@@ -1,3 +1,4 @@
+
 ## k8s_v1_component_status_list
 
 Kubernetes ComponentStatusList
@@ -7,9 +8,15 @@ Author: OpenShift (@openshift)
 Version added: 2.3.0
 
 
+
+
+
 ---
 ### Requirements
+
 * kubernetes == 3.0.0
+
+
 
 
 ---
@@ -21,22 +28,39 @@ Version added: 2.3.0
 #### Synopsis
 Retrieve a list of component_status. List operations provide a snapshot read of the underlying objects, returning a resource_version representing a consistent version of the listed objects.
 
+
 #### Options
 
 | Parameter     | required    | default  | choices    | comments |
 | ------------- |-------------| ---------|----------- |--------- |
-| username  |   |  | |  Provide a username for connecting to the API.  |
-| ssl_ca_cert  |   |  | |  Path to a CA certificate used to authenticate with the API.  |
-| api_key  |   |  | |  Token used to connect to the API.  |
-| force  |   |  False  | |  If set to C(True), and I(state) is C(present), an existing object will updated, and lists will be replaced, rather than merged.  |
-| cert_file  |   |  | |  Path to a certificate used to authenticate with the API.  |
-| verify_ssl  |   |  | |  Whether or not to verify the API server's SSL certificates.  |
-| kubeconfig  |   |  | |  Path to an existing Kubernetes config file. If not provided, and no other connection options are provided, the openshift client will attempt to load the default configuration file from I(~/.kube/config.json).  |
-| host  |   |  | |  Provide a URL for acessing the Kubernetes API.  |
-| context  |   |  | |  The name of a context found in the Kubernetes config file.  |
-| debug  |   |  False  | |  Enable debug output from the OpenShift helper. Logging info is written to KubeObjHelper.log  |
-| key_file  |   |  | |  Path to a key file used to authenticate with the API.  |
-| password  |   |  | |  Provide a password for connecting to the API. Use in conjunction with I(username).  |
+
+| username  |     |    | <ul></ul> |  Provide a username for connecting to the API.  |
+
+| ssl_ca_cert  |     |    | <ul></ul> |  Path to a CA certificate used to authenticate with the API.  |
+
+| api_key  |     |    | <ul></ul> |  Token used to connect to the API.  |
+
+| force  |     |  False  | <ul></ul> |  If set to C(True), and I(state) is C(present), an existing object will updated, and lists will be replaced, rather than merged.  |
+
+| cert_file  |     |    | <ul></ul> |  Path to a certificate used to authenticate with the API.  |
+
+| host  |     |    | <ul></ul> |  Provide a URL for acessing the Kubernetes API.  |
+
+| kubeconfig  |     |    | <ul></ul> |  Path to an existing Kubernetes config file. If not provided, and no other connection options are provided, the openshift client will attempt to load the default configuration file from I(~/.kube/config.json).  |
+
+| verify_ssl  |     |    | <ul></ul> |  Whether or not to verify the API server's SSL certificates.  |
+
+| context  |     |    | <ul></ul> |  The name of a context found in the Kubernetes config file.  |
+
+| debug  |     |  False  | <ul></ul> |  Enable debug output from the OpenShift helper. Logging info is written to KubeObjHelper.log  |
+
+| key_file  |     |    | <ul></ul> |  Path to a key file used to authenticate with the API.  |
+
+| password  |     |    | <ul></ul> |  Provide a password for connecting to the API. Use in conjunction with I(username).  |
+
+
+
+
 
 
 
@@ -44,6 +68,7 @@ Retrieve a list of component_status. List operations provide a snapshot read of 
 
 #### Return
 
+```yaml
 api_version:
   type: string
   description: Requested API version
@@ -434,6 +459,9 @@ component_status_list:
           description:
           - SelfLink is a URL representing this object. Populated by the system. Read-only.
           type: str
+
+```
+
 
 
 

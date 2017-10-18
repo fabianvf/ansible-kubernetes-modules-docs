@@ -1,3 +1,4 @@
+
 ## k8s_v1_service
 
 Kubernetes Service
@@ -7,9 +8,15 @@ Author: OpenShift (@openshift)
 Version added: 2.3.0
 
 
+
+
+
 ---
 ### Requirements
+
 * kubernetes == 3.0.0
+
+
 
 
 ---
@@ -21,40 +28,74 @@ Version added: 2.3.0
 #### Synopsis
 Manage the lifecycle of a service object. Supports check mode, and attempts to to be idempotent.
 
+
 #### Options
 
 | Parameter     | required    | default  | choices    | comments |
 | ------------- |-------------| ---------|----------- |--------- |
-| force  |   |  False  | |  If set to C(True), and I(state) is C(present), an existing object will updated, and lists will be replaced, rather than merged.  |
-| ssl_ca_cert  |   |  | |  Path to a CA certificate used to authenticate with the API.  |
-| cert_file  |   |  | |  Path to a certificate used to authenticate with the API.  |
-| labels  |   |  | |  Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services.  |
-| verify_ssl  |   |  | |  Whether or not to verify the API server's SSL certificates.  |
-| spec_selector  |   |  | |  Route service traffic to pods with label keys and values matching this selector. If empty or not present, the service is assumed to have an external process managing its endpoints, which Kubernetes will not modify. Only applies to types ClusterIP, NodePort, and LoadBalancer. Ignored if type is ExternalName.  |
-| spec_external_name  |   |  | |  externalName is the external reference that kubedns or equivalent will return as a CNAME record for this service. No proxying will be involved. Must be a valid DNS name and requires Type to be ExternalName.  |
-| spec_load_balancer_ip  |   |  | |  Only applies to Service Type: LoadBalancer LoadBalancer will get created with the IP specified in this field. This feature depends on whether the underlying cloud-provider supports specifying the loadBalancerIP when a load balancer is created. This field will be ignored if the cloud-provider does not support the feature.  |
-| namespace  |   |  | |  Namespace defines the space within each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty. Must be a DNS_LABEL. Cannot be updated.  |
-| resource_definition  |   |  | |  Provide the YAML definition for the object, bypassing any modules parameters intended to define object attributes.  |
-| state  |   |  present  | <ul> <li>present</li>  <li>absent</li> </ul> |  Determines if an object should be created, patched, or deleted. When set to C(present), the object will be created, if it does not exist, or patched, if parameter values differ from the existing object's attributes, and deleted, if set to C(absent). A patch operation results in merging lists and updating dictionaries, with lists being merged into a unique set of values. If a list contains a dictionary with a I(name) or I(type) attribute, a strategic merge is performed, where individual elements with a matching I(name_) or I(type) are merged. To force the replacement of lists, set the I(force) option to C(True).  |
-| spec_session_affinity  |   |  | |  Supports "ClientIP" and "None". Used to maintain session affinity. Enable client IP based session affinity. Must be ClientIP or None. Defaults to None.  |
-| api_key  |   |  | |  Token used to connect to the API.  |
-| annotations  |   |  | |  Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects.  |
-| spec_ports  |   |  | |  The list of ports that are exposed by this service.  |
-| username  |   |  | |  Provide a username for connecting to the API.  |
-| spec_external_i_ps  |   |  | |  externalIPs is a list of IP addresses for which nodes in the cluster will also accept traffic for this service. These IPs are not managed by Kubernetes. The user is responsible for ensuring that traffic arrives at a node with this IP. A common example is external load-balancers that are not part of the Kubernetes system.  |
-| spec_load_balancer_source_ranges  |   |  | |  If specified and supported by the platform, this will restrict traffic through the cloud-provider load-balancer will be restricted to the specified client IPs. This field will be ignored if the cloud-provider does not support the feature."  |
-| spec_cluster_ip  |   |  | |  clusterIP is the IP address of the service and is usually assigned randomly by the master. If an address is specified manually and is not in use by others, it will be allocated to the service; otherwise, creation of the service will fail. This field can not be changed through updates. Valid values are "None", empty string (""), or a valid IP address. "None" can be specified for headless services when proxying is not required. Only applies to types ClusterIP, NodePort, and LoadBalancer. Ignored if type is ExternalName.  |
-| host  |   |  | |  Provide a URL for acessing the Kubernetes API.  |
-| password  |   |  | |  Provide a password for connecting to the API. Use in conjunction with I(username).  |
-| src  |   |  | |  Provide a path to a file containing the YAML definition of the object. Mutually exclusive with I(resource_definition).  |
-| name  |   |  | |  Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated.  |
-| kubeconfig  |   |  | |  Path to an existing Kubernetes config file. If not provided, and no other connection options are provided, the openshift client will attempt to load the default configuration file from I(~/.kube/config.json).  |
-| spec_type  |   |  | |  type determines how the Service is exposed. Defaults to ClusterIP. Valid options are ExternalName, ClusterIP, NodePort, and LoadBalancer. "ExternalName" maps to the specified externalName. "ClusterIP" allocates a cluster-internal IP address for load-balancing to endpoints. Endpoints are determined by the selector or if that is not specified, by manual construction of an Endpoints object. If clusterIP is "None", no virtual IP is allocated and the endpoints are published as a set of endpoints rather than a stable IP. "NodePort" builds on ClusterIP and allocates a port on every node which routes to the clusterIP. "LoadBalancer" builds on NodePort and creates an external load-balancer (if supported in the current cloud) which routes to the clusterIP.  |
-| context  |   |  | |  The name of a context found in the Kubernetes config file.  |
-| spec_health_check_node_port  |   |  | |  healthCheckNodePort specifies the healthcheck nodePort for the service. If not specified, HealthCheckNodePort is created by the service api backend with the allocated nodePort. Will use user-specified nodePort value if specified by the client. Only effects when Type is set to LoadBalancer and ExternalTrafficPolicy is set to Local.  |
-| debug  |   |  False  | |  Enable debug output from the OpenShift helper. Logging info is written to KubeObjHelper.log  |
-| key_file  |   |  | |  Path to a key file used to authenticate with the API.  |
-| spec_external_traffic_policy  |   |  | |  externalTrafficPolicy denotes if this Service desires to route external traffic to node-local or cluster-wide endpoints. "Local" preserves the client source IP and avoids a second hop for LoadBalancer and Nodeport type services, but risks potentially imbalanced traffic spreading. "Cluster" obscures the client source IP and may cause a second hop to another node, but should have good overall load-spreading.  |
+
+| username  |     |    | <ul></ul> |  Provide a username for connecting to the API.  |
+
+| ssl_ca_cert  |     |    | <ul></ul> |  Path to a CA certificate used to authenticate with the API.  |
+
+| force  |     |  False  | <ul></ul> |  If set to C(True), and I(state) is C(present), an existing object will updated, and lists will be replaced, rather than merged.  |
+
+| context  |     |    | <ul></ul> |  The name of a context found in the Kubernetes config file.  |
+
+| kubeconfig  |     |    | <ul></ul> |  Path to an existing Kubernetes config file. If not provided, and no other connection options are provided, the openshift client will attempt to load the default configuration file from I(~/.kube/config.json).  |
+
+| spec_external_i_ps  |     |    | <ul></ul> |  externalIPs is a list of IP addresses for which nodes in the cluster will also accept traffic for this service. These IPs are not managed by Kubernetes. The user is responsible for ensuring that traffic arrives at a node with this IP. A common example is external load-balancers that are not part of the Kubernetes system.  |
+
+| spec_cluster_ip  |     |    | <ul></ul> |  clusterIP is the IP address of the service and is usually assigned randomly by the master. If an address is specified manually and is not in use by others, it will be allocated to the service; otherwise, creation of the service will fail. This field can not be changed through updates. Valid values are "None", empty string (""), or a valid IP address. "None" can be specified for headless services when proxying is not required. Only applies to types ClusterIP, NodePort, and LoadBalancer. Ignored if type is ExternalName.  |
+
+| cert_file  |     |    | <ul></ul> |  Path to a certificate used to authenticate with the API.  |
+
+| labels  |     |    | <ul></ul> |  Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services.  |
+
+| verify_ssl  |     |    | <ul></ul> |  Whether or not to verify the API server's SSL certificates.  |
+
+| spec_load_balancer_source_ranges  |     |    | <ul></ul> |  If specified and supported by the platform, this will restrict traffic through the cloud-provider load-balancer will be restricted to the specified client IPs. This field will be ignored if the cloud-provider does not support the feature."  |
+
+| password  |     |    | <ul></ul> |  Provide a password for connecting to the API. Use in conjunction with I(username).  |
+
+| spec_selector  |     |    | <ul></ul> |  Route service traffic to pods with label keys and values matching this selector. If empty or not present, the service is assumed to have an external process managing its endpoints, which Kubernetes will not modify. Only applies to types ClusterIP, NodePort, and LoadBalancer. Ignored if type is ExternalName.  |
+
+| spec_external_name  |     |    | <ul></ul> |  externalName is the external reference that kubedns or equivalent will return as a CNAME record for this service. No proxying will be involved. Must be a valid DNS name and requires Type to be ExternalName.  |
+
+| src  |     |    | <ul></ul> |  Provide a path to a file containing the YAML definition of the object. Mutually exclusive with I(resource_definition).  |
+
+| spec_load_balancer_ip  |     |    | <ul></ul> |  Only applies to Service Type: LoadBalancer LoadBalancer will get created with the IP specified in this field. This feature depends on whether the underlying cloud-provider supports specifying the loadBalancerIP when a load balancer is created. This field will be ignored if the cloud-provider does not support the feature.  |
+
+| name  |     |    | <ul></ul> |  Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated.  |
+
+| namespace  |     |    | <ul></ul> |  Namespace defines the space within each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty. Must be a DNS_LABEL. Cannot be updated.  |
+
+| host  |     |    | <ul></ul> |  Provide a URL for acessing the Kubernetes API.  |
+
+| resource_definition  |     |    | <ul></ul> |  Provide the YAML definition for the object, bypassing any modules parameters intended to define object attributes.  |
+
+| state  |     |  present  | <ul> <li>present</li>  <li>absent</li> </ul> |  Determines if an object should be created, patched, or deleted. When set to C(present), the object will be created, if it does not exist, or patched, if parameter values differ from the existing object's attributes, and deleted, if set to C(absent). A patch operation results in merging lists and updating dictionaries, with lists being merged into a unique set of values. If a list contains a dictionary with a I(name) or I(type) attribute, a strategic merge is performed, where individual elements with a matching I(name_) or I(type) are merged. To force the replacement of lists, set the I(force) option to C(True).  |
+
+| spec_type  |     |    | <ul></ul> |  type determines how the Service is exposed. Defaults to ClusterIP. Valid options are ExternalName, ClusterIP, NodePort, and LoadBalancer. "ExternalName" maps to the specified externalName. "ClusterIP" allocates a cluster-internal IP address for load-balancing to endpoints. Endpoints are determined by the selector or if that is not specified, by manual construction of an Endpoints object. If clusterIP is "None", no virtual IP is allocated and the endpoints are published as a set of endpoints rather than a stable IP. "NodePort" builds on ClusterIP and allocates a port on every node which routes to the clusterIP. "LoadBalancer" builds on NodePort and creates an external load-balancer (if supported in the current cloud) which routes to the clusterIP.  |
+
+| spec_session_affinity  |     |    | <ul></ul> |  Supports "ClientIP" and "None". Used to maintain session affinity. Enable client IP based session affinity. Must be ClientIP or None. Defaults to None.  |
+
+| spec_health_check_node_port  |     |    | <ul></ul> |  healthCheckNodePort specifies the healthcheck nodePort for the service. If not specified, HealthCheckNodePort is created by the service api backend with the allocated nodePort. Will use user-specified nodePort value if specified by the client. Only effects when Type is set to LoadBalancer and ExternalTrafficPolicy is set to Local.  |
+
+| debug  |     |  False  | <ul></ul> |  Enable debug output from the OpenShift helper. Logging info is written to KubeObjHelper.log  |
+
+| key_file  |     |    | <ul></ul> |  Path to a key file used to authenticate with the API.  |
+
+| api_key  |     |    | <ul></ul> |  Token used to connect to the API.  |
+
+| spec_external_traffic_policy  |     |    | <ul></ul> |  externalTrafficPolicy denotes if this Service desires to route external traffic to node-local or cluster-wide endpoints. "Local" preserves the client source IP and avoids a second hop for LoadBalancer and Nodeport type services, but risks potentially imbalanced traffic spreading. "Cluster" obscures the client source IP and may cause a second hop to another node, but should have good overall load-spreading.  |
+
+| annotations  |     |    | <ul></ul> |  Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects.  |
+
+| spec_ports  |     |    | <ul></ul> |  The list of ports that are exposed by this service.  |
+
+
+
 
 
 
@@ -62,85 +103,163 @@ Manage the lifecycle of a service object. Supports check mode, and attempts to t
 #### Examples
 
 ```
+
 - name: Create service
+
   k8s_v1_service.yml:
+
     name: myservice
+
     namespace: k8s-project
+
     state: present
+
     selector:
+
       app: django
+
     ports:
+
     - port: 8765
+
       target_port: 8000
+
       name: http-port
+
     type: ClusterIP
 
+
+
 - name: Patch service
+
   k8s_v1_service.yml:
+
     name: myservice
+
     namespace: k8s-project
+
     state: present
+
     selector:
+
       app: django
+
       env: production
+
     ports:
+
     - port: 8765
+
       target_port: 8010
+
       name: http-port
+
     - port: 8788
+
       target_port: 8080
+
       name: socket-port
+
     type: ClusterIP
+
+
 
 - name: Create service
+
   k8s_v1_service.yml:
+
     name: myservice01
+
     namespace: k8s-project
+
     state: present
+
     selector:
+
       app_name: service_testing
+
       app_env: production
+
     ports:
+
     - port: 8888
+
       target_port: 8010
+
       name: http
+
     type: ClusterIP
 
+
+
 - name: Patch service
+
   k8s_v1_service.yml:
+
     name: myservice01
+
     namespace: k8s-project
+
     state: present
+
     ports:
+
     - port: 9443
+
       target_port: 9443
+
       name: https
+
     - port: 8888
+
       target_port: 8015
+
       name: http
+
+
 
 - name: Repace service
+
   k8s_v1_service.yml:
+
     name: myservice01
+
     namespace: k8s-project
+
     state: replaced
+
     selector:
+
       app_name: web_site
+
       app_env: testing
+
     ports:
+
     - port: 9999
+
       target_port: 9999
+
       name: https
+
     - port: 8080
+
       target_port: 8080
+
       name: http
+
     type: NodePort
+
+
 
 ```
 
 
+
+
 #### Return
 
+```yaml
 api_version:
   type: string
   description: Requested API version
@@ -623,6 +742,9 @@ service:
                   - IP is set for load-balancer ingress points that are IP based (typically
                     GCE or OpenStack load-balancers)
                   type: str
+
+```
+
 
 
 

@@ -1,3 +1,4 @@
+
 ## openshift_v1_self_subject_rules_review
 
 OpenShift SelfSubjectRulesReview
@@ -7,9 +8,15 @@ Author: OpenShift (@openshift)
 Version added: 2.3.0
 
 
+
+
+
 ---
 ### Requirements
-* openshift == 0.3.2
+
+* openshift == 0.3.3
+
+
 
 
 ---
@@ -21,23 +28,41 @@ Version added: 2.3.0
 #### Synopsis
 Manage the lifecycle of a self_subject_rules_review object. Supports check mode, and attempts to to be idempotent.
 
+
 #### Options
 
 | Parameter     | required    | default  | choices    | comments |
 | ------------- |-------------| ---------|----------- |--------- |
-| username  |   |  | |  Provide a username for connecting to the API.  |
-| ssl_ca_cert  |   |  | |  Path to a CA certificate used to authenticate with the API.  |
-| api_key  |   |  | |  Token used to connect to the API.  |
-| force  |   |  False  | |  If set to C(True), and I(state) is C(present), an existing object will updated, and lists will be replaced, rather than merged.  |
-| cert_file  |   |  | |  Path to a certificate used to authenticate with the API.  |
-| verify_ssl  |   |  | |  Whether or not to verify the API server's SSL certificates.  |
-| kubeconfig  |   |  | |  Path to an existing Kubernetes config file. If not provided, and no other connection options are provided, the openshift client will attempt to load the default configuration file from I(~/.kube/config.json).  |
-| spec_scopes  |   |  | |  Scopes to use for the evaluation. Empty means "use the unscoped (full) permissions of the user/groups". Nil means "use the scopes on this request".  |
-| host  |   |  | |  Provide a URL for acessing the Kubernetes API.  |
-| context  |   |  | |  The name of a context found in the Kubernetes config file.  |
-| debug  |   |  False  | |  Enable debug output from the OpenShift helper. Logging info is written to KubeObjHelper.log  |
-| key_file  |   |  | |  Path to a key file used to authenticate with the API.  |
-| password  |   |  | |  Provide a password for connecting to the API. Use in conjunction with I(username).  |
+
+| username  |     |    | <ul></ul> |  Provide a username for connecting to the API.  |
+
+| ssl_ca_cert  |     |    | <ul></ul> |  Path to a CA certificate used to authenticate with the API.  |
+
+| api_key  |     |    | <ul></ul> |  Token used to connect to the API.  |
+
+| force  |     |  False  | <ul></ul> |  If set to C(True), and I(state) is C(present), an existing object will updated, and lists will be replaced, rather than merged.  |
+
+| cert_file  |     |    | <ul></ul> |  Path to a certificate used to authenticate with the API.  |
+
+| host  |     |    | <ul></ul> |  Provide a URL for acessing the Kubernetes API.  |
+
+| kubeconfig  |     |    | <ul></ul> |  Path to an existing Kubernetes config file. If not provided, and no other connection options are provided, the openshift client will attempt to load the default configuration file from I(~/.kube/config.json).  |
+
+| spec_scopes  |     |    | <ul></ul> |  Scopes to use for the evaluation. Empty means "use the unscoped (full) permissions of the user/groups". Nil means "use the scopes on this request".  |
+
+| verify_ssl  |     |    | <ul></ul> |  Whether or not to verify the API server's SSL certificates.  |
+
+| context  |     |    | <ul></ul> |  The name of a context found in the Kubernetes config file.  |
+
+| debug  |     |  False  | <ul></ul> |  Enable debug output from the OpenShift helper. Logging info is written to KubeObjHelper.log  |
+
+| key_file  |     |    | <ul></ul> |  Path to a key file used to authenticate with the API.  |
+
+| password  |     |    | <ul></ul> |  Provide a password for connecting to the API. Use in conjunction with I(username).  |
+
+
+
+
 
 
 
@@ -45,6 +70,7 @@ Manage the lifecycle of a self_subject_rules_review object. Supports check mode,
 
 #### Return
 
+```yaml
 api_version:
   type: string
   description: Requested API version
@@ -139,6 +165,9 @@ self_subject_rules_review:
                 contained in this rule. VerbAll represents all kinds.
               type: list
               contains: str
+
+```
+
 
 
 

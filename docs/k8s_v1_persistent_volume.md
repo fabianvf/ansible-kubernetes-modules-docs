@@ -1,3 +1,4 @@
+
 ## k8s_v1_persistent_volume
 
 Kubernetes PersistentVolume
@@ -7,9 +8,15 @@ Author: OpenShift (@openshift)
 Version added: 2.3.0
 
 
+
+
+
 ---
 ### Requirements
+
 * kubernetes == 3.0.0
+
+
 
 
 ---
@@ -21,138 +28,270 @@ Version added: 2.3.0
 #### Synopsis
 Manage the lifecycle of a persistent_volume object. Supports check mode, and attempts to to be idempotent.
 
+
 #### Options
 
 | Parameter     | required    | default  | choices    | comments |
 | ------------- |-------------| ---------|----------- |--------- |
-| labels  |   |  | |  Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services.  |
-| spec_rbd_pool  |   |  | |  The rados pool name. Default is rbd.  |
-| verify_ssl  |   |  | |  Whether or not to verify the API server's SSL certificates.  |
-| spec_flex_volume_driver  |   |  | |  Driver is the name of the driver to use for this volume.  |
-| spec_azure_disk_disk_uri  |   |  | |  The URI the data disk in the blob storage  |
-| spec_storageos_volume_namespace  |   |  | |  VolumeNamespace specifies the scope of the volume within StorageOS. If no namespace is specified then the Pod's namespace will be used. This allows the Kubernetes name scoping to be mirrored within StorageOS for tighter integration. Set VolumeName to any name to override the default behaviour. Set to "default" if you are not using namespaces within StorageOS. Namespaces that do not pre-exist within StorageOS will be created.  |
-| spec_photon_persistent_disk_pd_id  |   |  | |  ID that identifies Photon Controller persistent disk  |
-| spec_claim_ref_resource_version  |   |  | |  Specific resourceVersion to which this reference is made, if any.  |
-| spec_scale_io_volume_name  |   |  | |  The name of a volume already created in the ScaleIO system that is associated with this volume source.  |
-| spec_quobyte_user  |   |  | |  User to map volume access to Defaults to serivceaccount user  |
-| spec_vsphere_volume_fs_type  |   |  | |  Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.  |
-| resource_definition  |   |  | |  Provide the YAML definition for the object, bypassing any modules parameters intended to define object attributes.  |
-| spec_scale_io_gateway  |   |  | |  The host address of the ScaleIO API Gateway.  |
-| annotations  |   |  | |  Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects.  |
-| spec_access_modes  |   |  | |  AccessModes contains all ways the volume can be mounted.  |
-| api_key  |   |  | |  Token used to connect to the API.  |
-| spec_cephfs_path  |   |  | |  Optional: Used as the mounted root, rather than the full Ceph tree, default is /  |
-| spec_claim_ref_field_path  |   |  | |  If referring to a piece of an object instead of an entire object, this string should contain a valid JSON/Go field access statement, such as desiredState.manifest.containers[2]. For example, if the object reference is to a container within a pod, this would take on a value like: "spec.containers{name}" (where "name" refers to the name of the container that triggered the event) or if no container name is specified "spec.containers[2]" (container with index 2 in this pod). This syntax is chosen only to have some well-defined way of referencing a part of an object.  |
-| spec_cinder_volume_id  |   |  | |  volume id used to identify the volume in cinder  |
-| spec_flocker_dataset_uuid  |   |  | |  UUID of the dataset. This is unique identifier of a Flocker dataset  |
-| spec_local_path  |   |  | |  The full path to the volume on the node For alpha, this path must be a directory Once block as a source is supported, then this path can point to a block device  |
-| password  |   |  | |  Provide a password for connecting to the API. Use in conjunction with I(username).  |
-| spec_storageos_secret_ref_field_path  |   |  | |  If referring to a piece of an object instead of an entire object, this string should contain a valid JSON/Go field access statement, such as desiredState.manifest.containers[2]. For example, if the object reference is to a container within a pod, this would take on a value like: "spec.containers{name}" (where "name" refers to the name of the container that triggered the event) or if no container name is specified "spec.containers[2]" (container with index 2 in this pod). This syntax is chosen only to have some well-defined way of referencing a part of an object.  |
-| name  |   |  | |  Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated.  |
-| spec_cinder_read_only  |   |  | |  Optional: Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.  |
-| spec_quobyte_read_only  |   |  | |  ReadOnly here will force the Quobyte volume to be mounted with read-only permissions. Defaults to false.  |
-| spec_nfs_path  |   |  | |  Path that is exported by the NFS server.  |
-| debug  |   |  False  | |  Enable debug output from the OpenShift helper. Logging info is written to KubeObjHelper.log  |
-| spec_storageos_secret_ref_name  |   |  | |  Name of the referent.  |
-| spec_glusterfs_path  |   |  | |  Path is the Glusterfs volume path.  |
-| spec_claim_ref_name  |   |  | |  Name of the referent.  |
-| spec_aws_elastic_block_store_volume_id  |   |  | |  Unique ID of the persistent disk resource in AWS (Amazon EBS volume).  |
-| spec_iscsi_secret_ref_name  |   |  | |  Name of the referent.  |
-| spec_fc_fs_type  |   |  | |  Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.  |
-| spec_gce_persistent_disk_pd_name  |   |  | |  Unique name of the PD resource in GCE. Used to identify the disk in GCE.  |
-| spec_nfs_read_only  |   |  | |  ReadOnly here will force the NFS export to be mounted with read-only permissions. Defaults to false.  |
-| spec_claim_ref_kind  |   |  | |  Kind of the referent.  |
-| spec_aws_elastic_block_store_fs_type  |   |  | |  Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.  |
-| state  |   |  present  | <ul> <li>present</li>  <li>absent</li> </ul> |  Determines if an object should be created, patched, or deleted. When set to C(present), the object will be created, if it does not exist, or patched, if parameter values differ from the existing object's attributes, and deleted, if set to C(absent). A patch operation results in merging lists and updating dictionaries, with lists being merged into a unique set of values. If a list contains a dictionary with a I(name) or I(type) attribute, a strategic merge is performed, where individual elements with a matching I(name_) or I(type) are merged. To force the replacement of lists, set the I(force) option to C(True).  |
-| spec_flex_volume_fs_type  |   |  | |  Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". The default filesystem depends on FlexVolume script.  |
-| spec_flocker_dataset_name  |   |  | |  Name of the dataset stored as metadata -> name on the dataset for Flocker should be considered as deprecated  |
-| spec_scale_io_ssl_enabled  |   |  | |  Flag to enable/disable SSL communication with Gateway, default false  |
-| spec_fc_target_ww_ns  |   |  | |  Required: FC target worldwide names (WWNs)  |
-| spec_azure_disk_fs_type  |   |  | |  Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.  |
-| spec_gce_persistent_disk_read_only  |   |  | |  ReadOnly here will force the ReadOnly setting in VolumeMounts. Defaults to false.  |
-| spec_storageos_secret_ref_namespace  |   |  | |  Namespace of the referent.  |
-| spec_iscsi_chap_auth_session  |   |  | |  whether support iSCSI Session CHAP authentication  |
-| spec_storageos_secret_ref_uid  |   |  | |  UID of the referent.  |
-| host  |   |  | |  Provide a URL for acessing the Kubernetes API.  |
-| spec_portworx_volume_volume_id  |   |  | |  VolumeID uniquely identifies a Portworx volume  |
-| spec_storageos_fs_type  |   |  | |  Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.  |
-| spec_storage_class_name  |   |  | |  Name of StorageClass to which this persistent volume belongs. Empty value means that this volume does not belong to any StorageClass.  |
-| src  |   |  | |  Provide a path to a file containing the YAML definition of the object. Mutually exclusive with I(resource_definition).  |
-| spec_rbd_read_only  |   |  | |  ReadOnly here will force the ReadOnly setting in VolumeMounts. Defaults to false.  |
-| kubeconfig  |   |  | |  Path to an existing Kubernetes config file. If not provided, and no other connection options are provided, the openshift client will attempt to load the default configuration file from I(~/.kube/config.json).  |
-| spec_iscsi_iqn  |   |  | |  Target iSCSI Qualified Name.  |
-| spec_vsphere_volume_storage_policy_id  |   |  | |  Storage Policy Based Management (SPBM) profile ID associated with the StoragePolicyName.  |
-| context  |   |  | |  The name of a context found in the Kubernetes config file.  |
-| spec_flex_volume_read_only  |   |  | |  Optional: Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.  |
-| spec_aws_elastic_block_store_read_only  |   |  | |  Specify "true" to force and set the ReadOnly property in VolumeMounts to "true". If omitted, the default is "false".  |
-| spec_fc_lun  |   |  | |  Required: FC target lun number  |
-| spec_scale_io_protection_domain  |   |  | |  The name of the Protection Domain for the configured storage (defaults to "default").  |
-| spec_cephfs_secret_file  |   |  | |  Optional: SecretFile is the path to key ring for User, default is /etc/ceph/user.secret  |
-| spec_rbd_monitors  |   |  | |  A collection of Ceph monitors.  |
-| force  |   |  False  | |  If set to C(True), and I(state) is C(present), an existing object will updated, and lists will be replaced, rather than merged.  |
-| spec_portworx_volume_fs_type  |   |  | |  FSType represents the filesystem type to mount Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs". Implicitly inferred to be "ext4" if unspecified.  |
-| spec_host_path_path  |   |  | |  Path of the directory on the host.  |
-| spec_quobyte_registry  |   |  | |  Registry represents a single or multiple Quobyte Registry services specified as a string as host:port pair (multiple entries are separated with commas) which acts as the central registry for volumes  |
-| spec_rbd_user  |   |  | |  The rados user name. Default is admin.  |
-| spec_rbd_secret_ref_name  |   |  | |  Name of the referent.  |
-| spec_azure_disk_read_only  |   |  | |  Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.  |
-| spec_persistent_volume_reclaim_policy  |   |  | |  What happens to a persistent volume when released from its claim. Valid options are Retain (default) and Recycle. Recycling must be supported by the volume plugin underlying this persistent volume.  |
-| spec_azure_file_secret_name  |   |  | |  the name of secret that contains Azure Storage Account Name and Key  |
-| spec_azure_file_read_only  |   |  | |  Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.  |
-| spec_cephfs_secret_ref_name  |   |  | |  Name of the referent.  |
-| spec_cinder_fs_type  |   |  | |  Filesystem type to mount. Must be a filesystem type supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.  |
-| spec_flex_volume_secret_ref_name  |   |  | |  Name of the referent.  |
-| cert_file  |   |  | |  Path to a certificate used to authenticate with the API.  |
-| spec_quobyte_volume  |   |  | |  Volume is a string that references an already created Quobyte volume by name.  |
-| username  |   |  | |  Provide a username for connecting to the API.  |
-| spec_iscsi_fs_type  |   |  | |  Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.  |
-| spec_iscsi_read_only  |   |  | |  ReadOnly here will force the ReadOnly setting in VolumeMounts. Defaults to false.  |
-| spec_claim_ref_api_version  |   |  | |  API version of the referent.  |
-| spec_gce_persistent_disk_fs_type  |   |  | |  Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.  |
-| spec_scale_io_read_only  |   |  | |  Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.  |
-| spec_scale_io_secret_ref_name  |   |  | |  Name of the referent.  |
-| spec_scale_io_system  |   |  | |  The name of the storage system as configured in ScaleIO.  |
-| spec_iscsi_target_portal  |   |  | |  iSCSI target portal. The portal is either an IP or ip_addr:port if the port is other than default (typically TCP ports 860 and 3260).  |
-| spec_flex_volume_options  |   |  | |  Optional: Extra command options if any.  |
-| key_file  |   |  | |  Path to a key file used to authenticate with the API.  |
-| spec_storageos_secret_ref_api_version  |   |  | |  API version of the referent.  |
-| spec_claim_ref_namespace  |   |  | |  Namespace of the referent.  |
-| spec_storageos_secret_ref_resource_version  |   |  | |  Specific resourceVersion to which this reference is made, if any.  |
-| spec_photon_persistent_disk_fs_type  |   |  | |  Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.  |
-| spec_storageos_read_only  |   |  | |  Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.  |
-| spec_iscsi_iscsi_interface  |   |  | |  Optional: Defaults to 'default' (tcp). iSCSI interface name that uses an iSCSI       transport.  |
-| spec_azure_disk_kind  |   |  | |  Expected values Shared: mulitple blob disks per storage account Dedicated: single blob disk per storage account Managed: azure managed data disk (only in managed availability set). defaults to shared  |
-| spec_aws_elastic_block_store_partition  |   |  | |  The partition in the volume that you want to mount. If omitted, the default is to mount by volume name. Examples: For volume /dev/sda1, you specify the partition as "1". Similarly, the volume partition for /dev/sda is "0" (or you can leave the property empty).  |
-| spec_azure_disk_disk_name  |   |  | |  The Name of the data disk in the blob storage  |
-| spec_capacity  |   |  | |  A description of the persistent volume's resources and capacity.  |
-| spec_azure_disk_caching_mode  |   |  | |  Host Caching mode: None, Read Only, Read Write.  |
-| spec_cephfs_read_only  |   |  | |  Optional: Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.  |
-| spec_azure_file_share_name  |   |  | |  Share Name  |
-| namespace  |   |  | |  Namespace defines the space within each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty. Must be a DNS_LABEL. Cannot be updated.  |
-| spec_claim_ref_uid  |   |  | |  UID of the referent.  |
-| spec_storageos_secret_ref_kind  |   |  | |  Kind of the referent.  |
-| spec_glusterfs_read_only  |   |  | |  ReadOnly here will force the Glusterfs volume to be mounted with read-only permissions. Defaults to false.  |
-| spec_scale_io_storage_mode  |   |  | |  Indicates whether the storage for a volume should be thick or thin (defaults to "thin").  |
-| spec_iscsi_lun  |   |  | |  iSCSI target lun number.  |
-| spec_vsphere_volume_volume_path  |   |  | |  Path that identifies vSphere volume vmdk  |
-| ssl_ca_cert  |   |  | |  Path to a CA certificate used to authenticate with the API.  |
-| spec_rbd_fs_type  |   |  | |  Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.  |
-| spec_vsphere_volume_storage_policy_name  |   |  | |  Storage Policy Based Management (SPBM) profile name.  |
-| spec_fc_read_only  |   |  | |  Optional: Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.  |
-| spec_gce_persistent_disk_partition  |   |  | |  The partition in the volume that you want to mount. If omitted, the default is to mount by volume name. Examples: For volume /dev/sda1, you specify the partition as "1". Similarly, the volume partition for /dev/sda is "0" (or you can leave the property empty).  |
-| spec_glusterfs_endpoints  |   |  | |  EndpointsName is the endpoint name that details Glusterfs topology.  |
-| spec_cephfs_user  |   |  | |  Optional: User is the rados user name, default is admin  |
-| spec_quobyte_group  |   |  | |  Group to map volume access to Default is no group  |
-| spec_scale_io_storage_pool  |   |  | |  The Storage Pool associated with the protection domain (defaults to "default").  |
-| spec_iscsi_portals  |   |  | |  iSCSI target portal List. The portal is either an IP or ip_addr:port if the port is other than default (typically TCP ports 860 and 3260).  |
-| spec_iscsi_chap_auth_discovery  |   |  | |  whether support iSCSI Discovery CHAP authentication  |
-| spec_portworx_volume_read_only  |   |  | |  Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.  |
-| spec_storageos_volume_name  |   |  | |  VolumeName is the human-readable name of the StorageOS volume. Volume names are only unique within a namespace.  |
-| spec_cephfs_monitors  |   |  | |  Required: Monitors is a collection of Ceph monitors  |
-| spec_scale_io_fs_type  |   |  | |  Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.  |
-| spec_rbd_keyring  |   |  | |  Keyring is the path to key ring for RBDUser. Default is /etc/ceph/keyring.  |
-| spec_nfs_server  |   |  | |  Server is the hostname or IP address of the NFS server.  |
-| spec_rbd_image  |   |  | |  The rados image name.  |
+
+| spec_flex_volume_options  |     |    | <ul></ul> |  Optional: Extra command options if any.  |
+
+| labels  |     |    | <ul></ul> |  Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services.  |
+
+| spec_rbd_pool  |     |    | <ul></ul> |  The rados pool name. Default is rbd.  |
+
+| verify_ssl  |     |    | <ul></ul> |  Whether or not to verify the API server's SSL certificates.  |
+
+| spec_flex_volume_driver  |     |    | <ul></ul> |  Driver is the name of the driver to use for this volume.  |
+
+| spec_azure_disk_disk_uri  |     |    | <ul></ul> |  The URI the data disk in the blob storage  |
+
+| spec_scale_io_secret_ref_name  |     |    | <ul></ul> |  Name of the referent.  |
+
+| spec_photon_persistent_disk_pd_id  |     |    | <ul></ul> |  ID that identifies Photon Controller persistent disk  |
+
+| spec_claim_ref_resource_version  |     |    | <ul></ul> |  Specific resourceVersion to which this reference is made, if any.  |
+
+| spec_scale_io_volume_name  |     |    | <ul></ul> |  The name of a volume already created in the ScaleIO system that is associated with this volume source.  |
+
+| spec_quobyte_user  |     |    | <ul></ul> |  User to map volume access to Defaults to serivceaccount user  |
+
+| spec_iscsi_iqn  |     |    | <ul></ul> |  Target iSCSI Qualified Name.  |
+
+| resource_definition  |     |    | <ul></ul> |  Provide the YAML definition for the object, bypassing any modules parameters intended to define object attributes.  |
+
+| spec_azure_file_read_only  |     |    | <ul></ul> |  Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.  |
+
+| spec_access_modes  |     |    | <ul></ul> |  AccessModes contains all ways the volume can be mounted.  |
+
+| api_key  |     |    | <ul></ul> |  Token used to connect to the API.  |
+
+| spec_cephfs_path  |     |    | <ul></ul> |  Optional: Used as the mounted root, rather than the full Ceph tree, default is /  |
+
+| spec_claim_ref_field_path  |     |    | <ul></ul> |  If referring to a piece of an object instead of an entire object, this string should contain a valid JSON/Go field access statement, such as desiredState.manifest.containers[2]. For example, if the object reference is to a container within a pod, this would take on a value like: "spec.containers{name}" (where "name" refers to the name of the container that triggered the event) or if no container name is specified "spec.containers[2]" (container with index 2 in this pod). This syntax is chosen only to have some well-defined way of referencing a part of an object.  |
+
+| spec_cinder_volume_id  |     |    | <ul></ul> |  volume id used to identify the volume in cinder  |
+
+| spec_flocker_dataset_uuid  |     |    | <ul></ul> |  UUID of the dataset. This is unique identifier of a Flocker dataset  |
+
+| spec_local_path  |     |    | <ul></ul> |  The full path to the volume on the node For alpha, this path must be a directory Once block as a source is supported, then this path can point to a block device  |
+
+| password  |     |    | <ul></ul> |  Provide a password for connecting to the API. Use in conjunction with I(username).  |
+
+| spec_storageos_secret_ref_field_path  |     |    | <ul></ul> |  If referring to a piece of an object instead of an entire object, this string should contain a valid JSON/Go field access statement, such as desiredState.manifest.containers[2]. For example, if the object reference is to a container within a pod, this would take on a value like: "spec.containers{name}" (where "name" refers to the name of the container that triggered the event) or if no container name is specified "spec.containers[2]" (container with index 2 in this pod). This syntax is chosen only to have some well-defined way of referencing a part of an object.  |
+
+| name  |     |    | <ul></ul> |  Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated.  |
+
+| spec_cinder_read_only  |     |    | <ul></ul> |  Optional: Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.  |
+
+| spec_quobyte_read_only  |     |    | <ul></ul> |  ReadOnly here will force the Quobyte volume to be mounted with read-only permissions. Defaults to false.  |
+
+| spec_nfs_path  |     |    | <ul></ul> |  Path that is exported by the NFS server.  |
+
+| debug  |     |  False  | <ul></ul> |  Enable debug output from the OpenShift helper. Logging info is written to KubeObjHelper.log  |
+
+| spec_storageos_secret_ref_name  |     |    | <ul></ul> |  Name of the referent.  |
+
+| force  |     |  False  | <ul></ul> |  If set to C(True), and I(state) is C(present), an existing object will updated, and lists will be replaced, rather than merged.  |
+
+| spec_claim_ref_name  |     |    | <ul></ul> |  Name of the referent.  |
+
+| spec_aws_elastic_block_store_volume_id  |     |    | <ul></ul> |  Unique ID of the persistent disk resource in AWS (Amazon EBS volume).  |
+
+| spec_iscsi_secret_ref_name  |     |    | <ul></ul> |  Name of the referent.  |
+
+| spec_fc_fs_type  |     |    | <ul></ul> |  Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.  |
+
+| spec_gce_persistent_disk_pd_name  |     |    | <ul></ul> |  Unique name of the PD resource in GCE. Used to identify the disk in GCE.  |
+
+| spec_nfs_read_only  |     |    | <ul></ul> |  ReadOnly here will force the NFS export to be mounted with read-only permissions. Defaults to false.  |
+
+| spec_claim_ref_kind  |     |    | <ul></ul> |  Kind of the referent.  |
+
+| spec_aws_elastic_block_store_fs_type  |     |    | <ul></ul> |  Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.  |
+
+| state  |     |  present  | <ul> <li>present</li>  <li>absent</li> </ul> |  Determines if an object should be created, patched, or deleted. When set to C(present), the object will be created, if it does not exist, or patched, if parameter values differ from the existing object's attributes, and deleted, if set to C(absent). A patch operation results in merging lists and updating dictionaries, with lists being merged into a unique set of values. If a list contains a dictionary with a I(name) or I(type) attribute, a strategic merge is performed, where individual elements with a matching I(name_) or I(type) are merged. To force the replacement of lists, set the I(force) option to C(True).  |
+
+| spec_flex_volume_fs_type  |     |    | <ul></ul> |  Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". The default filesystem depends on FlexVolume script.  |
+
+| spec_flocker_dataset_name  |     |    | <ul></ul> |  Name of the dataset stored as metadata -> name on the dataset for Flocker should be considered as deprecated  |
+
+| spec_scale_io_ssl_enabled  |     |    | <ul></ul> |  Flag to enable/disable SSL communication with Gateway, default false  |
+
+| spec_fc_target_ww_ns  |     |    | <ul></ul> |  Required: FC target worldwide names (WWNs)  |
+
+| spec_azure_disk_fs_type  |     |    | <ul></ul> |  Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.  |
+
+| spec_gce_persistent_disk_read_only  |     |    | <ul></ul> |  ReadOnly here will force the ReadOnly setting in VolumeMounts. Defaults to false.  |
+
+| spec_storageos_secret_ref_namespace  |     |    | <ul></ul> |  Namespace of the referent.  |
+
+| spec_iscsi_chap_auth_session  |     |    | <ul></ul> |  whether support iSCSI Session CHAP authentication  |
+
+| spec_storageos_secret_ref_uid  |     |    | <ul></ul> |  UID of the referent.  |
+
+| host  |     |    | <ul></ul> |  Provide a URL for acessing the Kubernetes API.  |
+
+| spec_portworx_volume_volume_id  |     |    | <ul></ul> |  VolumeID uniquely identifies a Portworx volume  |
+
+| key_file  |     |    | <ul></ul> |  Path to a key file used to authenticate with the API.  |
+
+| spec_storage_class_name  |     |    | <ul></ul> |  Name of StorageClass to which this persistent volume belongs. Empty value means that this volume does not belong to any StorageClass.  |
+
+| src  |     |    | <ul></ul> |  Provide a path to a file containing the YAML definition of the object. Mutually exclusive with I(resource_definition).  |
+
+| spec_rbd_read_only  |     |    | <ul></ul> |  ReadOnly here will force the ReadOnly setting in VolumeMounts. Defaults to false.  |
+
+| kubeconfig  |     |    | <ul></ul> |  Path to an existing Kubernetes config file. If not provided, and no other connection options are provided, the openshift client will attempt to load the default configuration file from I(~/.kube/config.json).  |
+
+| spec_azure_disk_caching_mode  |     |    | <ul></ul> |  Host Caching mode: None, Read Only, Read Write.  |
+
+| spec_vsphere_volume_storage_policy_id  |     |    | <ul></ul> |  Storage Policy Based Management (SPBM) profile ID associated with the StoragePolicyName.  |
+
+| context  |     |    | <ul></ul> |  The name of a context found in the Kubernetes config file.  |
+
+| spec_portworx_volume_read_only  |     |    | <ul></ul> |  Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.  |
+
+| spec_aws_elastic_block_store_read_only  |     |    | <ul></ul> |  Specify "true" to force and set the ReadOnly property in VolumeMounts to "true". If omitted, the default is "false".  |
+
+| spec_fc_lun  |     |    | <ul></ul> |  Required: FC target lun number  |
+
+| spec_scale_io_protection_domain  |     |    | <ul></ul> |  The name of the Protection Domain for the configured storage (defaults to "default").  |
+
+| spec_cephfs_secret_file  |     |    | <ul></ul> |  Optional: SecretFile is the path to key ring for User, default is /etc/ceph/user.secret  |
+
+| spec_rbd_monitors  |     |    | <ul></ul> |  A collection of Ceph monitors.  |
+
+| spec_glusterfs_path  |     |    | <ul></ul> |  Path is the Glusterfs volume path.  |
+
+| spec_portworx_volume_fs_type  |     |    | <ul></ul> |  FSType represents the filesystem type to mount Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs". Implicitly inferred to be "ext4" if unspecified.  |
+
+| spec_host_path_path  |     |    | <ul></ul> |  Path of the directory on the host.  |
+
+| spec_quobyte_registry  |     |    | <ul></ul> |  Registry represents a single or multiple Quobyte Registry services specified as a string as host:port pair (multiple entries are separated with commas) which acts as the central registry for volumes  |
+
+| spec_rbd_user  |     |    | <ul></ul> |  The rados user name. Default is admin.  |
+
+| spec_rbd_secret_ref_name  |     |    | <ul></ul> |  Name of the referent.  |
+
+| spec_azure_disk_read_only  |     |    | <ul></ul> |  Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.  |
+
+| spec_persistent_volume_reclaim_policy  |     |    | <ul></ul> |  What happens to a persistent volume when released from its claim. Valid options are Retain (default) and Recycle. Recycling must be supported by the volume plugin underlying this persistent volume.  |
+
+| spec_azure_file_secret_name  |     |    | <ul></ul> |  the name of secret that contains Azure Storage Account Name and Key  |
+
+| spec_scale_io_gateway  |     |    | <ul></ul> |  The host address of the ScaleIO API Gateway.  |
+
+| spec_cephfs_secret_ref_name  |     |    | <ul></ul> |  Name of the referent.  |
+
+| spec_cinder_fs_type  |     |    | <ul></ul> |  Filesystem type to mount. Must be a filesystem type supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.  |
+
+| spec_flex_volume_secret_ref_name  |     |    | <ul></ul> |  Name of the referent.  |
+
+| cert_file  |     |    | <ul></ul> |  Path to a certificate used to authenticate with the API.  |
+
+| spec_quobyte_volume  |     |    | <ul></ul> |  Volume is a string that references an already created Quobyte volume by name.  |
+
+| username  |     |    | <ul></ul> |  Provide a username for connecting to the API.  |
+
+| spec_iscsi_fs_type  |     |    | <ul></ul> |  Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.  |
+
+| spec_capacity  |     |    | <ul></ul> |  A description of the persistent volume's resources and capacity.  |
+
+| spec_iscsi_read_only  |     |    | <ul></ul> |  ReadOnly here will force the ReadOnly setting in VolumeMounts. Defaults to false.  |
+
+| spec_claim_ref_api_version  |     |    | <ul></ul> |  API version of the referent.  |
+
+| spec_gce_persistent_disk_fs_type  |     |    | <ul></ul> |  Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.  |
+
+| spec_scale_io_read_only  |     |    | <ul></ul> |  Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.  |
+
+| spec_storageos_volume_namespace  |     |    | <ul></ul> |  VolumeNamespace specifies the scope of the volume within StorageOS. If no namespace is specified then the Pod's namespace will be used. This allows the Kubernetes name scoping to be mirrored within StorageOS for tighter integration. Set VolumeName to any name to override the default behaviour. Set to "default" if you are not using namespaces within StorageOS. Namespaces that do not pre-exist within StorageOS will be created.  |
+
+| spec_scale_io_system  |     |    | <ul></ul> |  The name of the storage system as configured in ScaleIO.  |
+
+| spec_iscsi_target_portal  |     |    | <ul></ul> |  iSCSI target portal. The portal is either an IP or ip_addr:port if the port is other than default (typically TCP ports 860 and 3260).  |
+
+| annotations  |     |    | <ul></ul> |  Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects.  |
+
+| spec_storageos_fs_type  |     |    | <ul></ul> |  Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.  |
+
+| spec_storageos_secret_ref_api_version  |     |    | <ul></ul> |  API version of the referent.  |
+
+| spec_claim_ref_namespace  |     |    | <ul></ul> |  Namespace of the referent.  |
+
+| spec_vsphere_volume_fs_type  |     |    | <ul></ul> |  Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.  |
+
+| spec_storageos_secret_ref_resource_version  |     |    | <ul></ul> |  Specific resourceVersion to which this reference is made, if any.  |
+
+| spec_photon_persistent_disk_fs_type  |     |    | <ul></ul> |  Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.  |
+
+| spec_storageos_read_only  |     |    | <ul></ul> |  Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.  |
+
+| spec_iscsi_iscsi_interface  |     |    | <ul></ul> |  Optional: Defaults to 'default' (tcp). iSCSI interface name that uses an iSCSI       transport.  |
+
+| spec_azure_disk_kind  |     |    | <ul></ul> |  Expected values Shared: mulitple blob disks per storage account Dedicated: single blob disk per storage account Managed: azure managed data disk (only in managed availability set). defaults to shared  |
+
+| spec_aws_elastic_block_store_partition  |     |    | <ul></ul> |  The partition in the volume that you want to mount. If omitted, the default is to mount by volume name. Examples: For volume /dev/sda1, you specify the partition as "1". Similarly, the volume partition for /dev/sda is "0" (or you can leave the property empty).  |
+
+| spec_azure_disk_disk_name  |     |    | <ul></ul> |  The Name of the data disk in the blob storage  |
+
+| spec_quobyte_group  |     |    | <ul></ul> |  Group to map volume access to Default is no group  |
+
+| spec_cephfs_read_only  |     |    | <ul></ul> |  Optional: Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.  |
+
+| spec_azure_file_share_name  |     |    | <ul></ul> |  Share Name  |
+
+| namespace  |     |    | <ul></ul> |  Namespace defines the space within each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty. Must be a DNS_LABEL. Cannot be updated.  |
+
+| spec_claim_ref_uid  |     |    | <ul></ul> |  UID of the referent.  |
+
+| spec_storageos_secret_ref_kind  |     |    | <ul></ul> |  Kind of the referent.  |
+
+| spec_scale_io_storage_mode  |     |    | <ul></ul> |  Indicates whether the storage for a volume should be thick or thin (defaults to "thin").  |
+
+| spec_iscsi_lun  |     |    | <ul></ul> |  iSCSI target lun number.  |
+
+| spec_vsphere_volume_volume_path  |     |    | <ul></ul> |  Path that identifies vSphere volume vmdk  |
+
+| ssl_ca_cert  |     |    | <ul></ul> |  Path to a CA certificate used to authenticate with the API.  |
+
+| spec_rbd_fs_type  |     |    | <ul></ul> |  Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.  |
+
+| spec_vsphere_volume_storage_policy_name  |     |    | <ul></ul> |  Storage Policy Based Management (SPBM) profile name.  |
+
+| spec_fc_read_only  |     |    | <ul></ul> |  Optional: Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.  |
+
+| spec_gce_persistent_disk_partition  |     |    | <ul></ul> |  The partition in the volume that you want to mount. If omitted, the default is to mount by volume name. Examples: For volume /dev/sda1, you specify the partition as "1". Similarly, the volume partition for /dev/sda is "0" (or you can leave the property empty).  |
+
+| spec_glusterfs_endpoints  |     |    | <ul></ul> |  EndpointsName is the endpoint name that details Glusterfs topology.  |
+
+| spec_cephfs_user  |     |    | <ul></ul> |  Optional: User is the rados user name, default is admin  |
+
+| spec_glusterfs_read_only  |     |    | <ul></ul> |  ReadOnly here will force the Glusterfs volume to be mounted with read-only permissions. Defaults to false.  |
+
+| spec_scale_io_storage_pool  |     |    | <ul></ul> |  The Storage Pool associated with the protection domain (defaults to "default").  |
+
+| spec_iscsi_portals  |     |    | <ul></ul> |  iSCSI target portal List. The portal is either an IP or ip_addr:port if the port is other than default (typically TCP ports 860 and 3260).  |
+
+| spec_iscsi_chap_auth_discovery  |     |    | <ul></ul> |  whether support iSCSI Discovery CHAP authentication  |
+
+| spec_flex_volume_read_only  |     |    | <ul></ul> |  Optional: Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.  |
+
+| spec_storageos_volume_name  |     |    | <ul></ul> |  VolumeName is the human-readable name of the StorageOS volume. Volume names are only unique within a namespace.  |
+
+| spec_cephfs_monitors  |     |    | <ul></ul> |  Required: Monitors is a collection of Ceph monitors  |
+
+| spec_scale_io_fs_type  |     |    | <ul></ul> |  Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.  |
+
+| spec_rbd_keyring  |     |    | <ul></ul> |  Keyring is the path to key ring for RBDUser. Default is /etc/ceph/keyring.  |
+
+| spec_nfs_server  |     |    | <ul></ul> |  Server is the hostname or IP address of the NFS server.  |
+
+| spec_rbd_image  |     |    | <ul></ul> |  The rados image name.  |
+
+
+
 
 
 
@@ -160,22 +299,37 @@ Manage the lifecycle of a persistent_volume object. Supports check mode, and att
 #### Examples
 
 ```
+
 - name: Create persitent volume
+
   k8s_v1_persistent_volume.yml:
+
     name: mypv
+
     state: present
+
     capacity:
+
       storage: 1Gi
+
     access_modes:
+
     - ReadWriteOnce
+
     persistent_volume_reclaim_policy: Recycle
+
     host_path_path: /tmp/test_volume
+
+
 
 ```
 
 
+
+
 #### Return
 
+```yaml
 api_version:
   type: string
   description: Requested API version
@@ -1236,6 +1390,9 @@ persistent_volume:
           - Reason is a brief CamelCase string that describes any failure and is meant
             for machine parsing and tidy display in the CLI.
           type: str
+
+```
+
 
 
 

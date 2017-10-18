@@ -1,3 +1,4 @@
+
 ## openshift_v1_deployment_config_rollback
 
 OpenShift DeploymentConfigRollback
@@ -7,9 +8,15 @@ Author: OpenShift (@openshift)
 Version added: 2.3.0
 
 
+
+
+
 ---
 ### Requirements
-* openshift == 0.3.2
+
+* openshift == 0.3.3
+
+
 
 
 ---
@@ -21,36 +28,67 @@ Version added: 2.3.0
 #### Synopsis
 Manage the lifecycle of a deployment_config_rollback object. Supports check mode, and attempts to to be idempotent.
 
+
 #### Options
 
 | Parameter     | required    | default  | choices    | comments |
 | ------------- |-------------| ---------|----------- |--------- |
-| force  |   |  False  | |  If set to C(True), and I(state) is C(present), an existing object will updated, and lists will be replaced, rather than merged.  |
-| cert_file  |   |  | |  Path to a certificate used to authenticate with the API.  |
-| verify_ssl  |   |  | |  Whether or not to verify the API server's SSL certificates.  |
-| spec_include_template  |   |  | |  IncludeTemplate specifies whether to include the PodTemplateSpec.  |
-| updated_annotations  |   |  | |  UpdatedAnnotations is a set of new annotations that will be added in the deployment config.  |
-| password  |   |  | |  Provide a password for connecting to the API. Use in conjunction with I(username).  |
-| spec__from_namespace  |   |  | |  Namespace of the referent.  |
-| spec__from_uid  |   |  | |  UID of the referent.  |
-| api_key  |   |  | |  Token used to connect to the API.  |
-| username  |   |  | |  Provide a username for connecting to the API.  |
-| ssl_ca_cert  |   |  | |  Path to a CA certificate used to authenticate with the API.  |
-| spec_include_replication_meta  |   |  | |  IncludeReplicationMeta specifies whether to include the replica count and selector.  |
-| spec_include_strategy  |   |  | |  IncludeStrategy specifies whether to include the deployment Strategy.  |
-| host  |   |  | |  Provide a URL for acessing the Kubernetes API.  |
-| spec__from_name  |   |  | |  Name of the referent.  |
-| spec_revision  |   |  | |  Revision to rollback to. If set to 0, rollback to the last revision.  |
-| spec__from_resource_version  |   |  | |  Specific resourceVersion to which this reference is made, if any.  |
-| spec__from_field_path  |   |  | |  If referring to a piece of an object instead of an entire object, this string should contain a valid JSON/Go field access statement, such as desiredState.manifest.containers[2]. For example, if the object reference is to a container within a pod, this would take on a value like: "spec.containers{name}" (where "name" refers to the name of the container that triggered the event) or if no container name is specified "spec.containers[2]" (container with index 2 in this pod). This syntax is chosen only to have some well-defined way of referencing a part of an object.  |
-| spec__from_kind  |   |  | |  Kind of the referent.  |
-| spec_include_triggers  |   |  | |  IncludeTriggers specifies whether to include config Triggers.  |
-| name  |   |  | |  Name of the deployment config that will be rolled back.  |
-| kubeconfig  |   |  | |  Path to an existing Kubernetes config file. If not provided, and no other connection options are provided, the openshift client will attempt to load the default configuration file from I(~/.kube/config.json).  |
-| context  |   |  | |  The name of a context found in the Kubernetes config file.  |
-| debug  |   |  False  | |  Enable debug output from the OpenShift helper. Logging info is written to KubeObjHelper.log  |
-| spec__from_api_version  |   |  | |  API version of the referent.  |
-| key_file  |   |  | |  Path to a key file used to authenticate with the API.  |
+
+| username  |     |    | <ul></ul> |  Provide a username for connecting to the API.  |
+
+| ssl_ca_cert  |     |    | <ul></ul> |  Path to a CA certificate used to authenticate with the API.  |
+
+| force  |     |  False  | <ul></ul> |  If set to C(True), and I(state) is C(present), an existing object will updated, and lists will be replaced, rather than merged.  |
+
+| context  |     |    | <ul></ul> |  The name of a context found in the Kubernetes config file.  |
+
+| cert_file  |     |    | <ul></ul> |  Path to a certificate used to authenticate with the API.  |
+
+| spec_include_replication_meta  |     |    | <ul></ul> |  IncludeReplicationMeta specifies whether to include the replica count and selector.  |
+
+| spec_include_strategy  |     |    | <ul></ul> |  IncludeStrategy specifies whether to include the deployment Strategy.  |
+
+| verify_ssl  |     |    | <ul></ul> |  Whether or not to verify the API server's SSL certificates.  |
+
+| spec_include_template  |     |    | <ul></ul> |  IncludeTemplate specifies whether to include the PodTemplateSpec.  |
+
+| updated_annotations  |     |    | <ul></ul> |  UpdatedAnnotations is a set of new annotations that will be added in the deployment config.  |
+
+| spec_revision  |     |    | <ul></ul> |  Revision to rollback to. If set to 0, rollback to the last revision.  |
+
+| spec__from_api_version  |     |    | <ul></ul> |  API version of the referent.  |
+
+| spec__from_resource_version  |     |    | <ul></ul> |  Specific resourceVersion to which this reference is made, if any.  |
+
+| spec__from_field_path  |     |    | <ul></ul> |  If referring to a piece of an object instead of an entire object, this string should contain a valid JSON/Go field access statement, such as desiredState.manifest.containers[2]. For example, if the object reference is to a container within a pod, this would take on a value like: "spec.containers{name}" (where "name" refers to the name of the container that triggered the event) or if no container name is specified "spec.containers[2]" (container with index 2 in this pod). This syntax is chosen only to have some well-defined way of referencing a part of an object.  |
+
+| password  |     |    | <ul></ul> |  Provide a password for connecting to the API. Use in conjunction with I(username).  |
+
+| spec_include_triggers  |     |    | <ul></ul> |  IncludeTriggers specifies whether to include config Triggers.  |
+
+| kubeconfig  |     |    | <ul></ul> |  Path to an existing Kubernetes config file. If not provided, and no other connection options are provided, the openshift client will attempt to load the default configuration file from I(~/.kube/config.json).  |
+
+| spec__from_kind  |     |    | <ul></ul> |  Kind of the referent.  |
+
+| name  |     |    | <ul></ul> |  Name of the deployment config that will be rolled back.  |
+
+| host  |     |    | <ul></ul> |  Provide a URL for acessing the Kubernetes API.  |
+
+| spec__from_namespace  |     |    | <ul></ul> |  Namespace of the referent.  |
+
+| spec__from_uid  |     |    | <ul></ul> |  UID of the referent.  |
+
+| debug  |     |  False  | <ul></ul> |  Enable debug output from the OpenShift helper. Logging info is written to KubeObjHelper.log  |
+
+| spec__from_name  |     |    | <ul></ul> |  Name of the referent.  |
+
+| key_file  |     |    | <ul></ul> |  Path to a key file used to authenticate with the API.  |
+
+| api_key  |     |    | <ul></ul> |  Token used to connect to the API.  |
+
+
+
+
 
 
 
@@ -58,6 +96,7 @@ Manage the lifecycle of a deployment_config_rollback object. Supports check mode
 
 #### Return
 
+```yaml
 api_version:
   type: string
   description: Requested API version
@@ -154,6 +193,9 @@ deployment_config_rollback:
         config.
       type: complex
       contains: str, str
+
+```
+
 
 
 
