@@ -21,12 +21,12 @@ Version added: 2.3.0
 
 ---
 
-  * [Synopsis](#Synopsis)
+  * [Synopsis](#synopsis)
 
-  * [Options](#Options)
+  * [Options](#options)
 
 
-* [Return](#Return)
+* [Return](#return)
 
 
 
