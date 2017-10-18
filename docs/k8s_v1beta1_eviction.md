@@ -52,6 +52,8 @@ Manage the lifecycle of a eviction object. Supports check mode, and attempts to 
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

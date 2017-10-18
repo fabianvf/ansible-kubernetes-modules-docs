@@ -60,6 +60,8 @@ Manage the lifecycle of a image_signature object. Supports check mode, and attem
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

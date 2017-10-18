@@ -45,6 +45,8 @@ Retrieve a list of endpoints. List operations provide a snapshot read of the und
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

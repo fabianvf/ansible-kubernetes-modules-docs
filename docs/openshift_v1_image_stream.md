@@ -52,6 +52,8 @@ Manage the lifecycle of a image_stream object. Supports check mode, and attempts
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

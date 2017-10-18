@@ -95,6 +95,8 @@ Manage the lifecycle of a daemon_set object. Supports check mode, and attempts t
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

@@ -45,6 +45,8 @@ Retrieve a list of o_auth_access_tokens. List operations provide a snapshot read
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

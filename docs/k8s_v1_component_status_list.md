@@ -42,6 +42,8 @@ Retrieve a list of component_status. List operations provide a snapshot read of 
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

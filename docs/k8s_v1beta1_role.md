@@ -50,6 +50,8 @@ Manage the lifecycle of a role object. Supports check mode, and attempts to to b
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

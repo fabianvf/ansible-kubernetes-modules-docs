@@ -45,6 +45,8 @@ Manage the lifecycle of a subject_rules_review object. Supports check mode, and 
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

@@ -57,6 +57,8 @@ Manage the lifecycle of a api_service object. Supports check mode, and attempts 
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

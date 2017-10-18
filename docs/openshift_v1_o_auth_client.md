@@ -56,6 +56,8 @@ Manage the lifecycle of a o_auth_client object. Supports check mode, and attempt
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

@@ -47,6 +47,8 @@ Manage the lifecycle of a token_review object. Supports check mode, and attempts
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

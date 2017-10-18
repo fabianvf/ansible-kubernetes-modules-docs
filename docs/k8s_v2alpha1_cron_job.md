@@ -104,6 +104,8 @@ Manage the lifecycle of a cron_job object. Supports check mode, and attempts to 
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

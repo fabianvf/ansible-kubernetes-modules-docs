@@ -45,6 +45,8 @@ Retrieve a list of stateful_sets. List operations provide a snapshot read of the
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

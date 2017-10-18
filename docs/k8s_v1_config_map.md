@@ -50,6 +50,8 @@ Manage the lifecycle of a config_map object. Supports check mode, and attempts t
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

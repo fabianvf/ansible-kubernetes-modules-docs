@@ -45,6 +45,8 @@ Retrieve a list of jobs. List operations provide a snapshot read of the underlyi
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

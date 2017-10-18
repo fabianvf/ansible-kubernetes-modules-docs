@@ -45,6 +45,8 @@ Retrieve a list of replication_controllers. List operations provide a snapshot r
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

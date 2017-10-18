@@ -45,6 +45,8 @@ Retrieve a list of deployment_configs. List operations provide a snapshot read o
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

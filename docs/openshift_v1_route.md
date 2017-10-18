@@ -117,6 +117,8 @@ Manage the lifecycle of a route object. Supports check mode, and attempts to to 
 ```
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

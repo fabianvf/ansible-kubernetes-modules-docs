@@ -91,6 +91,8 @@ Manage the lifecycle of a replication_controller object. Supports check mode, an
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

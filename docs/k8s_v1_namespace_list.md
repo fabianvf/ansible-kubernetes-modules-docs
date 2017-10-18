@@ -45,6 +45,8 @@ Retrieve a list of namespaces. List operations provide a snapshot read of the un
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

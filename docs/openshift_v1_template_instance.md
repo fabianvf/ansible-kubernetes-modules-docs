@@ -64,6 +64,8 @@ Manage the lifecycle of a template_instance object. Supports check mode, and att
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

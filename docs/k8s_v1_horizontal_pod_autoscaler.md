@@ -70,6 +70,8 @@ Manage the lifecycle of a horizontal_pod_autoscaler object. Supports check mode,
 ```
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

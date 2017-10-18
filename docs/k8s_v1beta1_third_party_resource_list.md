@@ -45,6 +45,8 @@ Retrieve a list of third_party_resources. List operations provide a snapshot rea
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

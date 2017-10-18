@@ -50,6 +50,8 @@ Manage the lifecycle of a external_admission_hook_configuration object. Supports
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

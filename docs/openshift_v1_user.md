@@ -52,6 +52,8 @@ Manage the lifecycle of a user object. Supports check mode, and attempts to to b
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

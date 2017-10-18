@@ -45,6 +45,8 @@ Retrieve a list of egress_network_policys. List operations provide a snapshot re
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

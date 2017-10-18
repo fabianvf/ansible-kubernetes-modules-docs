@@ -45,6 +45,8 @@ Retrieve a list of resource_quotas. List operations provide a snapshot read of t
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

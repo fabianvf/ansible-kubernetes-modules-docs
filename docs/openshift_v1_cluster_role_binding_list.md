@@ -45,6 +45,8 @@ Retrieve a list of cluster_role_bindings. List operations provide a snapshot rea
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

@@ -59,6 +59,8 @@ Manage the lifecycle of a cluster_role_binding object. Supports check mode, and 
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

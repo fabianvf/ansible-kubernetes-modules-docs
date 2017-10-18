@@ -42,6 +42,8 @@ Retrieve a list of applied_cluster_resource_quotas. List operations provide a sn
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

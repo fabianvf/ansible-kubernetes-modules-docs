@@ -119,6 +119,8 @@ Manage the lifecycle of a stateful_set object. Supports check mode, and attempts
 ```
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

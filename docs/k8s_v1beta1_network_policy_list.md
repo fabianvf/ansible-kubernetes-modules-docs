@@ -45,6 +45,8 @@ Retrieve a list of network_policys. List operations provide a snapshot read of t
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

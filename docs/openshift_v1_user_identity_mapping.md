@@ -63,6 +63,8 @@ Manage the lifecycle of a user_identity_mapping object. Supports check mode, and
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

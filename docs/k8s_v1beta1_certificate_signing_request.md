@@ -55,6 +55,8 @@ Manage the lifecycle of a certificate_signing_request object. Supports check mod
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

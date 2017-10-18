@@ -107,6 +107,8 @@ Manage the lifecycle of a namespace object. Supports check mode, and attempts to
 ```
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

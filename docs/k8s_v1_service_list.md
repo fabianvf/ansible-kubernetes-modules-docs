@@ -45,6 +45,8 @@ Retrieve a list of services. List operations provide a snapshot read of the unde
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

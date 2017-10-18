@@ -50,6 +50,8 @@ Manage the lifecycle of a egress_network_policy object. Supports check mode, and
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

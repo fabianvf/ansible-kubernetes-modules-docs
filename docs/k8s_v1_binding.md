@@ -53,6 +53,8 @@ Manage the lifecycle of a binding object. Supports check mode, and attempts to t
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

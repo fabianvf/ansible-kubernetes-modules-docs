@@ -45,6 +45,8 @@ Retrieve a list of events. List operations provide a snapshot read of the underl
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

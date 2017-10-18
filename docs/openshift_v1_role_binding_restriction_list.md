@@ -45,6 +45,8 @@ Retrieve a list of role_binding_restrictions. List operations provide a snapshot
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

@@ -94,6 +94,8 @@ Manage the lifecycle of a job object. Supports check mode, and attempts to to be
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

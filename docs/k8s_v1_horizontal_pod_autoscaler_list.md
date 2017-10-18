@@ -45,6 +45,8 @@ Retrieve a list of horizontal_pod_autoscalers. List operations provide a snapsho
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

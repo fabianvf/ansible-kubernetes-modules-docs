@@ -51,6 +51,8 @@ Manage the lifecycle of a third_party_resource object. Supports check mode, and 
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

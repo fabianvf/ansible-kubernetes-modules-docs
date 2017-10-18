@@ -71,6 +71,8 @@ Manage the lifecycle of a persistent_volume_claim object. Supports check mode, a
 ```
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

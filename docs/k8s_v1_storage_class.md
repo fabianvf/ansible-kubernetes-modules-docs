@@ -51,6 +51,8 @@ Manage the lifecycle of a storage_class object. Supports check mode, and attempt
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

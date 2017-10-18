@@ -45,6 +45,8 @@ Retrieve a list of external_admission_hook_configurations. List operations provi
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

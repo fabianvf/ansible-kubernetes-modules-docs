@@ -45,6 +45,8 @@ Retrieve a list of config_maps. List operations provide a snapshot read of the u
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

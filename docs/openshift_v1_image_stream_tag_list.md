@@ -45,6 +45,8 @@ Retrieve a list of image_stream_tags. List operations provide a snapshot read of
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

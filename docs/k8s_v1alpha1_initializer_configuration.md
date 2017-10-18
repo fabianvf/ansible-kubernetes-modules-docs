@@ -50,6 +50,8 @@ Manage the lifecycle of a initializer_configuration object. Supports check mode,
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

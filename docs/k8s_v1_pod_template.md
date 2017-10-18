@@ -88,6 +88,8 @@ Manage the lifecycle of a pod_template object. Supports check mode, and attempts
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

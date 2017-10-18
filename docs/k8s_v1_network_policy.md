@@ -52,6 +52,8 @@ Manage the lifecycle of a network_policy object. Supports check mode, and attemp
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

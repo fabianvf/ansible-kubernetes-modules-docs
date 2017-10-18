@@ -50,6 +50,8 @@ Manage the lifecycle of a cluster_role object. Supports check mode, and attempts
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

@@ -45,6 +45,8 @@ Retrieve a list of certificate_signing_requests. List operations provide a snaps
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

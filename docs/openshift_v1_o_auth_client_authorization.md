@@ -53,6 +53,8 @@ Manage the lifecycle of a o_auth_client_authorization object. Supports check mod
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

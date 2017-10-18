@@ -82,6 +82,8 @@ Manage the lifecycle of a pod_security_policy_review object. Supports check mode
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

@@ -51,6 +51,8 @@ Manage the lifecycle of a applied_cluster_resource_quota object. Supports check 
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

@@ -189,6 +189,8 @@ Manage the lifecycle of a deployment_config object. Supports check mode, and att
 ```
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

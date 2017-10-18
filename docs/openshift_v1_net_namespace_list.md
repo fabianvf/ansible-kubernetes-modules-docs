@@ -45,6 +45,8 @@ Retrieve a list of net_namespaces. List operations provide a snapshot read of th
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

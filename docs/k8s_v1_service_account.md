@@ -52,6 +52,8 @@ Manage the lifecycle of a service_account object. Supports check mode, and attem
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

@@ -45,6 +45,8 @@ Retrieve a list of cron_jobs. List operations provide a snapshot read of the und
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

@@ -45,6 +45,8 @@ Retrieve a list of secrets. List operations provide a snapshot read of the under
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

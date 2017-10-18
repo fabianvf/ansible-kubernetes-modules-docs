@@ -81,6 +81,8 @@ Manage the lifecycle of a image_stream_tag object. Supports check mode, and atte
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

@@ -52,6 +52,8 @@ Manage the lifecycle of a host_subnet object. Supports check mode, and attempts 
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

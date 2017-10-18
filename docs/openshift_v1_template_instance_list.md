@@ -45,6 +45,8 @@ Retrieve a list of template_instances. List operations provide a snapshot read o
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

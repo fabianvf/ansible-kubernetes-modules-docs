@@ -57,6 +57,8 @@ Manage the lifecycle of a o_auth_authorize_token object. Supports check mode, an
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

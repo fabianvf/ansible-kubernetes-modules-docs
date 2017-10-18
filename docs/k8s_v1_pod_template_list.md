@@ -45,6 +45,8 @@ Retrieve a list of pod_templates. List operations provide a snapshot read of the
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

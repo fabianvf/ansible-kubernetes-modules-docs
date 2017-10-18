@@ -45,6 +45,8 @@ Retrieve a list of groups. List operations provide a snapshot read of the underl
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

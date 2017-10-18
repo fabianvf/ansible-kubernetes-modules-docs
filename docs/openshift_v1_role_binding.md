@@ -59,6 +59,8 @@ Manage the lifecycle of a role_binding object. Supports check mode, and attempts
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

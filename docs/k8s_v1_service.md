@@ -139,6 +139,8 @@ Manage the lifecycle of a service object. Supports check mode, and attempts to t
 ```
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

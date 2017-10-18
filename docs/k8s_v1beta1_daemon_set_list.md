@@ -45,6 +45,8 @@ Retrieve a list of daemon_sets. List operations provide a snapshot read of the u
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

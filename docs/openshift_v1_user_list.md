@@ -45,6 +45,8 @@ Retrieve a list of users. List operations provide a snapshot read of the underly
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

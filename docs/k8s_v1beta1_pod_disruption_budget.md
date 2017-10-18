@@ -53,6 +53,8 @@ Manage the lifecycle of a pod_disruption_budget object. Supports check mode, and
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

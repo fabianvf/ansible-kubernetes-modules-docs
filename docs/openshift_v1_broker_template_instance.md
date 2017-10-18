@@ -64,6 +64,8 @@ Manage the lifecycle of a broker_template_instance object. Supports check mode, 
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

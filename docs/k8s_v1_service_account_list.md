@@ -45,6 +45,8 @@ Retrieve a list of service_accounts. List operations provide a snapshot read of 
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version

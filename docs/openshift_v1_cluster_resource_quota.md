@@ -54,6 +54,8 @@ Manage the lifecycle of a cluster_resource_quota object. Supports check mode, an
 
 
 
+#### Return
+
 api_version:
   type: string
   description: Requested API version
