@@ -55,7 +55,7 @@ def generate_index(modules, dests):
             modules=map(
                 lambda x: {
                     'name': x[0]['module'] if x[0] else 'BROKEN',
-                    'path': x[1]
+                    'path': x[1].split(os.path.sep)[-1]
                 }, 
                 zip(modules, dests)
             )
