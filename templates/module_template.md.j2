@@ -1,0 +1,77 @@
+{% if heading is defined %}
+# {{ heading }}
+{% else %}
+## {{ module }}
+
+{{ short_description }}
+
+Author: {{ author }}
+
+Version added: {{ version_added }}
+
+{% endif %}
+{% if subheading is defined %}
+### *{{ subheading }}*
+{% endif %}
+
+{% if requirements is defined %}
+---
+### Requirements
+{% for req in requirements %}
+* {{ req }}
+{% endfor %}
+{% endif %}
+
+
+---
+
+  * Synopsis
+  * Options
+  * Examples
+
+#### Synopsis
+{{ description[0] |string }}
+
+{% if options is defined %}
+#### Options
+
+| Parameter     | required    | default  | choices    | comments |
+| ------------- |-------------| ---------|----------- |--------- |
+{% for option,values in options.iteritems() %}
+| {{ option }}  |  {% if values.required != None %} {{ values.required | replace("True", "yes") | replace("False", "no") }} {% endif %} | {% if values.default != None %} {{ values.default | replace("None","")}} {% endif %} |{% if values.choices != None %} <ul>{% for each in values.choices %} <li>{{ each }}</li> {% endfor %}</ul>{% endif %} | {% if values.description != None %}{% for each in values.description %} {{ each }} {% endfor %}{% endif %} |
+{% endfor %}
+
+{% endif %}
+
+
+{% if examples is defined %}
+
+#### Examples
+
+```
+{% for each in examples %}
+{{ each | replace("{#","{{") | replace("#}","}}") }}
+{% endfor %}
+```
+{% endif %}
+
+
+{% if returndocs is defined %}
+#### Return
+
+```yaml
+{{ returndocs }}
+```
+
+{% endif %}
+
+{% if notes is defined %}
+#### Notes
+
+{% for note in notes %}
+- {{ note }}
+
+{% endfor %}
+{% endif %}
+
+---
