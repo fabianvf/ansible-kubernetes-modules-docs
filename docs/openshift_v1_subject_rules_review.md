@@ -34,35 +34,35 @@ Manage the lifecycle of a subject_rules_review object. Supports check mode, and 
 | Parameter     | required    | default  | choices    | comments |
 | ------------- |-------------| ---------|----------- |--------- |
 
-| username  |     |    | <ul></ul> |  Provide a username for connecting to the API.  |
+| username  |   |  | |  Provide a username for connecting to the API.  |
 
-| ssl_ca_cert  |     |    | <ul></ul> |  Path to a CA certificate used to authenticate with the API.  |
+| ssl_ca_cert  |   |  | |  Path to a CA certificate used to authenticate with the API.  |
 
-| api_key  |     |    | <ul></ul> |  Token used to connect to the API.  |
+| api_key  |   |  | |  Token used to connect to the API.  |
 
-| force  |     |  False  | <ul></ul> |  If set to C(True), and I(state) is C(present), an existing object will updated, and lists will be replaced, rather than merged.  |
+| force  |   |  False  | |  If set to C(True), and I(state) is C(present), an existing object will updated, and lists will be replaced, rather than merged.  |
 
-| cert_file  |     |    | <ul></ul> |  Path to a certificate used to authenticate with the API.  |
+| cert_file  |   |  | |  Path to a certificate used to authenticate with the API.  |
 
-| spec_user  |     |    | <ul></ul> |  User is optional. At least one of User and Groups must be specified.  |
+| spec_user  |   |  | |  User is optional. At least one of User and Groups must be specified.  |
 
-| host  |     |    | <ul></ul> |  Provide a URL for acessing the Kubernetes API.  |
+| host  |   |  | |  Provide a URL for acessing the Kubernetes API.  |
 
-| kubeconfig  |     |    | <ul></ul> |  Path to an existing Kubernetes config file. If not provided, and no other connection options are provided, the openshift client will attempt to load the default configuration file from I(~/.kube/config.json).  |
+| kubeconfig  |   |  | |  Path to an existing Kubernetes config file. If not provided, and no other connection options are provided, the openshift client will attempt to load the default configuration file from I(~/.kube/config.json).  |
 
-| spec_scopes  |     |    | <ul></ul> |  Scopes to use for the evaluation. Empty means "use the unscoped (full) permissions of the user/groups".  |
+| spec_scopes  |   |  | |  Scopes to use for the evaluation. Empty means "use the unscoped (full) permissions of the user/groups".  |
 
-| verify_ssl  |     |    | <ul></ul> |  Whether or not to verify the API server's SSL certificates.  |
+| verify_ssl  |   |  | |  Whether or not to verify the API server's SSL certificates.  |
 
-| context  |     |    | <ul></ul> |  The name of a context found in the Kubernetes config file.  |
+| context  |   |  | |  The name of a context found in the Kubernetes config file.  |
 
-| spec_groups  |     |    | <ul></ul> |  Groups is optional. Groups is the list of groups to which the User belongs. At least one of User and Groups must be specified.  |
+| spec_groups  |   |  | |  Groups is optional. Groups is the list of groups to which the User belongs. At least one of User and Groups must be specified.  |
 
-| debug  |     |  False  | <ul></ul> |  Enable debug output from the OpenShift helper. Logging info is written to KubeObjHelper.log  |
+| debug  |   |  False  | |  Enable debug output from the OpenShift helper. Logging info is written to KubeObjHelper.log  |
 
-| key_file  |     |    | <ul></ul> |  Path to a key file used to authenticate with the API.  |
+| key_file  |   |  | |  Path to a key file used to authenticate with the API.  |
 
-| password  |     |    | <ul></ul> |  Provide a password for connecting to the API. Use in conjunction with I(username).  |
+| password  |   |  | |  Provide a password for connecting to the API. Use in conjunction with I(username).  |
 
 
 

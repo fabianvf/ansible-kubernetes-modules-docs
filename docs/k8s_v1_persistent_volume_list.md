@@ -34,35 +34,35 @@ Retrieve a list of persistent_volumes. List operations provide a snapshot read o
 | Parameter     | required    | default  | choices    | comments |
 | ------------- |-------------| ---------|----------- |--------- |
 
-| username  |     |    | <ul></ul> |  Provide a username for connecting to the API.  |
+| username  |   |  | |  Provide a username for connecting to the API.  |
 
-| src  |     |    | <ul></ul> |  Provide a path to a file containing the YAML definition of the object. Mutually exclusive with I(resource_definition).  |
+| src  |   |  | |  Provide a path to a file containing the YAML definition of the object. Mutually exclusive with I(resource_definition).  |
 
-| api_key  |     |    | <ul></ul> |  Token used to connect to the API.  |
+| api_key  |   |  | |  Token used to connect to the API.  |
 
-| force  |     |  False  | <ul></ul> |  If set to C(True), and I(state) is C(present), an existing object will updated, and lists will be replaced, rather than merged.  |
+| force  |   |  False  | |  If set to C(True), and I(state) is C(present), an existing object will updated, and lists will be replaced, rather than merged.  |
 
-| ssl_ca_cert  |     |    | <ul></ul> |  Path to a CA certificate used to authenticate with the API.  |
+| ssl_ca_cert  |   |  | |  Path to a CA certificate used to authenticate with the API.  |
 
-| cert_file  |     |    | <ul></ul> |  Path to a certificate used to authenticate with the API.  |
+| cert_file  |   |  | |  Path to a certificate used to authenticate with the API.  |
 
-| state  |     |  present  | <ul> <li>present</li>  <li>absent</li> </ul> |  Determines if an object should be created, patched, or deleted. When set to C(present), the object will be created, if it does not exist, or patched, if parameter values differ from the existing object's attributes, and deleted, if set to C(absent). A patch operation results in merging lists and updating dictionaries, with lists being merged into a unique set of values. If a list contains a dictionary with a I(name) or I(type) attribute, a strategic merge is performed, where individual elements with a matching I(name_) or I(type) are merged. To force the replacement of lists, set the I(force) option to C(True).  |
+| state  |   |  present  | <ul> <li>present</li>  <li>absent</li> </ul> |  Determines if an object should be created, patched, or deleted. When set to C(present), the object will be created, if it does not exist, or patched, if parameter values differ from the existing object's attributes, and deleted, if set to C(absent). A patch operation results in merging lists and updating dictionaries, with lists being merged into a unique set of values. If a list contains a dictionary with a I(name) or I(type) attribute, a strategic merge is performed, where individual elements with a matching I(name_) or I(type) are merged. To force the replacement of lists, set the I(force) option to C(True).  |
 
-| kubeconfig  |     |    | <ul></ul> |  Path to an existing Kubernetes config file. If not provided, and no other connection options are provided, the openshift client will attempt to load the default configuration file from I(~/.kube/config.json).  |
+| kubeconfig  |   |  | |  Path to an existing Kubernetes config file. If not provided, and no other connection options are provided, the openshift client will attempt to load the default configuration file from I(~/.kube/config.json).  |
 
-| debug  |     |  False  | <ul></ul> |  Enable debug output from the OpenShift helper. Logging info is written to KubeObjHelper.log  |
+| debug  |   |  False  | |  Enable debug output from the OpenShift helper. Logging info is written to KubeObjHelper.log  |
 
-| verify_ssl  |     |    | <ul></ul> |  Whether or not to verify the API server's SSL certificates.  |
+| verify_ssl  |   |  | |  Whether or not to verify the API server's SSL certificates.  |
 
-| context  |     |    | <ul></ul> |  The name of a context found in the Kubernetes config file.  |
+| context  |   |  | |  The name of a context found in the Kubernetes config file.  |
 
-| host  |     |    | <ul></ul> |  Provide a URL for acessing the Kubernetes API.  |
+| host  |   |  | |  Provide a URL for acessing the Kubernetes API.  |
 
-| resource_definition  |     |    | <ul></ul> |  Provide the YAML definition for the object, bypassing any modules parameters intended to define object attributes.  |
+| resource_definition  |   |  | |  Provide the YAML definition for the object, bypassing any modules parameters intended to define object attributes.  |
 
-| key_file  |     |    | <ul></ul> |  Path to a key file used to authenticate with the API.  |
+| key_file  |   |  | |  Path to a key file used to authenticate with the API.  |
 
-| password  |     |    | <ul></ul> |  Provide a password for connecting to the API. Use in conjunction with I(username).  |
+| password  |   |  | |  Provide a password for connecting to the API. Use in conjunction with I(username).  |
 
 
 

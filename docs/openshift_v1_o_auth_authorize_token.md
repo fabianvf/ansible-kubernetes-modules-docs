@@ -34,59 +34,59 @@ Manage the lifecycle of a o_auth_authorize_token object. Supports check mode, an
 | Parameter     | required    | default  | choices    | comments |
 | ------------- |-------------| ---------|----------- |--------- |
 
-| username  |     |    | <ul></ul> |  Provide a username for connecting to the API.  |
+| username  |   |  | |  Provide a username for connecting to the API.  |
 
-| ssl_ca_cert  |     |    | <ul></ul> |  Path to a CA certificate used to authenticate with the API.  |
+| ssl_ca_cert  |   |  | |  Path to a CA certificate used to authenticate with the API.  |
 
-| user_uid  |     |    | <ul></ul> |  UserUID is the unique UID associated with this token. UserUID and UserName must both match for this token to be valid.  |
+| user_uid  |   |  | |  UserUID is the unique UID associated with this token. UserUID and UserName must both match for this token to be valid.  |
 
-| code_challenge  |     |    | <ul></ul> |  CodeChallenge is the optional code_challenge associated with this authorization code, as described in rfc7636  |
+| code_challenge  |   |  | |  CodeChallenge is the optional code_challenge associated with this authorization code, as described in rfc7636  |
 
-| force  |     |  False  | <ul></ul> |  If set to C(True), and I(state) is C(present), an existing object will updated, and lists will be replaced, rather than merged.  |
+| force  |   |  False  | |  If set to C(True), and I(state) is C(present), an existing object will updated, and lists will be replaced, rather than merged.  |
 
-| scopes  |     |    | <ul></ul> |  Scopes is an array of the requested scopes.  |
+| scopes  |   |  | |  Scopes is an array of the requested scopes.  |
 
-| namespace  |     |    | <ul></ul> |  Namespace defines the space within each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty. Must be a DNS_LABEL. Cannot be updated.  |
+| namespace  |   |  | |  Namespace defines the space within each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty. Must be a DNS_LABEL. Cannot be updated.  |
 
-| cert_file  |     |    | <ul></ul> |  Path to a certificate used to authenticate with the API.  |
+| cert_file  |   |  | |  Path to a certificate used to authenticate with the API.  |
 
-| labels  |     |    | <ul></ul> |  Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services.  |
+| labels  |   |  | |  Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services.  |
 
-| verify_ssl  |     |    | <ul></ul> |  Whether or not to verify the API server's SSL certificates.  |
+| verify_ssl  |   |  | |  Whether or not to verify the API server's SSL certificates.  |
 
-| code_challenge_method  |     |    | <ul></ul> |  CodeChallengeMethod is the optional code_challenge_method associated with this authorization code, as described in rfc7636  |
+| code_challenge_method  |   |  | |  CodeChallengeMethod is the optional code_challenge_method associated with this authorization code, as described in rfc7636  |
 
-| password  |     |    | <ul></ul> |  Provide a password for connecting to the API. Use in conjunction with I(username).  |
+| password  |   |  | |  Provide a password for connecting to the API. Use in conjunction with I(username).  |
 
-| kubeconfig  |     |    | <ul></ul> |  Path to an existing Kubernetes config file. If not provided, and no other connection options are provided, the openshift client will attempt to load the default configuration file from I(~/.kube/config.json).  |
+| kubeconfig  |   |  | |  Path to an existing Kubernetes config file. If not provided, and no other connection options are provided, the openshift client will attempt to load the default configuration file from I(~/.kube/config.json).  |
 
-| src  |     |    | <ul></ul> |  Provide a path to a file containing the YAML definition of the object. Mutually exclusive with I(resource_definition).  |
+| src  |   |  | |  Provide a path to a file containing the YAML definition of the object. Mutually exclusive with I(resource_definition).  |
 
-| name  |     |    | <ul></ul> |  Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated.  |
+| name  |   |  | |  Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated.  |
 
-| client_name  |     |    | <ul></ul> |  ClientName references the client that created this token.  |
+| client_name  |   |  | |  ClientName references the client that created this token.  |
 
-| expires_in  |     |    | <ul></ul> |  ExpiresIn is the seconds from CreationTime before this token expires.  |
+| expires_in  |   |  | |  ExpiresIn is the seconds from CreationTime before this token expires.  |
 
-| host  |     |    | <ul></ul> |  Provide a URL for acessing the Kubernetes API.  |
+| host  |   |  | |  Provide a URL for acessing the Kubernetes API.  |
 
-| resource_definition  |     |    | <ul></ul> |  Provide the YAML definition for the object, bypassing any modules parameters intended to define object attributes.  |
+| resource_definition  |   |  | |  Provide the YAML definition for the object, bypassing any modules parameters intended to define object attributes.  |
 
-| state  |     |    | <ul></ul> |  State data from request  |
+| state  |   |  | |  State data from request  |
 
-| redirect_uri  |     |    | <ul></ul> |  RedirectURI is the redirection associated with the token.  |
+| redirect_uri  |   |  | |  RedirectURI is the redirection associated with the token.  |
 
-| context  |     |    | <ul></ul> |  The name of a context found in the Kubernetes config file.  |
+| context  |   |  | |  The name of a context found in the Kubernetes config file.  |
 
-| debug  |     |  False  | <ul></ul> |  Enable debug output from the OpenShift helper. Logging info is written to KubeObjHelper.log  |
+| debug  |   |  False  | |  Enable debug output from the OpenShift helper. Logging info is written to KubeObjHelper.log  |
 
-| key_file  |     |    | <ul></ul> |  Path to a key file used to authenticate with the API.  |
+| key_file  |   |  | |  Path to a key file used to authenticate with the API.  |
 
-| api_key  |     |    | <ul></ul> |  Token used to connect to the API.  |
+| api_key  |   |  | |  Token used to connect to the API.  |
 
-| user_name  |     |    | <ul></ul> |  UserName is the user name associated with this token  |
+| user_name  |   |  | |  UserName is the user name associated with this token  |
 
-| annotations  |     |    | <ul></ul> |  Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects.  |
+| annotations  |   |  | |  Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects.  |
 
 
 

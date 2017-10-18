@@ -38,7 +38,7 @@ Version added: {{ version_added }}
 | Parameter     | required    | default  | choices    | comments |
 | ------------- |-------------| ---------|----------- |--------- |
 {% for option,values in options.iteritems() %}
-| {{ option }}  |  {% if values.required != None %} {{ values.required | replace("True", "yes") | replace("False", "no") }} {% endif %} | {% if values.default != None %} {{ values.default | replace("None","")}} {% endif %} |{% if values.choices != None %} <ul>{% for each in values.choices %} <li>{{ each }}</li> {% endfor %}</ul>{% endif %} | {% if values.description != None %}{% for each in values.description %} {{ each }} {% endfor %}{% endif %} |
+| {{ option }}  |  {% if values.required is defined %} {{ values.required | replace("True", "yes") | replace("False", "no") }} {% endif %} | {% if values.default is defined %} {{ values.default | replace("None","")}} {% endif %} |{% if values.choices is defined %} <ul>{% for each in values.choices %} <li>{{ each }}</li> {% endfor %}</ul>{% endif %} | {% if values.description is defined %}{% for each in values.description %} {{ each }} {% endfor %}{% endif %} |
 {% endfor %}
 
 {% endif %}

@@ -34,57 +34,57 @@ Manage the lifecycle of a o_auth_client object. Supports check mode, and attempt
 | Parameter     | required    | default  | choices    | comments |
 | ------------- |-------------| ---------|----------- |--------- |
 
-| username  |     |    | <ul></ul> |  Provide a username for connecting to the API.  |
+| username  |   |  | |  Provide a username for connecting to the API.  |
 
-| access_token_max_age_seconds  |     |    | <ul></ul> |  AccessTokenMaxAgeSeconds overrides the default access token max age for tokens granted to this client. 0 means no expiration.  |
+| access_token_max_age_seconds  |   |  | |  AccessTokenMaxAgeSeconds overrides the default access token max age for tokens granted to this client. 0 means no expiration.  |
 
-| force  |     |  False  | <ul></ul> |  If set to C(True), and I(state) is C(present), an existing object will updated, and lists will be replaced, rather than merged.  |
+| force  |   |  False  | |  If set to C(True), and I(state) is C(present), an existing object will updated, and lists will be replaced, rather than merged.  |
 
-| kubeconfig  |     |    | <ul></ul> |  Path to an existing Kubernetes config file. If not provided, and no other connection options are provided, the openshift client will attempt to load the default configuration file from I(~/.kube/config.json).  |
+| kubeconfig  |   |  | |  Path to an existing Kubernetes config file. If not provided, and no other connection options are provided, the openshift client will attempt to load the default configuration file from I(~/.kube/config.json).  |
 
-| ssl_ca_cert  |     |    | <ul></ul> |  Path to a CA certificate used to authenticate with the API.  |
+| ssl_ca_cert  |   |  | |  Path to a CA certificate used to authenticate with the API.  |
 
-| cert_file  |     |    | <ul></ul> |  Path to a certificate used to authenticate with the API.  |
+| cert_file  |   |  | |  Path to a certificate used to authenticate with the API.  |
 
-| labels  |     |    | <ul></ul> |  Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services.  |
+| labels  |   |  | |  Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services.  |
 
-| verify_ssl  |     |    | <ul></ul> |  Whether or not to verify the API server's SSL certificates.  |
+| verify_ssl  |   |  | |  Whether or not to verify the API server's SSL certificates.  |
 
-| scope_restrictions  |     |    | <ul></ul> |  ScopeRestrictions describes which scopes this client can request. Each requested scope is checked against each restriction. If any restriction matches, then the scope is allowed. If no restriction matches, then the scope is denied.  |
+| scope_restrictions  |   |  | |  ScopeRestrictions describes which scopes this client can request. Each requested scope is checked against each restriction. If any restriction matches, then the scope is allowed. If no restriction matches, then the scope is denied.  |
 
-| grant_method  |     |    | <ul></ul> |  GrantMethod determines how to handle grants for this client. If no method is provided, the cluster default grant handling method will be used. Valid grant handling methods are: - auto: always approves grant requests, useful for trusted clients - prompt: prompts the end user for approval of grant requests, useful for third-party clients - deny: always denies grant requests, useful for black-listed clients  |
+| grant_method  |   |  | |  GrantMethod determines how to handle grants for this client. If no method is provided, the cluster default grant handling method will be used. Valid grant handling methods are: - auto: always approves grant requests, useful for trusted clients - prompt: prompts the end user for approval of grant requests, useful for third-party clients - deny: always denies grant requests, useful for black-listed clients  |
 
-| password  |     |    | <ul></ul> |  Provide a password for connecting to the API. Use in conjunction with I(username).  |
+| password  |   |  | |  Provide a password for connecting to the API. Use in conjunction with I(username).  |
 
-| additional_secrets  |     |    | <ul></ul> |  AdditionalSecrets holds other secrets that may be used to identify the client. This is useful for rotation and for service account token validation  |
+| additional_secrets  |   |  | |  AdditionalSecrets holds other secrets that may be used to identify the client. This is useful for rotation and for service account token validation  |
 
-| src  |     |    | <ul></ul> |  Provide a path to a file containing the YAML definition of the object. Mutually exclusive with I(resource_definition).  |
+| src  |   |  | |  Provide a path to a file containing the YAML definition of the object. Mutually exclusive with I(resource_definition).  |
 
-| name  |     |    | <ul></ul> |  Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated.  |
+| name  |   |  | |  Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated.  |
 
-| redirect_ur_is  |     |    | <ul></ul> |  RedirectURIs is the valid redirection URIs associated with a client  |
+| redirect_ur_is  |   |  | |  RedirectURIs is the valid redirection URIs associated with a client  |
 
-| namespace  |     |    | <ul></ul> |  Namespace defines the space within each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty. Must be a DNS_LABEL. Cannot be updated.  |
+| namespace  |   |  | |  Namespace defines the space within each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty. Must be a DNS_LABEL. Cannot be updated.  |
 
-| secret  |     |    | <ul></ul> |  Secret is the unique secret associated with a client  |
+| secret  |   |  | |  Secret is the unique secret associated with a client  |
 
-| resource_definition  |     |    | <ul></ul> |  Provide the YAML definition for the object, bypassing any modules parameters intended to define object attributes.  |
+| resource_definition  |   |  | |  Provide the YAML definition for the object, bypassing any modules parameters intended to define object attributes.  |
 
-| host  |     |    | <ul></ul> |  Provide a URL for acessing the Kubernetes API.  |
+| host  |   |  | |  Provide a URL for acessing the Kubernetes API.  |
 
-| state  |     |  present  | <ul> <li>present</li>  <li>absent</li> </ul> |  Determines if an object should be created, patched, or deleted. When set to C(present), the object will be created, if it does not exist, or patched, if parameter values differ from the existing object's attributes, and deleted, if set to C(absent). A patch operation results in merging lists and updating dictionaries, with lists being merged into a unique set of values. If a list contains a dictionary with a I(name) or I(type) attribute, a strategic merge is performed, where individual elements with a matching I(name_) or I(type) are merged. To force the replacement of lists, set the I(force) option to C(True).  |
+| state  |   |  present  | <ul> <li>present</li>  <li>absent</li> </ul> |  Determines if an object should be created, patched, or deleted. When set to C(present), the object will be created, if it does not exist, or patched, if parameter values differ from the existing object's attributes, and deleted, if set to C(absent). A patch operation results in merging lists and updating dictionaries, with lists being merged into a unique set of values. If a list contains a dictionary with a I(name) or I(type) attribute, a strategic merge is performed, where individual elements with a matching I(name_) or I(type) are merged. To force the replacement of lists, set the I(force) option to C(True).  |
 
-| respond_with_challenges  |     |    | <ul></ul> |  RespondWithChallenges indicates whether the client wants authentication needed responses made in the form of challenges instead of redirects  |
+| respond_with_challenges  |   |  | |  RespondWithChallenges indicates whether the client wants authentication needed responses made in the form of challenges instead of redirects  |
 
-| context  |     |    | <ul></ul> |  The name of a context found in the Kubernetes config file.  |
+| context  |   |  | |  The name of a context found in the Kubernetes config file.  |
 
-| debug  |     |  False  | <ul></ul> |  Enable debug output from the OpenShift helper. Logging info is written to KubeObjHelper.log  |
+| debug  |   |  False  | |  Enable debug output from the OpenShift helper. Logging info is written to KubeObjHelper.log  |
 
-| key_file  |     |    | <ul></ul> |  Path to a key file used to authenticate with the API.  |
+| key_file  |   |  | |  Path to a key file used to authenticate with the API.  |
 
-| api_key  |     |    | <ul></ul> |  Token used to connect to the API.  |
+| api_key  |   |  | |  Token used to connect to the API.  |
 
-| annotations  |     |    | <ul></ul> |  Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects.  |
+| annotations  |   |  | |  Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects.  |
 
 
 

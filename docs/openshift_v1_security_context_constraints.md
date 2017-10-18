@@ -34,101 +34,101 @@ Manage the lifecycle of a security_context_constraints object. Supports check mo
 | Parameter     | required    | default  | choices    | comments |
 | ------------- |-------------| ---------|----------- |--------- |
 
-| context  |     |    | <ul></ul> |  The name of a context found in the Kubernetes config file.  |
+| context  |   |  | |  The name of a context found in the Kubernetes config file.  |
 
-| se_linux_context_se_linux_options_level  |     |    | <ul></ul> |  Level is SELinux level label that applies to the container.  |
+| se_linux_context_se_linux_options_level  |   |  | |  Level is SELinux level label that applies to the container.  |
 
-| force  |     |  False  | <ul></ul> |  If set to C(True), and I(state) is C(present), an existing object will updated, and lists will be replaced, rather than merged.  |
+| force  |   |  False  | |  If set to C(True), and I(state) is C(present), an existing object will updated, and lists will be replaced, rather than merged.  |
 
-| cert_file  |     |    | <ul></ul> |  Path to a certificate used to authenticate with the API.  |
+| cert_file  |   |  | |  Path to a certificate used to authenticate with the API.  |
 
-| labels  |     |    | <ul></ul> |  Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services.  |
+| labels  |   |  | |  Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services.  |
 
-| allow_host_network  |     |    | <ul></ul> |  AllowHostNetwork determines if the policy allows the use of HostNetwork in the pod spec.  |
+| allow_host_network  |   |  | |  AllowHostNetwork determines if the policy allows the use of HostNetwork in the pod spec.  |
 
-| verify_ssl  |     |    | <ul></ul> |  Whether or not to verify the API server's SSL certificates.  |
+| verify_ssl  |   |  | |  Whether or not to verify the API server's SSL certificates.  |
 
-| allow_host_pid  |     |    | <ul></ul> |  AllowHostPID determines if the policy allows host pid in the containers.  |
+| allow_host_pid  |   |  | |  AllowHostPID determines if the policy allows host pid in the containers.  |
 
-| se_linux_context_se_linux_options_role  |     |    | <ul></ul> |  Role is a SELinux role label that applies to the container.  |
+| se_linux_context_se_linux_options_role  |   |  | |  Role is a SELinux role label that applies to the container.  |
 
-| se_linux_context_type  |     |    | <ul></ul> |  Type is the strategy that will dictate what SELinux context is used in the SecurityContext.  |
+| se_linux_context_type  |   |  | |  Type is the strategy that will dictate what SELinux context is used in the SecurityContext.  |
 
-| namespace  |     |    | <ul></ul> |  Namespace defines the space within each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty. Must be a DNS_LABEL. Cannot be updated.  |
+| namespace  |   |  | |  Namespace defines the space within each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty. Must be a DNS_LABEL. Cannot be updated.  |
 
-| resource_definition  |     |    | <ul></ul> |  Provide the YAML definition for the object, bypassing any modules parameters intended to define object attributes.  |
+| resource_definition  |   |  | |  Provide the YAML definition for the object, bypassing any modules parameters intended to define object attributes.  |
 
-| priority  |     |    | <ul></ul> |  Priority influences the sort order of SCCs when evaluating which SCCs to try first for a given pod request based on access in the Users and Groups fields. The higher the int, the higher priority. An unset value is considered a 0 priority. If scores for multiple SCCs are equal they will be sorted from most restrictive to least restrictive. If both priorities and restrictions are equal the SCCs will be sorted by name.  |
+| priority  |   |  | |  Priority influences the sort order of SCCs when evaluating which SCCs to try first for a given pod request based on access in the Users and Groups fields. The higher the int, the higher priority. An unset value is considered a 0 priority. If scores for multiple SCCs are equal they will be sorted from most restrictive to least restrictive. If both priorities and restrictions are equal the SCCs will be sorted by name.  |
 
-| state  |     |  present  | <ul> <li>present</li>  <li>absent</li> </ul> |  Determines if an object should be created, patched, or deleted. When set to C(present), the object will be created, if it does not exist, or patched, if parameter values differ from the existing object's attributes, and deleted, if set to C(absent). A patch operation results in merging lists and updating dictionaries, with lists being merged into a unique set of values. If a list contains a dictionary with a I(name) or I(type) attribute, a strategic merge is performed, where individual elements with a matching I(name_) or I(type) are merged. To force the replacement of lists, set the I(force) option to C(True).  |
+| state  |   |  present  | <ul> <li>present</li>  <li>absent</li> </ul> |  Determines if an object should be created, patched, or deleted. When set to C(present), the object will be created, if it does not exist, or patched, if parameter values differ from the existing object's attributes, and deleted, if set to C(absent). A patch operation results in merging lists and updating dictionaries, with lists being merged into a unique set of values. If a list contains a dictionary with a I(name) or I(type) attribute, a strategic merge is performed, where individual elements with a matching I(name_) or I(type) are merged. To force the replacement of lists, set the I(force) option to C(True).  |
 
-| read_only_root_filesystem  |     |    | <ul></ul> |  ReadOnlyRootFilesystem when set to true will force containers to run with a read only root file system. If the container specifically requests to run with a non-read only root file system the SCC should deny the pod. If set to false the container may run with a read only root file system if it wishes but it will not be forced to.  |
+| read_only_root_filesystem  |   |  | |  ReadOnlyRootFilesystem when set to true will force containers to run with a read only root file system. If the container specifically requests to run with a non-read only root file system the SCC should deny the pod. If set to false the container may run with a read only root file system if it wishes but it will not be forced to.  |
 
-| api_key  |     |    | <ul></ul> |  Token used to connect to the API.  |
+| api_key  |   |  | |  Token used to connect to the API.  |
 
-| supplemental_groups_type  |     |    | <ul></ul> |  Type is the strategy that will dictate what supplemental groups is used in the SecurityContext.  |
+| supplemental_groups_type  |   |  | |  Type is the strategy that will dictate what supplemental groups is used in the SecurityContext.  |
 
-| annotations  |     |    | <ul></ul> |  Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects.  |
+| annotations  |   |  | |  Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects.  |
 
-| username  |     |    | <ul></ul> |  Provide a username for connecting to the API.  |
+| username  |   |  | |  Provide a username for connecting to the API.  |
 
-| ssl_ca_cert  |     |    | <ul></ul> |  Path to a CA certificate used to authenticate with the API.  |
+| ssl_ca_cert  |   |  | |  Path to a CA certificate used to authenticate with the API.  |
 
-| run_as_user_uid_range_max  |     |    | <ul></ul> |  UIDRangeMax defines the max value for a strategy that allocates by range.  |
+| run_as_user_uid_range_max  |   |  | |  UIDRangeMax defines the max value for a strategy that allocates by range.  |
 
-| users  |     |    | <ul></ul> |  The users who have permissions to use this security context constraints  |
+| users  |   |  | |  The users who have permissions to use this security context constraints  |
 
-| default_add_capabilities  |     |    | <ul></ul> |  DefaultAddCapabilities is the default set of capabilities that will be added to the container unless the pod spec specifically drops the capability. You may not list a capabiility in both DefaultAddCapabilities and RequiredDropCapabilities.  |
+| default_add_capabilities  |   |  | |  DefaultAddCapabilities is the default set of capabilities that will be added to the container unless the pod spec specifically drops the capability. You may not list a capabiility in both DefaultAddCapabilities and RequiredDropCapabilities.  |
 
-| allow_host_ipc  |     |    | <ul></ul> |  AllowHostIPC determines if the policy allows host ipc in the containers.  |
+| allow_host_ipc  |   |  | |  AllowHostIPC determines if the policy allows host ipc in the containers.  |
 
-| fs_group_type  |     |    | <ul></ul> |  Type is the strategy that will dictate what FSGroup is used in the SecurityContext.  |
+| fs_group_type  |   |  | |  Type is the strategy that will dictate what FSGroup is used in the SecurityContext.  |
 
-| required_drop_capabilities  |     |    | <ul></ul> |  RequiredDropCapabilities are the capabilities that will be dropped from the container. These are required to be dropped and cannot be added.  |
+| required_drop_capabilities  |   |  | |  RequiredDropCapabilities are the capabilities that will be dropped from the container. These are required to be dropped and cannot be added.  |
 
-| fs_group_ranges  |     |    | <ul></ul> |  Ranges are the allowed ranges of fs groups. If you would like to force a single fs group then supply a single range with the same start and end.  |
+| fs_group_ranges  |   |  | |  Ranges are the allowed ranges of fs groups. If you would like to force a single fs group then supply a single range with the same start and end.  |
 
-| host  |     |    | <ul></ul> |  Provide a URL for acessing the Kubernetes API.  |
+| host  |   |  | |  Provide a URL for acessing the Kubernetes API.  |
 
-| allow_privileged_container  |     |    | <ul></ul> |  AllowPrivilegedContainer determines if a container can request to be run as privileged.  |
+| allow_privileged_container  |   |  | |  AllowPrivilegedContainer determines if a container can request to be run as privileged.  |
 
-| groups  |     |    | <ul></ul> |  The groups that have permission to use this security context constraints  |
+| groups  |   |  | |  The groups that have permission to use this security context constraints  |
 
-| allowed_capabilities  |     |    | <ul></ul> |  AllowedCapabilities is a list of capabilities that can be requested to add to the container. Capabilities in this field maybe added at the pod author's discretion. You must not list a capability in both AllowedCapabilities and RequiredDropCapabilities. To allow all capabilities you may use '*'.  |
+| allowed_capabilities  |   |  | |  AllowedCapabilities is a list of capabilities that can be requested to add to the container. Capabilities in this field maybe added at the pod author's discretion. You must not list a capability in both AllowedCapabilities and RequiredDropCapabilities. To allow all capabilities you may use '*'.  |
 
-| run_as_user_uid_range_min  |     |    | <ul></ul> |  UIDRangeMin defines the min value for a strategy that allocates by range.  |
+| run_as_user_uid_range_min  |   |  | |  UIDRangeMin defines the min value for a strategy that allocates by range.  |
 
-| password  |     |    | <ul></ul> |  Provide a password for connecting to the API. Use in conjunction with I(username).  |
+| password  |   |  | |  Provide a password for connecting to the API. Use in conjunction with I(username).  |
 
-| allowed_flex_volumes  |     |    | <ul></ul> |  AllowedFlexVolumes is a whitelist of allowed Flexvolumes. Empty or nil indicates that all Flexvolumes may be used. This parameter is effective only when the usage of the Flexvolumes is allowed in the "Volumes" field.  |
+| allowed_flex_volumes  |   |  | |  AllowedFlexVolumes is a whitelist of allowed Flexvolumes. Empty or nil indicates that all Flexvolumes may be used. This parameter is effective only when the usage of the Flexvolumes is allowed in the "Volumes" field.  |
 
-| name  |     |    | <ul></ul> |  Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated.  |
+| name  |   |  | |  Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated.  |
 
-| src  |     |    | <ul></ul> |  Provide a path to a file containing the YAML definition of the object. Mutually exclusive with I(resource_definition).  |
+| src  |   |  | |  Provide a path to a file containing the YAML definition of the object. Mutually exclusive with I(resource_definition).  |
 
-| seccomp_profiles  |     |    | <ul></ul> |  SeccompProfiles lists the allowed profiles that may be set for the pod or container's seccomp annotations. An unset (nil) or empty value means that no profiles may be specifid by the pod or container. The wildcard '*' may be used to allow all profiles. When used to generate a value for a pod the first non-wildcard profile will be used as the default.  |
+| seccomp_profiles  |   |  | |  SeccompProfiles lists the allowed profiles that may be set for the pod or container's seccomp annotations. An unset (nil) or empty value means that no profiles may be specifid by the pod or container. The wildcard '*' may be used to allow all profiles. When used to generate a value for a pod the first non-wildcard profile will be used as the default.  |
 
-| run_as_user_type  |     |    | <ul></ul> |  Type is the strategy that will dictate what RunAsUser is used in the SecurityContext.  |
+| run_as_user_type  |   |  | |  Type is the strategy that will dictate what RunAsUser is used in the SecurityContext.  |
 
-| se_linux_context_se_linux_options_type  |     |    | <ul></ul> |  Type is a SELinux type label that applies to the container.  |
+| se_linux_context_se_linux_options_type  |   |  | |  Type is a SELinux type label that applies to the container.  |
 
-| allow_host_dir_volume_plugin  |     |    | <ul></ul> |  AllowHostDirVolumePlugin determines if the policy allow containers to use the HostDir volume plugin  |
+| allow_host_dir_volume_plugin  |   |  | |  AllowHostDirVolumePlugin determines if the policy allow containers to use the HostDir volume plugin  |
 
-| kubeconfig  |     |    | <ul></ul> |  Path to an existing Kubernetes config file. If not provided, and no other connection options are provided, the openshift client will attempt to load the default configuration file from I(~/.kube/config.json).  |
+| kubeconfig  |   |  | |  Path to an existing Kubernetes config file. If not provided, and no other connection options are provided, the openshift client will attempt to load the default configuration file from I(~/.kube/config.json).  |
 
-| supplemental_groups_ranges  |     |    | <ul></ul> |  Ranges are the allowed ranges of supplemental groups. If you would like to force a single supplemental group then supply a single range with the same start and end.  |
+| supplemental_groups_ranges  |   |  | |  Ranges are the allowed ranges of supplemental groups. If you would like to force a single supplemental group then supply a single range with the same start and end.  |
 
-| se_linux_context_se_linux_options_user  |     |    | <ul></ul> |  User is a SELinux user label that applies to the container.  |
+| se_linux_context_se_linux_options_user  |   |  | |  User is a SELinux user label that applies to the container.  |
 
-| volumes  |     |    | <ul></ul> |  Volumes is a white list of allowed volume plugins. FSType corresponds directly with the field names of a VolumeSource (azureFile, configMap, emptyDir). To allow all volumes you may use "*". To allow no volumes, set to ["none"].  |
+| volumes  |   |  | |  Volumes is a white list of allowed volume plugins. FSType corresponds directly with the field names of a VolumeSource (azureFile, configMap, emptyDir). To allow all volumes you may use "*". To allow no volumes, set to ["none"].  |
 
-| debug  |     |  False  | <ul></ul> |  Enable debug output from the OpenShift helper. Logging info is written to KubeObjHelper.log  |
+| debug  |   |  False  | |  Enable debug output from the OpenShift helper. Logging info is written to KubeObjHelper.log  |
 
-| allow_host_ports  |     |    | <ul></ul> |  AllowHostPorts determines if the policy allows host ports in the containers.  |
+| allow_host_ports  |   |  | |  AllowHostPorts determines if the policy allows host ports in the containers.  |
 
-| key_file  |     |    | <ul></ul> |  Path to a key file used to authenticate with the API.  |
+| key_file  |   |  | |  Path to a key file used to authenticate with the API.  |
 
-| run_as_user_uid  |     |    | <ul></ul> |  UID is the user id that containers must run as. Required for the MustRunAs strategy if not using namespace/service account allocated uids.  |
+| run_as_user_uid  |   |  | |  UID is the user id that containers must run as. Required for the MustRunAs strategy if not using namespace/service account allocated uids.  |
 
 
 
