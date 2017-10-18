@@ -146,11 +146,23 @@ Manage the lifecycle of a pod_security_policy_subject_review object. Supports ch
 
 
 
+#### Examples
+
+```
+
+
+
+
+
+```
+
+
 
 
 #### Return
 
 ```yaml
+
 api_version:
   type: string
   description: Requested API version

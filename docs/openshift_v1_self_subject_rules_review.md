@@ -66,11 +66,23 @@ Manage the lifecycle of a self_subject_rules_review object. Supports check mode,
 
 
 
+#### Examples
+
+```
+
+
+
+
+
+```
+
+
 
 
 #### Return
 
 ```yaml
+
 api_version:
   type: string
   description: Requested API version

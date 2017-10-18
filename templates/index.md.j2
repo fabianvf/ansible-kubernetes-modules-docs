@@ -1,0 +1,32 @@
+# {{ name }}
+
+{% if description is defined %}
+{{ description }}
+{% endif %}
+
+{% if requirements is defined %}
+---
+## Requirements
+{% for req in requirements %}
+* {{ req }}
+{% endfor %}
+{% endif %}
+
+
+{% if installation is defined %}
+## Installation
+{{ installation}}
+{% endif %}
+
+{% if usage is defined %}
+## Usage
+{{ usage }}
+{% endif %}
+
+## Modules
+
+{% for module in modules %}
+
+- [{{ module.name }}]({{ module.path }})
+
+{% endfor %}

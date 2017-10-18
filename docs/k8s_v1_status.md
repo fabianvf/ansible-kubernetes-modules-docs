@@ -82,11 +82,23 @@ Manage the lifecycle of a status object. Supports check mode, and attempts to to
 
 
 
+#### Examples
+
+```
+
+
+
+
+
+```
+
+
 
 
 #### Return
 
 ```yaml
+
 api_version:
   type: string
   description: Requested API version

@@ -94,11 +94,23 @@ Manage the lifecycle of a o_auth_authorize_token object. Supports check mode, an
 
 
 
+#### Examples
+
+```
+
+
+
+
+
+```
+
+
 
 
 #### Return
 
 ```yaml
+
 api_version:
   type: string
   description: Requested API version

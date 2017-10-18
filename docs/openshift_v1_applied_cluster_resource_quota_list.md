@@ -64,11 +64,23 @@ Retrieve a list of applied_cluster_resource_quotas. List operations provide a sn
 
 
 
+#### Examples
+
+```
+
+
+
+
+
+```
+
+
 
 
 #### Return
 
 ```yaml
+
 api_version:
   type: string
   description: Requested API version

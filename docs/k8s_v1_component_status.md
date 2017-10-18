@@ -74,11 +74,23 @@ Manage the lifecycle of a component_status object. Supports check mode, and atte
 
 
 
+#### Examples
+
+```
+
+
+
+
+
+```
+
+
 
 
 #### Return
 
 ```yaml
+
 api_version:
   type: string
   description: Requested API version

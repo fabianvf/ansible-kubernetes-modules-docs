@@ -128,11 +128,23 @@ Manage the lifecycle of a build_request object. Supports check mode, and attempt
 
 
 
+#### Examples
+
+```
+
+
+
+
+
+```
+
+
 
 
 #### Return
 
 ```yaml
+
 api_version:
   type: string
   description: Requested API version

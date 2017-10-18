@@ -96,11 +96,23 @@ Manage the lifecycle of a subject_access_review object. Supports check mode, and
 
 
 
+#### Examples
+
+```
+
+
+
+
+
+```
+
+
 
 
 #### Return
 
 ```yaml
+
 api_version:
   type: string
   description: Requested API version

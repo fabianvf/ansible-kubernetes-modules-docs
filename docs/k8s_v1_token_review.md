@@ -74,11 +74,23 @@ Manage the lifecycle of a token_review object. Supports check mode, and attempts
 
 
 
+#### Examples
+
+```
+
+
+
+
+
+```
+
+
 
 
 #### Return
 
 ```yaml
+
 api_version:
   type: string
   description: Requested API version

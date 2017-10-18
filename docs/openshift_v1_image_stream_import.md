@@ -98,11 +98,23 @@ Manage the lifecycle of a image_stream_import object. Supports check mode, and a
 
 
 
+#### Examples
+
+```
+
+
+
+
+
+```
+
+
 
 
 #### Return
 
 ```yaml
+
 api_version:
   type: string
   description: Requested API version

@@ -14,6 +14,16 @@ try:
 except Exception:
     from ansible.utils.plugin_docs import get_docstring
 
+NAME = 'ansible-kubernetes-modules'
+DESCRIPTION = ''
+REQUIREMENTS = []
+INSTALLATION = ''
+USAGE = ''
+
+
+def jinja_env():
+    return Environment(loader=FileSystemLoader('templates'))
+
 
 def main():
     path = sys.argv[1]
@@ -29,7 +39,28 @@ def main():
         dests = [out]
     processed = list(map(process_doc, modules))
     map(lambda x: template_module(*x), zip(processed, dests))
+    generate_index(processed, dests)
 
+
+def generate_index(modules, dests):
+    template = jinja_env().get_template('index.md.j2')
+    index_path = os.path.join(os.path.abspath(os.path.dirname(dests[0])), 'README.md')
+    with open(index_path, 'w') as f:
+        f.write(template.render(
+            name=NAME,
+            description=DESCRIPTION,
+            requirements=REQUIREMENTS,
+            installation=INSTALLATION,
+            usage=USAGE,
+            modules=map(
+                lambda x: {
+                    'name': x[0]['module'] if x[0] else 'BROKEN',
+                    'path': x[1]
+                }, 
+                zip(modules, dests)
+            )
+        ))
+        print("Generated index at {}".format(index_path))
 
 def process_doc(module):
     doc, examples, returndocs, metadata = get_docstring(module)
@@ -51,11 +82,7 @@ def template_module(module, dest):
         print("No docstring retrieved for {}".format(module), file=sys.stderr)
         print("Docs for {} could not be generated".format(module), file=sys.stderr)
         return
-    env = Environment(
-        loader=FileSystemLoader('templates')
-    )
-
-    template = env.get_template('module_template.md.j2')
+    template = jinja_env().get_template('module_template.md.j2')
     with open(dest, 'w') as f:
         f.write(template.render(**module))
     print('Generated docs for {}'.format(module['module']))

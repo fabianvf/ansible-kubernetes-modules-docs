@@ -96,11 +96,23 @@ Manage the lifecycle of a local_subject_access_review object. Supports check mod
 
 
 
+#### Examples
+
+```
+
+
+
+
+
+```
+
+
 
 
 #### Return
 
 ```yaml
+
 api_version:
   type: string
   description: Requested API version

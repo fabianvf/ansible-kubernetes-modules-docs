@@ -64,11 +64,23 @@ Retrieve a list of component_status. List operations provide a snapshot read of 
 
 
 
+#### Examples
+
+```
+
+
+
+
+
+```
+
+
 
 
 #### Return
 
 ```yaml
+
 api_version:
   type: string
   description: Requested API version

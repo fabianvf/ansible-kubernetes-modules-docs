@@ -82,11 +82,23 @@ Manage the lifecycle of a applied_cluster_resource_quota object. Supports check 
 
 
 
+#### Examples
+
+```
+
+
+
+
+
+```
+
+
 
 
 #### Return
 
 ```yaml
+
 api_version:
   type: string
   description: Requested API version

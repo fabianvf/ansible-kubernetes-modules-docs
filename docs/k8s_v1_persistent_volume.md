@@ -110,7 +110,7 @@ Manage the lifecycle of a persistent_volume object. Supports check mode, and att
 
 | spec_aws_elastic_block_store_fs_type  |   |  | |  Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.  |
 
-| state  |   |  present  | <ul> <li>present</li>  <li>absent</li> </ul> |  Determines if an object should be created, patched, or deleted. When set to C(present), the object will be created, if it does not exist, or patched, if parameter values differ from the existing object's attributes, and deleted, if set to C(absent). A patch operation results in merging lists and updating dictionaries, with lists being merged into a unique set of values. If a list contains a dictionary with a I(name) or I(type) attribute, a strategic merge is performed, where individual elements with a matching I(name_) or I(type) are merged. To force the replacement of lists, set the I(force) option to C(True).  |
+| state  |   |  present  |  - present  - absent  |  Determines if an object should be created, patched, or deleted. When set to C(present), the object will be created, if it does not exist, or patched, if parameter values differ from the existing object's attributes, and deleted, if set to C(absent). A patch operation results in merging lists and updating dictionaries, with lists being merged into a unique set of values. If a list contains a dictionary with a I(name) or I(type) attribute, a strategic merge is performed, where individual elements with a matching I(name_) or I(type) are merged. To force the replacement of lists, set the I(force) option to C(True).  |
 
 | spec_flex_volume_fs_type  |   |  | |  Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". The default filesystem depends on FlexVolume script.  |
 
@@ -300,6 +300,8 @@ Manage the lifecycle of a persistent_volume object. Supports check mode, and att
 
 ```
 
+
+
 - name: Create persitent volume
 
   k8s_v1_persistent_volume.yml:
@@ -330,6 +332,7 @@ Manage the lifecycle of a persistent_volume object. Supports check mode, and att
 #### Return
 
 ```yaml
+
 api_version:
   type: string
   description: Requested API version

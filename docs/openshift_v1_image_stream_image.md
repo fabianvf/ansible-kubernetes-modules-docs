@@ -102,11 +102,23 @@ Manage the lifecycle of a image_stream_image object. Supports check mode, and at
 
 
 
+#### Examples
+
+```
+
+
+
+
+
+```
+
+
 
 
 #### Return
 
 ```yaml
+
 api_version:
   type: string
   description: Requested API version

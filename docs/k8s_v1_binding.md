@@ -86,11 +86,23 @@ Manage the lifecycle of a binding object. Supports check mode, and attempts to t
 
 
 
+#### Examples
+
+```
+
+
+
+
+
+```
+
+
 
 
 #### Return
 
 ```yaml
+
 api_version:
   type: string
   description: Requested API version
