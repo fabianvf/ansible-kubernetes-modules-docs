@@ -21,12 +21,12 @@ Version added: 2.3.0
 
 ---
 
-  * Synopsis
-* Options
+  * [Synopsis](#Synopsis)
 
-* Examples
+  * [Options](#Options)
 
-* Return
+
+* [Return](#Return)
 
 
 
@@ -73,17 +73,6 @@ Manage the lifecycle of a image_signature object. Supports check mode, and attem
 
 
 
-
-
-#### Examples
-
-```
-
-
-
-
-
-```
 
 
 

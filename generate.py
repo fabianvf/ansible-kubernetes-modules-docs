@@ -68,7 +68,7 @@ def process_doc(module):
         print("No docstring retrieved for {}".format(module), file=sys.stderr)
         return
     doc['options'] = sorted(doc['options'].items())
-    if examples and filter(lambda x: x, examples):
+    if examples and filter(lambda x: x.replace('\n', ''), examples):
         examples = filter(lambda x: x, examples)
         examples_list = examples.split('\n')
         doc['examples'] = examples_list

@@ -21,12 +21,12 @@ Version added: 2.3.0
 
 ---
 
-  * Synopsis
-* Options
+  * [Synopsis](#Synopsis)
 
-* Examples
+  * [Options](#Options)
 
-* Return
+
+* [Return](#Return)
 
 
 
@@ -58,17 +58,6 @@ Retrieve a list of certificate_signing_requests. List operations provide a snaps
 
 
 
-
-
-#### Examples
-
-```
-
-
-
-
-
-```
 
 
 

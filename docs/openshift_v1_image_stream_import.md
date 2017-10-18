@@ -21,12 +21,12 @@ Version added: 2.3.0
 
 ---
 
-  * Synopsis
-* Options
+  * [Synopsis](#Synopsis)
 
-* Examples
+  * [Options](#Options)
 
-* Return
+
+* [Return](#Return)
 
 
 
@@ -72,17 +72,6 @@ Manage the lifecycle of a image_stream_import object. Supports check mode, and a
 
 
 
-
-
-#### Examples
-
-```
-
-
-
-
-
-```
 
 
 

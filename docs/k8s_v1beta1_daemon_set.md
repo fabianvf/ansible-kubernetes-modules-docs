@@ -21,12 +21,12 @@ Version added: 2.3.0
 
 ---
 
-  * Synopsis
-* Options
+  * [Synopsis](#Synopsis)
 
-* Examples
+  * [Options](#Options)
 
-* Return
+
+* [Return](#Return)
 
 
 
@@ -108,17 +108,6 @@ Manage the lifecycle of a daemon_set object. Supports check mode, and attempts t
 
 
 
-
-
-#### Examples
-
-```
-
-
-
-
-
-```
 
 
 

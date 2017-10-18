@@ -21,12 +21,12 @@ Version added: 2.3.0
 
 ---
 
-  * Synopsis
-* Options
+  * [Synopsis](#Synopsis)
 
-* Examples
+  * [Options](#Options)
 
-* Return
+
+* [Return](#Return)
 
 
 
@@ -55,17 +55,6 @@ Retrieve a list of component_status. List operations provide a snapshot read of 
 
 
 
-
-
-#### Examples
-
-```
-
-
-
-
-
-```
 
 
 
