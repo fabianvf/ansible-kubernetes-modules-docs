@@ -36,20 +36,20 @@ Retrieve a list of component_status. List operations provide a snapshot read of 
 
 #### Options
 
-| Parameter     | required    | default  | choices    | comments |
-| ------------- |-------------| ---------|----------- |--------- |
-| username  |   |  | |  Provide a username for connecting to the API.  |
-| ssl_ca_cert  |   |  | |  Path to a CA certificate used to authenticate with the API.  |
-| api_key  |   |  | |  Token used to connect to the API.  |
-| force  |   |  False  | |  If set to C(True), and I(state) is C(present), an existing object will updated, and lists will be replaced, rather than merged.  |
-| cert_file  |   |  | |  Path to a certificate used to authenticate with the API.  |
-| host  |   |  | |  Provide a URL for acessing the Kubernetes API.  |
-| kubeconfig  |   |  | |  Path to an existing Kubernetes config file. If not provided, and no other connection options are provided, the openshift client will attempt to load the default configuration file from I(~/.kube/config.json).  |
-| verify_ssl  |   |  | |  Whether or not to verify the API server's SSL certificates.  |
-| context  |   |  | |  The name of a context found in the Kubernetes config file.  |
-| debug  |   |  False  | |  Enable debug output from the OpenShift helper. Logging info is written to KubeObjHelper.log  |
-| key_file  |   |  | |  Path to a key file used to authenticate with the API.  |
-| password  |   |  | |  Provide a password for connecting to the API. Use in conjunction with I(username).  |
+| Parameter     |  aliases     | required    | default  | choices    | comments |
+| ------------- |------------- |-------------| ---------|----------- |--------- |
+| api_key  |  |   |  | |  Token used to connect to the API.  |
+| cert_file  |  |   |  | |  Path to a certificate used to authenticate with the API.  |
+| context  |  |   |  | |  The name of a context found in the Kubernetes config file.  |
+| debug  |  |   |  False  | |  Enable debug output from the OpenShift helper. Logging info is written to KubeObjHelper.log  |
+| force  |  |   |  False  | |  If set to C(True), and I(state) is C(present), an existing object will updated, and lists will be replaced, rather than merged.  |
+| host  |  |   |  | |  Provide a URL for acessing the Kubernetes API.  |
+| key_file  |  |   |  | |  Path to a key file used to authenticate with the API.  |
+| kubeconfig  |  |   |  | |  Path to an existing Kubernetes config file. If not provided, and no other connection options are provided, the openshift client will attempt to load the default configuration file from I(~/.kube/config.json).  |
+| password  |  |   |  | |  Provide a password for connecting to the API. Use in conjunction with I(username).  |
+| ssl_ca_cert  |  |   |  | |  Path to a CA certificate used to authenticate with the API.  |
+| username  |  |   |  | |  Provide a username for connecting to the API.  |
+| verify_ssl  |  |   |  | |  Whether or not to verify the API server's SSL certificates.  |
 
 
 

@@ -36,29 +36,29 @@ Manage the lifecycle of a applied_cluster_resource_quota object. Supports check 
 
 #### Options
 
-| Parameter     | required    | default  | choices    | comments |
-| ------------- |-------------| ---------|----------- |--------- |
-| username  |   |  | |  Provide a username for connecting to the API.  |
-| ssl_ca_cert  |   |  | |  Path to a CA certificate used to authenticate with the API.  |
-| force  |   |  False  | |  If set to C(True), and I(state) is C(present), an existing object will updated, and lists will be replaced, rather than merged.  |
-| cert_file  |   |  | |  Path to a certificate used to authenticate with the API.  |
-| labels  |   |  | |  Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services.  |
-| debug  |   |  False  | |  Enable debug output from the OpenShift helper. Logging info is written to KubeObjHelper.log  |
-| verify_ssl  |   |  | |  Whether or not to verify the API server's SSL certificates.  |
-| host  |   |  | |  Provide a URL for acessing the Kubernetes API.  |
-| password  |   |  | |  Provide a password for connecting to the API. Use in conjunction with I(username).  |
-| spec_quota_hard  |   |  | |  Hard is the set of desired hard limits for each named resource.  |
-| spec_selector_annotations  |   |  | |  AnnotationSelector is used to select projects by annotation.  |
-| spec_selector_labels_match_expressions  |   |  | |  matchExpressions is a list of label selector requirements. The requirements are ANDed.  |
-| name  |   |  | |  Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated.  |
-| namespace  |   |  | |  Namespace defines the space within each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty. Must be a DNS_LABEL. Cannot be updated.  |
-| spec_quota_scopes  |   |  | |  A collection of filters that must match each object tracked by a quota. If not specified, the quota matches all objects.  |
-| kubeconfig  |   |  | |  Path to an existing Kubernetes config file. If not provided, and no other connection options are provided, the openshift client will attempt to load the default configuration file from I(~/.kube/config.json).  |
-| context  |   |  | |  The name of a context found in the Kubernetes config file.  |
-| spec_selector_labels_match_labels  |   |  | |  matchLabels is a map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.  |
-| key_file  |   |  | |  Path to a key file used to authenticate with the API.  |
-| api_key  |   |  | |  Token used to connect to the API.  |
-| annotations  |   |  | |  Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects.  |
+| Parameter     |  aliases     | required    | default  | choices    | comments |
+| ------------- |------------- |-------------| ---------|----------- |--------- |
+| annotations  |  |   |  | |  Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects.  |
+| api_key  |  |   |  | |  Token used to connect to the API.  |
+| cert_file  |  |   |  | |  Path to a certificate used to authenticate with the API.  |
+| context  |  |   |  | |  The name of a context found in the Kubernetes config file.  |
+| debug  |  |   |  False  | |  Enable debug output from the OpenShift helper. Logging info is written to KubeObjHelper.log  |
+| force  |  |   |  False  | |  If set to C(True), and I(state) is C(present), an existing object will updated, and lists will be replaced, rather than merged.  |
+| host  |  |   |  | |  Provide a URL for acessing the Kubernetes API.  |
+| key_file  |  |   |  | |  Path to a key file used to authenticate with the API.  |
+| kubeconfig  |  |   |  | |  Path to an existing Kubernetes config file. If not provided, and no other connection options are provided, the openshift client will attempt to load the default configuration file from I(~/.kube/config.json).  |
+| labels  |  |   |  | |  Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services.  |
+| name  |  |   |  | |  Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated.  |
+| namespace  |  |   |  | |  Namespace defines the space within each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty. Must be a DNS_LABEL. Cannot be updated.  |
+| password  |  |   |  | |  Provide a password for connecting to the API. Use in conjunction with I(username).  |
+| spec_quota_hard  |  quota_hard  |   |  | |  Hard is the set of desired hard limits for each named resource.  |
+| spec_quota_scopes  |  quota_scopes  |   |  | |  A collection of filters that must match each object tracked by a quota. If not specified, the quota matches all objects.  |
+| spec_selector_annotations  |  selector_annotations  |   |  | |  AnnotationSelector is used to select projects by annotation.  |
+| spec_selector_labels_match_expressions  |  selector_labels_match_expressions  |   |  | |  matchExpressions is a list of label selector requirements. The requirements are ANDed.  |
+| spec_selector_labels_match_labels  |  selector_labels_match_labels  |   |  | |  matchLabels is a map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.  |
+| ssl_ca_cert  |  |   |  | |  Path to a CA certificate used to authenticate with the API.  |
+| username  |  |   |  | |  Provide a username for connecting to the API.  |
+| verify_ssl  |  |   |  | |  Whether or not to verify the API server's SSL certificates.  |
 
 
 

@@ -36,29 +36,29 @@ Manage the lifecycle of a status object. Supports check mode, and attempts to to
 
 #### Options
 
-| Parameter     | required    | default  | choices    | comments |
-| ------------- |-------------| ---------|----------- |--------- |
-| username  |   |  | |  Provide a username for connecting to the API.  |
-| ssl_ca_cert  |   |  | |  Path to a CA certificate used to authenticate with the API.  |
-| code  |   |  | |  Suggested HTTP return code for this status, 0 if not set.  |
-| force  |   |  False  | |  If set to C(True), and I(state) is C(present), an existing object will updated, and lists will be replaced, rather than merged.  |
-| details_uid  |   |  | |  UID of the resource. (when there is a single resource which can be described).  |
-| cert_file  |   |  | |  Path to a certificate used to authenticate with the API.  |
-| verify_ssl  |   |  | |  Whether or not to verify the API server's SSL certificates.  |
-| details_causes  |   |  | |  The Causes array includes more details associated with the StatusReason failure. Not all StatusReasons may provide detailed causes.  |
-| host  |   |  | |  Provide a URL for acessing the Kubernetes API.  |
-| message  |   |  | |  A human-readable description of the status of this operation.  |
-| password  |   |  | |  Provide a password for connecting to the API. Use in conjunction with I(username).  |
-| details_retry_after_seconds  |   |  | |  If specified, the time in seconds before the operation should be retried.  |
-| details_kind  |   |  | |  The kind attribute of the resource associated with the status StatusReason. On some operations may differ from the requested resource Kind.  |
-| details_name  |   |  | |  The name attribute of the resource associated with the status StatusReason (when there is a single name which can be described).  |
-| reason  |   |  | |  A machine-readable description of why this operation is in the "Failure" status. If this value is empty there is no information available. A Reason clarifies an HTTP status code but does not override it.  |
-| kubeconfig  |   |  | |  Path to an existing Kubernetes config file. If not provided, and no other connection options are provided, the openshift client will attempt to load the default configuration file from I(~/.kube/config.json).  |
-| context  |   |  | |  The name of a context found in the Kubernetes config file.  |
-| debug  |   |  False  | |  Enable debug output from the OpenShift helper. Logging info is written to KubeObjHelper.log  |
-| key_file  |   |  | |  Path to a key file used to authenticate with the API.  |
-| api_key  |   |  | |  Token used to connect to the API.  |
-| details_group  |   |  | |  The group attribute of the resource associated with the status StatusReason.  |
+| Parameter     |  aliases     | required    | default  | choices    | comments |
+| ------------- |------------- |-------------| ---------|----------- |--------- |
+| api_key  |  |   |  | |  Token used to connect to the API.  |
+| cert_file  |  |   |  | |  Path to a certificate used to authenticate with the API.  |
+| code  |  |   |  | |  Suggested HTTP return code for this status, 0 if not set.  |
+| context  |  |   |  | |  The name of a context found in the Kubernetes config file.  |
+| debug  |  |   |  False  | |  Enable debug output from the OpenShift helper. Logging info is written to KubeObjHelper.log  |
+| details_causes  |  causes  |   |  | |  The Causes array includes more details associated with the StatusReason failure. Not all StatusReasons may provide detailed causes.  |
+| details_group  |  group  |   |  | |  The group attribute of the resource associated with the status StatusReason.  |
+| details_kind  |  kind  |   |  | |  The kind attribute of the resource associated with the status StatusReason. On some operations may differ from the requested resource Kind.  |
+| details_name  |  name  |   |  | |  The name attribute of the resource associated with the status StatusReason (when there is a single name which can be described).  |
+| details_retry_after_seconds  |  retry_after_seconds  |   |  | |  If specified, the time in seconds before the operation should be retried.  |
+| details_uid  |  uid  |   |  | |  UID of the resource. (when there is a single resource which can be described).  |
+| force  |  |   |  False  | |  If set to C(True), and I(state) is C(present), an existing object will updated, and lists will be replaced, rather than merged.  |
+| host  |  |   |  | |  Provide a URL for acessing the Kubernetes API.  |
+| key_file  |  |   |  | |  Path to a key file used to authenticate with the API.  |
+| kubeconfig  |  |   |  | |  Path to an existing Kubernetes config file. If not provided, and no other connection options are provided, the openshift client will attempt to load the default configuration file from I(~/.kube/config.json).  |
+| message  |  |   |  | |  A human-readable description of the status of this operation.  |
+| password  |  |   |  | |  Provide a password for connecting to the API. Use in conjunction with I(username).  |
+| reason  |  |   |  | |  A machine-readable description of why this operation is in the "Failure" status. If this value is empty there is no information available. A Reason clarifies an HTTP status code but does not override it.  |
+| ssl_ca_cert  |  |   |  | |  Path to a CA certificate used to authenticate with the API.  |
+| username  |  |   |  | |  Provide a username for connecting to the API.  |
+| verify_ssl  |  |   |  | |  Whether or not to verify the API server's SSL certificates.  |
 
 
 

@@ -36,34 +36,34 @@ Manage the lifecycle of a o_auth_client object. Supports check mode, and attempt
 
 #### Options
 
-| Parameter     | required    | default  | choices    | comments |
-| ------------- |-------------| ---------|----------- |--------- |
-| username  |   |  | |  Provide a username for connecting to the API.  |
-| access_token_max_age_seconds  |   |  | |  AccessTokenMaxAgeSeconds overrides the default access token max age for tokens granted to this client. 0 means no expiration.  |
-| force  |   |  False  | |  If set to C(True), and I(state) is C(present), an existing object will updated, and lists will be replaced, rather than merged.  |
-| kubeconfig  |   |  | |  Path to an existing Kubernetes config file. If not provided, and no other connection options are provided, the openshift client will attempt to load the default configuration file from I(~/.kube/config.json).  |
-| ssl_ca_cert  |   |  | |  Path to a CA certificate used to authenticate with the API.  |
-| cert_file  |   |  | |  Path to a certificate used to authenticate with the API.  |
-| labels  |   |  | |  Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services.  |
-| verify_ssl  |   |  | |  Whether or not to verify the API server's SSL certificates.  |
-| scope_restrictions  |   |  | |  ScopeRestrictions describes which scopes this client can request. Each requested scope is checked against each restriction. If any restriction matches, then the scope is allowed. If no restriction matches, then the scope is denied.  |
-| grant_method  |   |  | |  GrantMethod determines how to handle grants for this client. If no method is provided, the cluster default grant handling method will be used. Valid grant handling methods are: - auto: always approves grant requests, useful for trusted clients - prompt: prompts the end user for approval of grant requests, useful for third-party clients - deny: always denies grant requests, useful for black-listed clients  |
-| password  |   |  | |  Provide a password for connecting to the API. Use in conjunction with I(username).  |
-| additional_secrets  |   |  | |  AdditionalSecrets holds other secrets that may be used to identify the client. This is useful for rotation and for service account token validation  |
-| src  |   |  | |  Provide a path to a file containing the YAML definition of the object. Mutually exclusive with I(resource_definition).  |
-| name  |   |  | |  Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated.  |
-| redirect_ur_is  |   |  | |  RedirectURIs is the valid redirection URIs associated with a client  |
-| namespace  |   |  | |  Namespace defines the space within each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty. Must be a DNS_LABEL. Cannot be updated.  |
-| secret  |   |  | |  Secret is the unique secret associated with a client  |
-| resource_definition  |   |  | |  Provide the YAML definition for the object, bypassing any modules parameters intended to define object attributes.  |
-| host  |   |  | |  Provide a URL for acessing the Kubernetes API.  |
-| state  |   |  present  | <ul> <li>present</li>  <li>absent</li> </ul> |  Determines if an object should be created, patched, or deleted. When set to C(present), the object will be created, if it does not exist, or patched, if parameter values differ from the existing object's attributes, and deleted, if set to C(absent). A patch operation results in merging lists and updating dictionaries, with lists being merged into a unique set of values. If a list contains a dictionary with a I(name) or I(type) attribute, a strategic merge is performed, where individual elements with a matching I(name_) or I(type) are merged. To force the replacement of lists, set the I(force) option to C(True).  |
-| respond_with_challenges  |   |  | |  RespondWithChallenges indicates whether the client wants authentication needed responses made in the form of challenges instead of redirects  |
-| context  |   |  | |  The name of a context found in the Kubernetes config file.  |
-| debug  |   |  False  | |  Enable debug output from the OpenShift helper. Logging info is written to KubeObjHelper.log  |
-| key_file  |   |  | |  Path to a key file used to authenticate with the API.  |
-| api_key  |   |  | |  Token used to connect to the API.  |
-| annotations  |   |  | |  Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects.  |
+| Parameter     |  aliases     | required    | default  | choices    | comments |
+| ------------- |------------- |-------------| ---------|----------- |--------- |
+| access_token_max_age_seconds  |  |   |  | |  AccessTokenMaxAgeSeconds overrides the default access token max age for tokens granted to this client. 0 means no expiration.  |
+| additional_secrets  |  |   |  | |  AdditionalSecrets holds other secrets that may be used to identify the client. This is useful for rotation and for service account token validation  |
+| annotations  |  |   |  | |  Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects.  |
+| api_key  |  |   |  | |  Token used to connect to the API.  |
+| cert_file  |  |   |  | |  Path to a certificate used to authenticate with the API.  |
+| context  |  |   |  | |  The name of a context found in the Kubernetes config file.  |
+| debug  |  |   |  False  | |  Enable debug output from the OpenShift helper. Logging info is written to KubeObjHelper.log  |
+| force  |  |   |  False  | |  If set to C(True), and I(state) is C(present), an existing object will updated, and lists will be replaced, rather than merged.  |
+| grant_method  |  |   |  | |  GrantMethod determines how to handle grants for this client. If no method is provided, the cluster default grant handling method will be used. Valid grant handling methods are: - auto: always approves grant requests, useful for trusted clients - prompt: prompts the end user for approval of grant requests, useful for third-party clients - deny: always denies grant requests, useful for black-listed clients  |
+| host  |  |   |  | |  Provide a URL for acessing the Kubernetes API.  |
+| key_file  |  |   |  | |  Path to a key file used to authenticate with the API.  |
+| kubeconfig  |  |   |  | |  Path to an existing Kubernetes config file. If not provided, and no other connection options are provided, the openshift client will attempt to load the default configuration file from I(~/.kube/config.json).  |
+| labels  |  |   |  | |  Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services.  |
+| name  |  |   |  | |  Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated.  |
+| namespace  |  |   |  | |  Namespace defines the space within each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty. Must be a DNS_LABEL. Cannot be updated.  |
+| password  |  |   |  | |  Provide a password for connecting to the API. Use in conjunction with I(username).  |
+| redirect_ur_is  |  |   |  | |  RedirectURIs is the valid redirection URIs associated with a client  |
+| resource_definition  |  |   |  | |  Provide the YAML definition for the object, bypassing any modules parameters intended to define object attributes.  |
+| respond_with_challenges  |  |   |  | |  RespondWithChallenges indicates whether the client wants authentication needed responses made in the form of challenges instead of redirects  |
+| scope_restrictions  |  |   |  | |  ScopeRestrictions describes which scopes this client can request. Each requested scope is checked against each restriction. If any restriction matches, then the scope is allowed. If no restriction matches, then the scope is denied.  |
+| secret  |  |   |  | |  Secret is the unique secret associated with a client  |
+| src  |  |   |  | |  Provide a path to a file containing the YAML definition of the object. Mutually exclusive with I(resource_definition).  |
+| ssl_ca_cert  |  |   |  | |  Path to a CA certificate used to authenticate with the API.  |
+| state  |  |   |  present  | <ul> <li>present</li>  <li>absent</li> </ul> |  Determines if an object should be created, patched, or deleted. When set to C(present), the object will be created, if it does not exist, or patched, if parameter values differ from the existing object's attributes, and deleted, if set to C(absent). A patch operation results in merging lists and updating dictionaries, with lists being merged into a unique set of values. If a list contains a dictionary with a I(name) or I(type) attribute, a strategic merge is performed, where individual elements with a matching I(name_) or I(type) are merged. To force the replacement of lists, set the I(force) option to C(True).  |
+| username  |  |   |  | |  Provide a username for connecting to the API.  |
+| verify_ssl  |  |   |  | |  Whether or not to verify the API server's SSL certificates.  |
 
 
 

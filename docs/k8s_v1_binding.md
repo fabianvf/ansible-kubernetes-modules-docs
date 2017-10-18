@@ -36,31 +36,31 @@ Manage the lifecycle of a binding object. Supports check mode, and attempts to t
 
 #### Options
 
-| Parameter     | required    | default  | choices    | comments |
-| ------------- |-------------| ---------|----------- |--------- |
-| username  |   |  | |  Provide a username for connecting to the API.  |
-| ssl_ca_cert  |   |  | |  Path to a CA certificate used to authenticate with the API.  |
-| target_namespace  |   |  | |  Namespace of the referent.  |
-| force  |   |  False  | |  If set to C(True), and I(state) is C(present), an existing object will updated, and lists will be replaced, rather than merged.  |
-| target_api_version  |   |  | |  API version of the referent.  |
-| target_kind  |   |  | |  Kind of the referent.  |
-| target_name  |   |  | |  Name of the referent.  |
-| target_resource_version  |   |  | |  Specific resourceVersion to which this reference is made, if any.  |
-| cert_file  |   |  | |  Path to a certificate used to authenticate with the API.  |
-| labels  |   |  | |  Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services.  |
-| verify_ssl  |   |  | |  Whether or not to verify the API server's SSL certificates.  |
-| password  |   |  | |  Provide a password for connecting to the API. Use in conjunction with I(username).  |
-| target_field_path  |   |  | |  If referring to a piece of an object instead of an entire object, this string should contain a valid JSON/Go field access statement, such as desiredState.manifest.containers[2]. For example, if the object reference is to a container within a pod, this would take on a value like: "spec.containers{name}" (where "name" refers to the name of the container that triggered the event) or if no container name is specified "spec.containers[2]" (container with index 2 in this pod). This syntax is chosen only to have some well-defined way of referencing a part of an object.  |
-| name  |   |  | |  Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated.  |
-| target_uid  |   |  | |  UID of the referent.  |
-| namespace  |   |  | |  Namespace defines the space within each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty. Must be a DNS_LABEL. Cannot be updated.  |
-| host  |   |  | |  Provide a URL for acessing the Kubernetes API.  |
-| kubeconfig  |   |  | |  Path to an existing Kubernetes config file. If not provided, and no other connection options are provided, the openshift client will attempt to load the default configuration file from I(~/.kube/config.json).  |
-| context  |   |  | |  The name of a context found in the Kubernetes config file.  |
-| debug  |   |  False  | |  Enable debug output from the OpenShift helper. Logging info is written to KubeObjHelper.log  |
-| key_file  |   |  | |  Path to a key file used to authenticate with the API.  |
-| api_key  |   |  | |  Token used to connect to the API.  |
-| annotations  |   |  | |  Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects.  |
+| Parameter     |  aliases     | required    | default  | choices    | comments |
+| ------------- |------------- |-------------| ---------|----------- |--------- |
+| annotations  |  |   |  | |  Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects.  |
+| api_key  |  |   |  | |  Token used to connect to the API.  |
+| cert_file  |  |   |  | |  Path to a certificate used to authenticate with the API.  |
+| context  |  |   |  | |  The name of a context found in the Kubernetes config file.  |
+| debug  |  |   |  False  | |  Enable debug output from the OpenShift helper. Logging info is written to KubeObjHelper.log  |
+| force  |  |   |  False  | |  If set to C(True), and I(state) is C(present), an existing object will updated, and lists will be replaced, rather than merged.  |
+| host  |  |   |  | |  Provide a URL for acessing the Kubernetes API.  |
+| key_file  |  |   |  | |  Path to a key file used to authenticate with the API.  |
+| kubeconfig  |  |   |  | |  Path to an existing Kubernetes config file. If not provided, and no other connection options are provided, the openshift client will attempt to load the default configuration file from I(~/.kube/config.json).  |
+| labels  |  |   |  | |  Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services.  |
+| name  |  |   |  | |  Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated.  |
+| namespace  |  |   |  | |  Namespace defines the space within each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty. Must be a DNS_LABEL. Cannot be updated.  |
+| password  |  |   |  | |  Provide a password for connecting to the API. Use in conjunction with I(username).  |
+| ssl_ca_cert  |  |   |  | |  Path to a CA certificate used to authenticate with the API.  |
+| target_api_version  |  api_version  |   |  | |  API version of the referent.  |
+| target_field_path  |  field_path  |   |  | |  If referring to a piece of an object instead of an entire object, this string should contain a valid JSON/Go field access statement, such as desiredState.manifest.containers[2]. For example, if the object reference is to a container within a pod, this would take on a value like: "spec.containers{name}" (where "name" refers to the name of the container that triggered the event) or if no container name is specified "spec.containers[2]" (container with index 2 in this pod). This syntax is chosen only to have some well-defined way of referencing a part of an object.  |
+| target_kind  |  kind  |   |  | |  Kind of the referent.  |
+| target_name  |  name  |   |  | |  Name of the referent.  |
+| target_namespace  |  namespace  |   |  | |  Namespace of the referent.  |
+| target_resource_version  |  resource_version  |   |  | |  Specific resourceVersion to which this reference is made, if any.  |
+| target_uid  |  uid  |   |  | |  UID of the referent.  |
+| username  |  |   |  | |  Provide a username for connecting to the API.  |
+| verify_ssl  |  |   |  | |  Whether or not to verify the API server's SSL certificates.  |
 
 
 

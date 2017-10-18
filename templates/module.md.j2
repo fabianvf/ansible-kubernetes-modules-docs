@@ -45,10 +45,10 @@ Version added: {{ version_added }}
 {% if options is defined %}
 #### Options
 
-| Parameter     | required    | default  | choices    | comments |
-| ------------- |-------------| ---------|----------- |--------- |
+| Parameter     |  aliases     | required    | default  | choices    | comments |
+| ------------- |------------- |-------------| ---------|----------- |--------- |
 {% for option,values in options -%}
-| {{ option }}  |  {% if values.required is defined %} {{ values.required | replace("True", "yes") | replace("False", "no") }} {% endif %} | {% if values.default is defined %} {{ values.default | replace("None","")}} {% endif %} |{% if values.choices is defined %} <ul>{% for each in values.choices %} <li>{{ each }}</li> {% endfor %}</ul>{% endif %} | {% if values.description is defined %}{% for each in values.description %} {{ each }} {% endfor %}{% endif %} |
+| {{ option }}  | {% if values.aliases is defined %} {{ values.aliases|join(", ") }} {% endif %} |  {% if values.required is defined %} {{ values.required | replace("True", "yes") | replace("False", "no") }} {% endif %} | {% if values.default is defined %} {{ values.default | replace("None","")}} {% endif %} |{% if values.choices is defined %} <ul>{% for each in values.choices %} <li>{{ each }}</li> {% endfor %}</ul>{% endif %} | {% if values.description is defined %}{% for each in values.description %} {{ each }} {% endfor %}{% endif %} |
 {% endfor %}
 
 {% endif %}

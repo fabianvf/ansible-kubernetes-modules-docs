@@ -36,37 +36,37 @@ Manage the lifecycle of a image_stream_import object. Supports check mode, and a
 
 #### Options
 
-| Parameter     | required    | default  | choices    | comments |
-| ------------- |-------------| ---------|----------- |--------- |
-| username  |   |  | |  Provide a username for connecting to the API.  |
-| ssl_ca_cert  |   |  | |  Path to a CA certificate used to authenticate with the API.  |
-| force  |   |  False  | |  If set to C(True), and I(state) is C(present), an existing object will updated, and lists will be replaced, rather than merged.  |
-| cert_file  |   |  | |  Path to a certificate used to authenticate with the API.  |
-| labels  |   |  | |  Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services.  |
-| spec_repository__from_uid  |   |  | |  UID of the referent.  |
-| spec_images  |   |  | |  Images are a list of individual images to import.  |
-| verify_ssl  |   |  | |  Whether or not to verify the API server's SSL certificates.  |
-| spec_repository_reference_policy_type  |   |  | |  Type determines how the image pull spec should be transformed when the image stream tag is used in deployment config triggers or new builds. The default value is `Source`, indicating the original location of the image should be used (if imported). The user may also specify `Local`, indicating that the pull spec should point to the integrated Docker registry and leverage the registry's ability to proxy the pull to an upstream registry. `Local` allows the credentials used to pull this image to be managed from the image stream's namespace, so others on the platform can access a remote image but have no access to the remote secret. It also allows the image layers to be mirrored into the local registry which the images can still be pulled even if the upstream registry is unavailable.  |
-| spec_repository__from_kind  |   |  | |  Kind of the referent.  |
-| spec_repository_import_policy_scheduled  |   |  | |  Scheduled indicates to the server that this tag should be periodically checked to ensure it is up to date, and imported  |
-| password  |   |  | |  Provide a password for connecting to the API. Use in conjunction with I(username).  |
-| spec__import  |   |  | |  Import indicates whether to perform an import - if so, the specified tags are set on the spec and status of the image stream defined by the type meta.  |
-| spec_repository__from_resource_version  |   |  | |  Specific resourceVersion to which this reference is made, if any.  |
-| spec_repository__from_api_version  |   |  | |  API version of the referent.  |
-| spec_repository__from_namespace  |   |  | |  Namespace of the referent.  |
-| spec_repository__from_field_path  |   |  | |  If referring to a piece of an object instead of an entire object, this string should contain a valid JSON/Go field access statement, such as desiredState.manifest.containers[2]. For example, if the object reference is to a container within a pod, this would take on a value like: "spec.containers{name}" (where "name" refers to the name of the container that triggered the event) or if no container name is specified "spec.containers[2]" (container with index 2 in this pod). This syntax is chosen only to have some well-defined way of referencing a part of an object.  |
-| name  |   |  | |  Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated.  |
-| spec_repository__from_name  |   |  | |  Name of the referent.  |
-| spec_repository_include_manifest  |   |  | |  IncludeManifest determines if the manifest for each image is returned in the response  |
-| spec_repository_import_policy_insecure  |   |  | |  Insecure is true if the server may bypass certificate verification or connect directly over HTTP during image import.  |
-| namespace  |   |  | |  Namespace defines the space within each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty. Must be a DNS_LABEL. Cannot be updated.  |
-| host  |   |  | |  Provide a URL for acessing the Kubernetes API.  |
-| kubeconfig  |   |  | |  Path to an existing Kubernetes config file. If not provided, and no other connection options are provided, the openshift client will attempt to load the default configuration file from I(~/.kube/config.json).  |
-| context  |   |  | |  The name of a context found in the Kubernetes config file.  |
-| debug  |   |  False  | |  Enable debug output from the OpenShift helper. Logging info is written to KubeObjHelper.log  |
-| key_file  |   |  | |  Path to a key file used to authenticate with the API.  |
-| api_key  |   |  | |  Token used to connect to the API.  |
-| annotations  |   |  | |  Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects.  |
+| Parameter     |  aliases     | required    | default  | choices    | comments |
+| ------------- |------------- |-------------| ---------|----------- |--------- |
+| annotations  |  |   |  | |  Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects.  |
+| api_key  |  |   |  | |  Token used to connect to the API.  |
+| cert_file  |  |   |  | |  Path to a certificate used to authenticate with the API.  |
+| context  |  |   |  | |  The name of a context found in the Kubernetes config file.  |
+| debug  |  |   |  False  | |  Enable debug output from the OpenShift helper. Logging info is written to KubeObjHelper.log  |
+| force  |  |   |  False  | |  If set to C(True), and I(state) is C(present), an existing object will updated, and lists will be replaced, rather than merged.  |
+| host  |  |   |  | |  Provide a URL for acessing the Kubernetes API.  |
+| key_file  |  |   |  | |  Path to a key file used to authenticate with the API.  |
+| kubeconfig  |  |   |  | |  Path to an existing Kubernetes config file. If not provided, and no other connection options are provided, the openshift client will attempt to load the default configuration file from I(~/.kube/config.json).  |
+| labels  |  |   |  | |  Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services.  |
+| name  |  |   |  | |  Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated.  |
+| namespace  |  |   |  | |  Namespace defines the space within each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty. Must be a DNS_LABEL. Cannot be updated.  |
+| password  |  |   |  | |  Provide a password for connecting to the API. Use in conjunction with I(username).  |
+| spec__import  |  _import  |   |  | |  Import indicates whether to perform an import - if so, the specified tags are set on the spec and status of the image stream defined by the type meta.  |
+| spec_images  |  images  |   |  | |  Images are a list of individual images to import.  |
+| spec_repository__from_api_version  |  repository__from_api_version  |   |  | |  API version of the referent.  |
+| spec_repository__from_field_path  |  repository__from_field_path  |   |  | |  If referring to a piece of an object instead of an entire object, this string should contain a valid JSON/Go field access statement, such as desiredState.manifest.containers[2]. For example, if the object reference is to a container within a pod, this would take on a value like: "spec.containers{name}" (where "name" refers to the name of the container that triggered the event) or if no container name is specified "spec.containers[2]" (container with index 2 in this pod). This syntax is chosen only to have some well-defined way of referencing a part of an object.  |
+| spec_repository__from_kind  |  repository__from_kind  |   |  | |  Kind of the referent.  |
+| spec_repository__from_name  |  repository__from_name  |   |  | |  Name of the referent.  |
+| spec_repository__from_namespace  |  repository__from_namespace  |   |  | |  Namespace of the referent.  |
+| spec_repository__from_resource_version  |  repository__from_resource_version  |   |  | |  Specific resourceVersion to which this reference is made, if any.  |
+| spec_repository__from_uid  |  repository__from_uid  |   |  | |  UID of the referent.  |
+| spec_repository_import_policy_insecure  |  repository_import_policy_insecure  |   |  | |  Insecure is true if the server may bypass certificate verification or connect directly over HTTP during image import.  |
+| spec_repository_import_policy_scheduled  |  repository_import_policy_scheduled  |   |  | |  Scheduled indicates to the server that this tag should be periodically checked to ensure it is up to date, and imported  |
+| spec_repository_include_manifest  |  repository_include_manifest  |   |  | |  IncludeManifest determines if the manifest for each image is returned in the response  |
+| spec_repository_reference_policy_type  |  repository_reference_policy_type  |   |  | |  Type determines how the image pull spec should be transformed when the image stream tag is used in deployment config triggers or new builds. The default value is `Source`, indicating the original location of the image should be used (if imported). The user may also specify `Local`, indicating that the pull spec should point to the integrated Docker registry and leverage the registry's ability to proxy the pull to an upstream registry. `Local` allows the credentials used to pull this image to be managed from the image stream's namespace, so others on the platform can access a remote image but have no access to the remote secret. It also allows the image layers to be mirrored into the local registry which the images can still be pulled even if the upstream registry is unavailable.  |
+| ssl_ca_cert  |  |   |  | |  Path to a CA certificate used to authenticate with the API.  |
+| username  |  |   |  | |  Provide a username for connecting to the API.  |
+| verify_ssl  |  |   |  | |  Whether or not to verify the API server's SSL certificates.  |
 
 
 
