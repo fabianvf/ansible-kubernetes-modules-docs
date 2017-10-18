@@ -33,107 +33,56 @@ Manage the lifecycle of a image_stream_tag object. Supports check mode, and atte
 
 | Parameter     | required    | default  | choices    | comments |
 | ------------- |-------------| ---------|----------- |--------- |
-
 | tag__from_kind  |   |  | |  Kind of the referent.  |
-
 | force  |   |  False  | |  If set to C(True), and I(state) is C(present), an existing object will updated, and lists will be replaced, rather than merged.  |
-
 | image_metadata_namespace  |   |  | |  Namespace defines the space within each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty. Must be a DNS_LABEL. Cannot be updated.  |
-
 | generation  |   |  | |  generation is the current generation of the tagged image - if tag is provided and this value is not equal to the tag generation, a user has requested an import that has not completed, or conditions will be filled out indicating any error.  |
-
 | cert_file  |   |  | |  Path to a certificate used to authenticate with the API.  |
-
 | image_docker_image_manifest  |   |  | |  DockerImageManifest is the raw JSON of the manifest  |
-
 | tag__from_field_path  |   |  | |  If referring to a piece of an object instead of an entire object, this string should contain a valid JSON/Go field access statement, such as desiredState.manifest.containers[2]. For example, if the object reference is to a container within a pod, this would take on a value like: "spec.containers{name}" (where "name" refers to the name of the container that triggered the event) or if no container name is specified "spec.containers[2]" (container with index 2 in this pod). This syntax is chosen only to have some well-defined way of referencing a part of an object.  |
-
 | verify_ssl  |   |  | |  Whether or not to verify the API server's SSL certificates.  |
-
 | tag__from_uid  |   |  | |  UID of the referent.  |
-
 | tag_reference  |   |  | |  Reference states if the tag will be imported. Default value is false, which means the tag will be imported.  |
-
 | lookup_policy_local  |   |  | |  local will change the docker short image references (like "mysql" or "php:latest") on objects in this namespace to the image ID whenever they match this image stream, instead of reaching out to a remote registry. The name will be fully qualified to an image ID if found. The tag's referencePolicy is taken into account on the replaced value. Only works within the current namespace.  |
-
 | image_api_version  |   |  | |  APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.  |
-
 | image_metadata_name  |   |  | |  Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated.  |
-
 | namespace  |   |  | |  Namespace defines the space within each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty. Must be a DNS_LABEL. Cannot be updated.  |
-
 | tag__from_namespace  |   |  | |  Namespace of the referent.  |
-
 | resource_definition  |   |  | |  Provide the YAML definition for the object, bypassing any modules parameters intended to define object attributes.  |
-
 | image_docker_image_config  |   |  | |  DockerImageConfig is a JSON blob that the runtime uses to set up the container. This is a part of manifest schema v2.  |
-
 | state  |   |  present  |  - present  - absent  |  Determines if an object should be created, patched, or deleted. When set to C(present), the object will be created, if it does not exist, or patched, if parameter values differ from the existing object's attributes, and deleted, if set to C(absent). A patch operation results in merging lists and updating dictionaries, with lists being merged into a unique set of values. If a list contains a dictionary with a I(name) or I(type) attribute, a strategic merge is performed, where individual elements with a matching I(name_) or I(type) are merged. To force the replacement of lists, set the I(force) option to C(True).  |
-
 | image_signatures  |   |  | |  Signatures holds all signatures of the image.  |
-
 | image_metadata_annotations  |   |  | |  Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects.  |
-
 | api_key  |   |  | |  Token used to connect to the API.  |
-
 | conditions  |   |  | |  conditions is an array of conditions that apply to the image stream tag.  |
-
 | annotations  |   |  | |  Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects.  |
-
 | username  |   |  | |  Provide a username for connecting to the API.  |
-
 | ssl_ca_cert  |   |  | |  Path to a CA certificate used to authenticate with the API.  |
-
 | labels  |   |  | |  Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services.  |
-
 | image_metadata_labels  |   |  | |  Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services.  |
-
 | image_docker_image_metadata_raw  |   |  | |  Raw is the underlying serialization of this object.  |
-
 | image_docker_image_metadata_version  |   |  | |  DockerImageMetadataVersion conveys the version of the object, which if empty defaults to "1.0"  |
-
 | image_docker_image_signatures  |   |  | |  DockerImageSignatures provides the signatures as opaque blobs. This is a part of manifest schema v1.  |
-
 | image_docker_image_layers  |   |  | |  DockerImageLayers represents the layers in the image. May not be set if the image does not define that data.  |
-
 | host  |   |  | |  Provide a URL for acessing the Kubernetes API.  |
-
 | tag_import_policy_insecure  |   |  | |  Insecure is true if the server may bypass certificate verification or connect directly over HTTP during image import.  |
-
 | password  |   |  | |  Provide a password for connecting to the API. Use in conjunction with I(username).  |
-
 | image_docker_image_manifest_media_type  |   |  | |  DockerImageManifestMediaType specifies the mediaType of manifest. This is a part of manifest schema v2.  |
-
 | image_docker_image_reference  |   |  | |  DockerImageReference is the string that can be used to pull this image.  |
-
 | src  |   |  | |  Provide a path to a file containing the YAML definition of the object. Mutually exclusive with I(resource_definition).  |
-
 | tag__from_resource_version  |   |  | |  Specific resourceVersion to which this reference is made, if any.  |
-
 | tag_generation  |   |  | |  Generation is a counter that tracks mutations to the spec tag (user intent). When a tag reference is changed the generation is set to match the current stream generation (which is incremented every time spec is changed). Other processes in the system like the image importer observe that the generation of spec tag is newer than the generation recorded in the status and use that as a trigger to import the newest remote tag. To trigger a new import, clients may set this value to zero which will reset the generation to the latest stream generation. Legacy clients will send this value as nil which will be merged with the current tag generation.  |
-
 | name  |   |  | |  Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated.  |
-
 | tag_import_policy_scheduled  |   |  | |  Scheduled indicates to the server that this tag should be periodically checked to ensure it is up to date, and imported  |
-
 | tag_annotations  |   |  | |  Optional; if specified, annotations that are applied to images retrieved via ImageStreamTags.  |
-
 | tag__from_api_version  |   |  | |  API version of the referent.  |
-
 | tag_reference_policy_type  |   |  | |  Type determines how the image pull spec should be transformed when the image stream tag is used in deployment config triggers or new builds. The default value is `Source`, indicating the original location of the image should be used (if imported). The user may also specify `Local`, indicating that the pull spec should point to the integrated Docker registry and leverage the registry's ability to proxy the pull to an upstream registry. `Local` allows the credentials used to pull this image to be managed from the image stream's namespace, so others on the platform can access a remote image but have no access to the remote secret. It also allows the image layers to be mirrored into the local registry which the images can still be pulled even if the upstream registry is unavailable.  |
-
 | kubeconfig  |   |  | |  Path to an existing Kubernetes config file. If not provided, and no other connection options are provided, the openshift client will attempt to load the default configuration file from I(~/.kube/config.json).  |
-
 | tag__from_name  |   |  | |  Name of the referent.  |
-
 | tag_name  |   |  | |  Name of the tag  |
-
 | context  |   |  | |  The name of a context found in the Kubernetes config file.  |
-
 | debug  |   |  False  | |  Enable debug output from the OpenShift helper. Logging info is written to KubeObjHelper.log  |
-
 | key_file  |   |  | |  Path to a key file used to authenticate with the API.  |
-
 | image_kind  |   |  | |  Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.  |
 
 

@@ -33,59 +33,32 @@ Manage the lifecycle of a api_service object. Supports check mode, and attempts 
 
 | Parameter     | required    | default  | choices    | comments |
 | ------------- |-------------| ---------|----------- |--------- |
-
 | username  |   |  | |  Provide a username for connecting to the API.  |
-
 | ssl_ca_cert  |   |  | |  Path to a CA certificate used to authenticate with the API.  |
-
 | force  |   |  False  | |  If set to C(True), and I(state) is C(present), an existing object will updated, and lists will be replaced, rather than merged.  |
-
 | spec_group_priority_minimum  |   |  | |  GroupPriorityMininum is the priority this group should have at least. Higher       priority means that the group is prefered by clients over lower priority ones.       Note that other versions of this group might specify even higher GroupPriorityMininum       values such that the whole group gets a higher priority. The primary sort       is based on GroupPriorityMinimum, ordered highest number to lowest (20 before       10). The secondary sort is based on the alphabetical comparison of the name       of the object. (v1.bar before v1.foo) We'd recommend something like: *.k8s.io       (except extensions) at 18000 and PaaSes (OpenShift, Deis) are recommended       to be in the 2000s  |
-
 | kubeconfig  |   |  | |  Path to an existing Kubernetes config file. If not provided, and no other connection options are provided, the openshift client will attempt to load the default configuration file from I(~/.kube/config.json).  |
-
 | spec_version  |   |  | |  Version is the API version this server hosts. For example, "v1"  |
-
 | cert_file  |   |  | |  Path to a certificate used to authenticate with the API.  |
-
 | labels  |   |  | |  Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services.  |
-
 | spec_service_name  |   |  | |  Name is the name of the service  |
-
 | verify_ssl  |   |  | |  Whether or not to verify the API server's SSL certificates.  |
-
 | spec_service_namespace  |   |  | |  Namespace is the namespace of the service  |
-
 | resource_definition  |   |  | |  Provide the YAML definition for the object, bypassing any modules parameters intended to define object attributes.  |
-
 | spec_ca_bundle  |   |  | |  CABundle is a PEM encoded CA bundle which will be used to validate an API server's serving certificate.  |
-
 | spec_insecure_skip_tls_verify  |   |  | |  InsecureSkipTLSVerify disables TLS certificate verification when communicating with this server. This is strongly discouraged. You should use the CABundle instead.  |
-
 | src  |   |  | |  Provide a path to a file containing the YAML definition of the object. Mutually exclusive with I(resource_definition).  |
-
 | password  |   |  | |  Provide a password for connecting to the API. Use in conjunction with I(username).  |
-
 | name  |   |  | |  Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated.  |
-
 | namespace  |   |  | |  Namespace defines the space within each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty. Must be a DNS_LABEL. Cannot be updated.  |
-
 | host  |   |  | |  Provide a URL for acessing the Kubernetes API.  |
-
 | spec_version_priority  |   |  | |  VersionPriority controls the ordering of this API version inside of its group. Must be greater than zero. The primary sort is based on VersionPriority, ordered highest to lowest (20 before 10). The secondary sort is based on the alphabetical comparison of the name of the object. (v1.bar before v1.foo) Since it's inside of a group, the number can be small, probably in the 10s.  |
-
 | spec_group  |   |  | |  Group is the API group name this server hosts  |
-
 | state  |   |  present  |  - present  - absent  |  Determines if an object should be created, patched, or deleted. When set to C(present), the object will be created, if it does not exist, or patched, if parameter values differ from the existing object's attributes, and deleted, if set to C(absent). A patch operation results in merging lists and updating dictionaries, with lists being merged into a unique set of values. If a list contains a dictionary with a I(name) or I(type) attribute, a strategic merge is performed, where individual elements with a matching I(name_) or I(type) are merged. To force the replacement of lists, set the I(force) option to C(True).  |
-
 | context  |   |  | |  The name of a context found in the Kubernetes config file.  |
-
 | debug  |   |  False  | |  Enable debug output from the OpenShift helper. Logging info is written to KubeObjHelper.log  |
-
 | key_file  |   |  | |  Path to a key file used to authenticate with the API.  |
-
 | api_key  |   |  | |  Token used to connect to the API.  |
-
 | annotations  |   |  | |  Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects.  |
 
 

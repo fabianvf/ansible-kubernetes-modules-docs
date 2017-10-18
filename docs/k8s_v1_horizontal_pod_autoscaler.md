@@ -33,55 +33,30 @@ Manage the lifecycle of a horizontal_pod_autoscaler object. Supports check mode,
 
 | Parameter     | required    | default  | choices    | comments |
 | ------------- |-------------| ---------|----------- |--------- |
-
 | username  |   |  | |  Provide a username for connecting to the API.  |
-
 | ssl_ca_cert  |   |  | |  Path to a CA certificate used to authenticate with the API.  |
-
 | force  |   |  False  | |  If set to C(True), and I(state) is C(present), an existing object will updated, and lists will be replaced, rather than merged.  |
-
 | spec_scale_target_ref_name  |   |  | |  Name of the referent;  |
-
 | cert_file  |   |  | |  Path to a certificate used to authenticate with the API.  |
-
 | labels  |   |  | |  Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services.  |
-
 | verify_ssl  |   |  | |  Whether or not to verify the API server's SSL certificates.  |
-
 | spec_scale_target_ref_kind  |   |  | |  Kind of the referent;  |
-
 | password  |   |  | |  Provide a password for connecting to the API. Use in conjunction with I(username).  |
-
 | spec_min_replicas  |   |  | |  lower limit for the number of pods that can be set by the autoscaler, default 1.  |
-
 | kubeconfig  |   |  | |  Path to an existing Kubernetes config file. If not provided, and no other connection options are provided, the openshift client will attempt to load the default configuration file from I(~/.kube/config.json).  |
-
 | src  |   |  | |  Provide a path to a file containing the YAML definition of the object. Mutually exclusive with I(resource_definition).  |
-
 | name  |   |  | |  Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated.  |
-
 | namespace  |   |  | |  Namespace defines the space within each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty. Must be a DNS_LABEL. Cannot be updated.  |
-
 | host  |   |  | |  Provide a URL for acessing the Kubernetes API.  |
-
 | resource_definition  |   |  | |  Provide the YAML definition for the object, bypassing any modules parameters intended to define object attributes.  |
-
 | state  |   |  present  |  - present  - absent  |  Determines if an object should be created, patched, or deleted. When set to C(present), the object will be created, if it does not exist, or patched, if parameter values differ from the existing object's attributes, and deleted, if set to C(absent). A patch operation results in merging lists and updating dictionaries, with lists being merged into a unique set of values. If a list contains a dictionary with a I(name) or I(type) attribute, a strategic merge is performed, where individual elements with a matching I(name_) or I(type) are merged. To force the replacement of lists, set the I(force) option to C(True).  |
-
 | context  |   |  | |  The name of a context found in the Kubernetes config file.  |
-
 | debug  |   |  False  | |  Enable debug output from the OpenShift helper. Logging info is written to KubeObjHelper.log  |
-
 | spec_scale_target_ref_api_version  |   |  | |  API version of the referent  |
-
 | key_file  |   |  | |  Path to a key file used to authenticate with the API.  |
-
 | api_key  |   |  | |  Token used to connect to the API.  |
-
 | annotations  |   |  | |  Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects.  |
-
 | spec_target_cpu_utilization_percentage  |   |  | |  target average CPU utilization (represented as a percentage of requested CPU) over all the pods; if not specified the default autoscaling policy will be used.  |
-
 | spec_max_replicas  |   |  | |  upper limit for the number of pods that can be set by the autoscaler; cannot be smaller than MinReplicas.  |
 
 

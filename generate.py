@@ -82,7 +82,7 @@ def template_module(module, dest):
         print("No docstring retrieved for {}".format(module), file=sys.stderr)
         print("Docs for {} could not be generated".format(module), file=sys.stderr)
         return
-    template = jinja_env().get_template('module_template.md.j2')
+    template = jinja_env().get_template('module.md.j2')
     with open(dest, 'w') as f:
         f.write(template.render(**module))
     print('Generated docs for {}'.format(module['module']))

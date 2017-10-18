@@ -33,85 +33,45 @@ Manage the lifecycle of a pod_security_policy object. Supports check mode, and a
 
 | Parameter     | required    | default  | choices    | comments |
 | ------------- |-------------| ---------|----------- |--------- |
-
 | spec_default_add_capabilities  |   |  | |  DefaultAddCapabilities is the default set of capabilities that will be added to the container unless the pod spec specifically drops the capability. You may not list a capabiility in both DefaultAddCapabilities and RequiredDropCapabilities.  |
-
 | force  |   |  False  | |  If set to C(True), and I(state) is C(present), an existing object will updated, and lists will be replaced, rather than merged.  |
-
 | spec_fs_group_ranges  |   |  | |  Ranges are the allowed ranges of fs groups. If you would like to force a single fs group then supply a single range with the same start and end.  |
-
 | spec_se_linux_se_linux_options_level  |   |  | |  Level is SELinux level label that applies to the container.  |
-
 | cert_file  |   |  | |  Path to a certificate used to authenticate with the API.  |
-
 | labels  |   |  | |  Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services.  |
-
 | verify_ssl  |   |  | |  Whether or not to verify the API server's SSL certificates.  |
-
 | spec_host_network  |   |  | |  hostNetwork determines if the policy allows the use of HostNetwork in the pod spec.  |
-
 | spec_required_drop_capabilities  |   |  | |  RequiredDropCapabilities are the capabilities that will be dropped from the container. These are required to be dropped and cannot be added.  |
-
 | spec_se_linux_se_linux_options_role  |   |  | |  Role is a SELinux role label that applies to the container.  |
-
 | resource_definition  |   |  | |  Provide the YAML definition for the object, bypassing any modules parameters intended to define object attributes.  |
-
 | namespace  |   |  | |  Namespace defines the space within each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty. Must be a DNS_LABEL. Cannot be updated.  |
-
 | spec_supplemental_groups_rule  |   |  | |  Rule is the strategy that will dictate what supplemental groups is used in the SecurityContext.  |
-
 | spec_host_ports  |   |  | |  hostPorts determines which host port ranges are allowed to be exposed.  |
-
 | spec_volumes  |   |  | |  volumes is a white list of allowed volume plugins. Empty indicates that all plugins may be used.  |
-
 | state  |   |  present  |  - present  - absent  |  Determines if an object should be created, patched, or deleted. When set to C(present), the object will be created, if it does not exist, or patched, if parameter values differ from the existing object's attributes, and deleted, if set to C(absent). A patch operation results in merging lists and updating dictionaries, with lists being merged into a unique set of values. If a list contains a dictionary with a I(name) or I(type) attribute, a strategic merge is performed, where individual elements with a matching I(name_) or I(type) are merged. To force the replacement of lists, set the I(force) option to C(True).  |
-
 | spec_allowed_capabilities  |   |  | |  AllowedCapabilities is a list of capabilities that can be requested to add to the container. Capabilities in this field may be added at the pod author's discretion. You must not list a capability in both AllowedCapabilities and RequiredDropCapabilities.  |
-
 | spec_host_pid  |   |  | |  hostPID determines if the policy allows the use of HostPID in the pod spec.  |
-
 | api_key  |   |  | |  Token used to connect to the API.  |
-
 | annotations  |   |  | |  Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects.  |
-
 | spec_run_as_user_ranges  |   |  | |  Ranges are the allowed ranges of uids that may be used.  |
-
 | username  |   |  | |  Provide a username for connecting to the API.  |
-
 | spec_supplemental_groups_ranges  |   |  | |  Ranges are the allowed ranges of supplemental groups. If you would like to force a single supplemental group then supply a single range with the same start and end.  |
-
 | spec_run_as_user_rule  |   |  | |  Rule is the strategy that will dictate the allowable RunAsUser values that may be set.  |
-
 | host  |   |  | |  Provide a URL for acessing the Kubernetes API.  |
-
 | spec_fs_group_rule  |   |  | |  Rule is the strategy that will dictate what FSGroup is used in the SecurityContext.  |
-
 | spec_host_ipc  |   |  | |  hostIPC determines if the policy allows the use of HostIPC in the pod spec.  |
-
 | password  |   |  | |  Provide a password for connecting to the API. Use in conjunction with I(username).  |
-
 | src  |   |  | |  Provide a path to a file containing the YAML definition of the object. Mutually exclusive with I(resource_definition).  |
-
 | ssl_ca_cert  |   |  | |  Path to a CA certificate used to authenticate with the API.  |
-
 | name  |   |  | |  Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated.  |
-
 | spec_se_linux_rule  |   |  | |  type is the strategy that will dictate the allowable labels that may be set.  |
-
 | spec_se_linux_se_linux_options_type  |   |  | |  Type is a SELinux type label that applies to the container.  |
-
 | kubeconfig  |   |  | |  Path to an existing Kubernetes config file. If not provided, and no other connection options are provided, the openshift client will attempt to load the default configuration file from I(~/.kube/config.json).  |
-
 | spec_read_only_root_filesystem  |   |  | |  ReadOnlyRootFilesystem when set to true will force containers to run with a read only root file system. If the container specifically requests to run with a non-read only root file system the PSP should deny the pod. If set to false the container may run with a read only root file system if it wishes but it will not be forced to.  |
-
 | spec_privileged  |   |  | |  privileged determines if a pod can request to be run as privileged.  |
-
 | context  |   |  | |  The name of a context found in the Kubernetes config file.  |
-
 | spec_se_linux_se_linux_options_user  |   |  | |  User is a SELinux user label that applies to the container.  |
-
 | debug  |   |  False  | |  Enable debug output from the OpenShift helper. Logging info is written to KubeObjHelper.log  |
-
 | key_file  |   |  | |  Path to a key file used to authenticate with the API.  |
 
 

@@ -33,59 +33,32 @@ Manage the lifecycle of a o_auth_access_token object. Supports check mode, and a
 
 | Parameter     | required    | default  | choices    | comments |
 | ------------- |-------------| ---------|----------- |--------- |
-
 | username  |   |  | |  Provide a username for connecting to the API.  |
-
 | ssl_ca_cert  |   |  | |  Path to a CA certificate used to authenticate with the API.  |
-
 | user_uid  |   |  | |  UserUID is the unique UID associated with this token  |
-
 | force  |   |  False  | |  If set to C(True), and I(state) is C(present), an existing object will updated, and lists will be replaced, rather than merged.  |
-
 | scopes  |   |  | |  Scopes is an array of the requested scopes.  |
-
 | namespace  |   |  | |  Namespace defines the space within each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty. Must be a DNS_LABEL. Cannot be updated.  |
-
 | cert_file  |   |  | |  Path to a certificate used to authenticate with the API.  |
-
 | labels  |   |  | |  Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services.  |
-
 | verify_ssl  |   |  | |  Whether or not to verify the API server's SSL certificates.  |
-
 | password  |   |  | |  Provide a password for connecting to the API. Use in conjunction with I(username).  |
-
 | refresh_token  |   |  | |  RefreshToken is the value by which this token can be renewed. Can be blank.  |
-
 | kubeconfig  |   |  | |  Path to an existing Kubernetes config file. If not provided, and no other connection options are provided, the openshift client will attempt to load the default configuration file from I(~/.kube/config.json).  |
-
 | src  |   |  | |  Provide a path to a file containing the YAML definition of the object. Mutually exclusive with I(resource_definition).  |
-
 | name  |   |  | |  Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated.  |
-
 | user_name  |   |  | |  UserName is the user name associated with this token  |
-
 | client_name  |   |  | |  ClientName references the client that created this token.  |
-
 | expires_in  |   |  | |  ExpiresIn is the seconds from CreationTime before this token expires.  |
-
 | host  |   |  | |  Provide a URL for acessing the Kubernetes API.  |
-
 | resource_definition  |   |  | |  Provide the YAML definition for the object, bypassing any modules parameters intended to define object attributes.  |
-
 | state  |   |  present  |  - present  - absent  |  Determines if an object should be created, patched, or deleted. When set to C(present), the object will be created, if it does not exist, or patched, if parameter values differ from the existing object's attributes, and deleted, if set to C(absent). A patch operation results in merging lists and updating dictionaries, with lists being merged into a unique set of values. If a list contains a dictionary with a I(name) or I(type) attribute, a strategic merge is performed, where individual elements with a matching I(name_) or I(type) are merged. To force the replacement of lists, set the I(force) option to C(True).  |
-
 | redirect_uri  |   |  | |  RedirectURI is the redirection associated with the token.  |
-
 | context  |   |  | |  The name of a context found in the Kubernetes config file.  |
-
 | debug  |   |  False  | |  Enable debug output from the OpenShift helper. Logging info is written to KubeObjHelper.log  |
-
 | key_file  |   |  | |  Path to a key file used to authenticate with the API.  |
-
 | api_key  |   |  | |  Token used to connect to the API.  |
-
 | authorize_token  |   |  | |  AuthorizeToken contains the token that authorized this token  |
-
 | annotations  |   |  | |  Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects.  |
 
 

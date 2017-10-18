@@ -33,109 +33,57 @@ Manage the lifecycle of a pod_security_policy_review object. Supports check mode
 
 | Parameter     | required    | default  | choices    | comments |
 | ------------- |-------------| ---------|----------- |--------- |
-
 | spec_template_spec_host_pid  |   |  | |  Use the host's pid namespace. Optional: Default to false.  |
-
 | spec_template_spec_host_network  |   |  | |  Host networking requested for this pod. Use the host's network namespace. If this option is set, the ports that will be used must be specified. Default to false.  |
-
 | force  |   |  False  | |  If set to C(True), and I(state) is C(present), an existing object will updated, and lists will be replaced, rather than merged.  |
-
 | spec_template_spec_dns_policy  |   |  | |  Set DNS policy for containers within the pod. One of 'ClusterFirstWithHostNet', 'ClusterFirst' or 'Default'. Defaults to "ClusterFirst". To have DNS options set along with hostNetwork, you have to specify DNS policy explicitly to 'ClusterFirstWithHostNet'.  |
-
 | spec_template_metadata_labels  |   |  | |  Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services.  |
-
 | cert_file  |   |  | |  Path to a certificate used to authenticate with the API.  |
-
 | spec_template_spec_security_context_se_linux_options_type  |   |  | |  Type is a SELinux type label that applies to the container.  |
-
 | verify_ssl  |   |  | |  Whether or not to verify the API server's SSL certificates.  |
-
 | spec_template_spec_scheduler_name  |   |  | |  If specified, the pod will be dispatched by specified scheduler. If not specified, the pod will be dispatched by default scheduler.  |
-
 | spec_template_spec_affinity_node_affinity_preferred_during_scheduling_ignored_during_execution  |   |  | |  The scheduler will prefer to schedule pods to nodes that satisfy the affinity expressions specified by this field, but it may choose a node that violates one or more of the expressions. The node that is most preferred is the one with the greatest sum of weights, i.e. for each node that meets all of the scheduling requirements (resource request, requiredDuringScheduling affinity expressions, etc.), compute a sum by iterating through the elements of this field and adding "weight" to the sum if the node matches the corresponding matchExpressions; the node(s) with the highest sum are the most preferred.  |
-
 | spec_template_spec_affinity_pod_affinity_required_during_scheduling_ignored_during_execution  |   |  | |  NOT YET IMPLEMENTED. TODO: Uncomment field once it is implemented. If the affinity requirements specified by this field are not met at scheduling time, the pod will not be scheduled onto the node. If the affinity requirements specified by this field cease to be met at some point during pod execution (e.g. due to a pod label update), the system will try to eventually evict the pod from its node. When there are multiple elements, the lists of nodes corresponding to each podAffinityTerm are intersected, i.e. all terms must be satisfied. RequiredDuringSchedulingRequiredDuringExecution []PodAffinityTerm `json:"requiredDuringSchedulingRequiredDuringExecution,omitempty"` If the affinity requirements specified by this field are not met at scheduling time, the pod will not be scheduled onto the node. If the affinity requirements specified by this field cease to be met at some point during pod execution (e.g. due to a pod label update), the system may or may not try to eventually evict the pod from its node. When there are multiple elements, the lists of nodes corresponding to each podAffinityTerm are intersected, i.e. all terms must be satisfied.  |
-
 | spec_template_spec_restart_policy  |   |  | |  Restart policy for all containers within the pod. One of Always, OnFailure, Never. Default to Always.  |
-
 | spec_template_spec_automount_service_account_token  |   |  | |  AutomountServiceAccountToken indicates whether a service account token should be automatically mounted.  |
-
 | spec_template_spec_security_context_run_as_user  |   |  | |  The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in SecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence for that container.  |
-
 | spec_template_spec_containers  |   |  | |  List of containers belonging to the pod. Containers cannot currently be added or removed. There must be at least one container in a Pod. Cannot be updated.  |
-
 | spec_template_spec_node_selector  |   |  | |  NodeSelector is a selector which must be true for the pod to fit on a node. Selector which must match a node's labels for the pod to be scheduled on that node.  |
-
 | spec_template_metadata_annotations  |   |  | |  Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects.  |
-
 | spec_template_spec_affinity_node_affinity_required_during_scheduling_ignored_during_execution_node_selector_terms  |   |  | |  Required. A list of node selector terms. The terms are ORed.  |
-
 | spec_template_spec_affinity_pod_anti_affinity_preferred_during_scheduling_ignored_during_execution  |   |  | |  The scheduler will prefer to schedule pods to nodes that satisfy the anti-affinity expressions specified by this field, but it may choose a node that violates one or more of the expressions. The node that is most preferred is the one with the greatest sum of weights, i.e. for each node that meets all of the scheduling requirements (resource request, requiredDuringScheduling anti-affinity expressions, etc.), compute a sum by iterating through the elements of this field and adding "weight" to the sum if the node has pods which matches the corresponding podAffinityTerm; the node(s) with the highest sum are the most preferred.  |
-
 | spec_template_spec_hostname  |   |  | |  Specifies the hostname of the Pod If not specified, the pod's hostname will be set to a system-defined value.  |
-
 | spec_service_account_names  |   |  | |  serviceAccountNames is an optional set of ServiceAccounts to run the check with. If serviceAccountNames is empty, the template.spec.serviceAccountName is used, unless it's empty, in which case "default" is used instead. If serviceAccountNames is specified, template.spec.serviceAccountName is ignored.  |
-
 | api_key  |   |  | |  Token used to connect to the API.  |
-
 | spec_template_spec_host_ipc  |   |  | |  Use the host's ipc namespace. Optional: Default to false.  |
-
 | spec_template_spec_security_context_se_linux_options_user  |   |  | |  User is a SELinux user label that applies to the container.  |
-
 | username  |   |  | |  Provide a username for connecting to the API.  |
-
 | ssl_ca_cert  |   |  | |  Path to a CA certificate used to authenticate with the API.  |
-
 | spec_template_spec_security_context_fs_group  |   |  | |  A special supplemental group that applies to all containers in a pod. Some       volume types allow the Kubelet to change the ownership of that volume to be       owned by the pod: 1. The owning GID will be the FSGroup 2. The setgid bit       is set (new files created in the volume will be owned by FSGroup) 3. The permission       bits are OR'd with rw-rw---- If unset, the Kubelet will not modify the ownership       and permissions of any volume.  |
-
 | spec_template_spec_service_account  |   |  | |  DeprecatedServiceAccount is a depreciated alias for ServiceAccountName. Deprecated: Use serviceAccountName instead.  |
-
 | spec_template_spec_node_name  |   |  | |  NodeName is a request to schedule this pod onto a specific node. If it is non-empty, the scheduler simply schedules this pod onto that node, assuming that it fits resource requirements.  |
-
 | spec_template_spec_affinity_pod_affinity_preferred_during_scheduling_ignored_during_execution  |   |  | |  The scheduler will prefer to schedule pods to nodes that satisfy the affinity expressions specified by this field, but it may choose a node that violates one or more of the expressions. The node that is most preferred is the one with the greatest sum of weights, i.e. for each node that meets all of the scheduling requirements (resource request, requiredDuringScheduling affinity expressions, etc.), compute a sum by iterating through the elements of this field and adding "weight" to the sum if the node has pods which matches the corresponding podAffinityTerm; the node(s) with the highest sum are the most preferred.  |
-
 | spec_template_metadata_name  |   |  | |  Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated.  |
-
 | spec_template_spec_active_deadline_seconds  |   |  | |  Optional duration in seconds the pod may be active on the node relative to StartTime before the system will actively try to mark it failed and kill associated containers. Value must be a positive integer.  |
-
 | host  |   |  | |  Provide a URL for acessing the Kubernetes API.  |
-
 | spec_template_spec_host_aliases  |   |  | |  HostAliases is an optional list of hosts and IPs that will be injected into the pod's hosts file if specified. This is only valid for non-hostNetwork pods.  |
-
 | password  |   |  | |  Provide a password for connecting to the API. Use in conjunction with I(username).  |
-
 | spec_template_spec_volumes  |   |  | |  List of volumes that can be mounted by containers belonging to the pod.  |
-
 | spec_template_spec_security_context_supplemental_groups  |   |  | |  A list of groups applied to the first process run in each container, in addition to the container's primary GID. If unspecified, no groups will be added to any container.  |
-
 | spec_template_spec_service_account_name  |   |  | |  ServiceAccountName is the name of the ServiceAccount to use to run this pod.  |
-
 | spec_template_spec_security_context_run_as_non_root  |   |  | |  Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in SecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.  |
-
 | spec_template_spec_image_pull_secrets  |   |  | |  ImagePullSecrets is an optional list of references to secrets in the same namespace to use for pulling any of the images used by this PodSpec. If specified, these secrets will be passed to individual puller implementations for them to use. For example, in the case of docker, only DockerConfig type secrets are honored.  |
-
 | spec_template_spec_security_context_se_linux_options_level  |   |  | |  Level is SELinux level label that applies to the container.  |
-
 | spec_template_spec_termination_grace_period_seconds  |   |  | |  Optional duration in seconds the pod needs to terminate gracefully. May be decreased in delete request. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period will be used instead. The grace period is the duration in seconds after the processes running in the pod are sent a termination signal and the time when the processes are forcibly halted with a kill signal. Set this value longer than the expected cleanup time for your process. Defaults to 30 seconds.  |
-
 | spec_template_spec_security_context_se_linux_options_role  |   |  | |  Role is a SELinux role label that applies to the container.  |
-
 | spec_template_spec_tolerations  |   |  | |  If specified, the pod's tolerations.  |
-
 | kubeconfig  |   |  | |  Path to an existing Kubernetes config file. If not provided, and no other connection options are provided, the openshift client will attempt to load the default configuration file from I(~/.kube/config.json).  |
-
 | spec_template_metadata_namespace  |   |  | |  Namespace defines the space within each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty. Must be a DNS_LABEL. Cannot be updated.  |
-
 | spec_template_spec_affinity_pod_anti_affinity_required_during_scheduling_ignored_during_execution  |   |  | |  NOT YET IMPLEMENTED. TODO: Uncomment field once it is implemented. If the anti-affinity requirements specified by this field are not met at scheduling time, the pod will not be scheduled onto the node. If the anti-affinity requirements specified by this field cease to be met at some point during pod execution (e.g. due to a pod label update), the system will try to eventually evict the pod from its node. When there are multiple elements, the lists of nodes corresponding to each podAffinityTerm are intersected, i.e. all terms must be satisfied. RequiredDuringSchedulingRequiredDuringExecution []PodAffinityTerm `json:"requiredDuringSchedulingRequiredDuringExecution,omitempty"` If the anti-affinity requirements specified by this field are not met at scheduling time, the pod will not be scheduled onto the node. If the anti-affinity requirements specified by this field cease to be met at some point during pod execution (e.g. due to a pod label update), the system may or may not try to eventually evict the pod from its node. When there are multiple elements, the lists of nodes corresponding to each podAffinityTerm are intersected, i.e. all terms must be satisfied.  |
-
 | context  |   |  | |  The name of a context found in the Kubernetes config file.  |
-
 | debug  |   |  False  | |  Enable debug output from the OpenShift helper. Logging info is written to KubeObjHelper.log  |
-
 | key_file  |   |  | |  Path to a key file used to authenticate with the API.  |
-
 | spec_template_spec_subdomain  |   |  | |  If specified, the fully qualified Pod hostname will be "<hostname>.<subdomain>.<pod namespace>.svc.<cluster domain>". If not specified, the pod will not have a domainname at all.  |
-
 | spec_template_spec_init_containers  |   |  | |  List of initialization containers belonging to the pod. Init containers are executed in order prior to containers being started. If any init container fails, the pod is considered to have failed and is handled according to its restartPolicy. The name for an init container or normal container must be unique among all containers. Init containers may not have Lifecycle actions, Readiness probes, or Liveness probes. The resourceRequirements of an init container are taken into account during scheduling by finding the highest request/limit for each resource type, and then using the max of of that value or the sum of the normal containers. Limits are applied to init containers in a similar fashion. Init containers cannot currently be added or removed. Cannot be updated.  |
 
 

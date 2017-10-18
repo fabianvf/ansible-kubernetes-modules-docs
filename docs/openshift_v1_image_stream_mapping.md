@@ -33,69 +33,37 @@ Manage the lifecycle of a image_stream_mapping object. Supports check mode, and 
 
 | Parameter     | required    | default  | choices    | comments |
 | ------------- |-------------| ---------|----------- |--------- |
-
 | force  |   |  False  | |  If set to C(True), and I(state) is C(present), an existing object will updated, and lists will be replaced, rather than merged.  |
-
 | image_metadata_namespace  |   |  | |  Namespace defines the space within each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty. Must be a DNS_LABEL. Cannot be updated.  |
-
 | cert_file  |   |  | |  Path to a certificate used to authenticate with the API.  |
-
 | image_docker_image_manifest  |   |  | |  DockerImageManifest is the raw JSON of the manifest  |
-
 | verify_ssl  |   |  | |  Whether or not to verify the API server's SSL certificates.  |
-
 | tag  |   |  | |  Tag is a string value this image can be located with inside the stream.  |
-
 | image_signatures  |   |  | |  Signatures holds all signatures of the image.  |
-
 | image_api_version  |   |  | |  APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.  |
-
 | image_metadata_name  |   |  | |  Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated.  |
-
 | namespace  |   |  | |  Namespace defines the space within each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty. Must be a DNS_LABEL. Cannot be updated.  |
-
 | image_docker_image_config  |   |  | |  DockerImageConfig is a JSON blob that the runtime uses to set up the container. This is a part of manifest schema v2.  |
-
 | image_kind  |   |  | |  Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.  |
-
 | image_metadata_annotations  |   |  | |  Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects.  |
-
 | api_key  |   |  | |  Token used to connect to the API.  |
-
 | annotations  |   |  | |  Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects.  |
-
 | username  |   |  | |  Provide a username for connecting to the API.  |
-
 | ssl_ca_cert  |   |  | |  Path to a CA certificate used to authenticate with the API.  |
-
 | labels  |   |  | |  Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services.  |
-
 | image_metadata_labels  |   |  | |  Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services.  |
-
 | image_docker_image_metadata_raw  |   |  | |  Raw is the underlying serialization of this object.  |
-
 | image_docker_image_metadata_version  |   |  | |  DockerImageMetadataVersion conveys the version of the object, which if empty defaults to "1.0"  |
-
 | image_docker_image_signatures  |   |  | |  DockerImageSignatures provides the signatures as opaque blobs. This is a part of manifest schema v1.  |
-
 | image_docker_image_layers  |   |  | |  DockerImageLayers represents the layers in the image. May not be set if the image does not define that data.  |
-
 | host  |   |  | |  Provide a URL for acessing the Kubernetes API.  |
-
 | password  |   |  | |  Provide a password for connecting to the API. Use in conjunction with I(username).  |
-
 | image_docker_image_manifest_media_type  |   |  | |  DockerImageManifestMediaType specifies the mediaType of manifest. This is a part of manifest schema v2.  |
-
 | image_docker_image_reference  |   |  | |  DockerImageReference is the string that can be used to pull this image.  |
-
 | name  |   |  | |  Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated.  |
-
 | kubeconfig  |   |  | |  Path to an existing Kubernetes config file. If not provided, and no other connection options are provided, the openshift client will attempt to load the default configuration file from I(~/.kube/config.json).  |
-
 | context  |   |  | |  The name of a context found in the Kubernetes config file.  |
-
 | debug  |   |  False  | |  Enable debug output from the OpenShift helper. Logging info is written to KubeObjHelper.log  |
-
 | key_file  |   |  | |  Path to a key file used to authenticate with the API.  |
 
 

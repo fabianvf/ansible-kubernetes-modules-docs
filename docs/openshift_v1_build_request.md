@@ -33,93 +33,49 @@ Manage the lifecycle of a build_request object. Supports check mode, and attempt
 
 | Parameter     | required    | default  | choices    | comments |
 | ------------- |-------------| ---------|----------- |--------- |
-
 | triggered_by_image_name  |   |  | |  Name of the referent.  |
-
 | force  |   |  False  | |  If set to C(True), and I(state) is C(present), an existing object will updated, and lists will be replaced, rather than merged.  |
-
 | revision_git_author_email  |   |  | |  email of the source control user  |
-
 | last_version  |   |  | |  lastVersion (optional) is the LastVersion of the BuildConfig that was used to generate the build. If the BuildConfig in the generator doesn't match, a build will not be generated.  |
-
 | cert_file  |   |  | |  Path to a certificate used to authenticate with the API.  |
-
 | labels  |   |  | |  Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services.  |
-
 | verify_ssl  |   |  | |  Whether or not to verify the API server's SSL certificates.  |
-
 | revision_git_author_name  |   |  | |  name of the source control user  |
-
 | triggered_by_image_api_version  |   |  | |  API version of the referent.  |
-
 | triggered_by_image_kind  |   |  | |  Kind of the referent.  |
-
 | revision_git_message  |   |  | |  message is the description of a specific commit  |
-
 | revision_git_committer_name  |   |  | |  name of the source control user  |
-
 | triggered_by_image_resource_version  |   |  | |  Specific resourceVersion to which this reference is made, if any.  |
-
 | triggered_by_image_field_path  |   |  | |  If referring to a piece of an object instead of an entire object, this string should contain a valid JSON/Go field access statement, such as desiredState.manifest.containers[2]. For example, if the object reference is to a container within a pod, this would take on a value like: "spec.containers{name}" (where "name" refers to the name of the container that triggered the event) or if no container name is specified "spec.containers[2]" (container with index 2 in this pod). This syntax is chosen only to have some well-defined way of referencing a part of an object.  |
-
 | env  |   |  | |  env contains additional environment variables you want to pass into a builder container.  |
-
 | api_key  |   |  | |  Token used to connect to the API.  |
-
 | annotations  |   |  | |  Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects.  |
-
 | username  |   |  | |  Provide a username for connecting to the API.  |
-
 | ssl_ca_cert  |   |  | |  Path to a CA certificate used to authenticate with the API.  |
-
 | _from_kind  |   |  | |  Kind of the referent.  |
-
 | triggered_by_image_namespace  |   |  | |  Namespace of the referent.  |
-
 | source_strategy_options_incremental  |   |  | |  incremental overrides the source-strategy incremental option in the build config  |
-
 | revision_git_commit  |   |  | |  commit is the commit hash identifying a specific commit  |
-
 | triggered_by_image_uid  |   |  | |  UID of the referent.  |
-
 | _from_field_path  |   |  | |  If referring to a piece of an object instead of an entire object, this string should contain a valid JSON/Go field access statement, such as desiredState.manifest.containers[2]. For example, if the object reference is to a container within a pod, this would take on a value like: "spec.containers{name}" (where "name" refers to the name of the container that triggered the event) or if no container name is specified "spec.containers[2]" (container with index 2 in this pod). This syntax is chosen only to have some well-defined way of referencing a part of an object.  |
-
 | host  |   |  | |  Provide a URL for acessing the Kubernetes API.  |
-
 | docker_strategy_options_no_cache  |   |  | |  noCache overrides the docker-strategy noCache option in the build config  |
-
 | revision_type  |   |  | |  type of the build source, may be one of 'Source', 'Dockerfile', 'Binary', or 'Images'  |
-
 | _from_namespace  |   |  | |  Namespace of the referent.  |
-
 | _from_resource_version  |   |  | |  Specific resourceVersion to which this reference is made, if any.  |
-
 | password  |   |  | |  Provide a password for connecting to the API. Use in conjunction with I(username).  |
-
 | _from_name  |   |  | |  Name of the referent.  |
-
 | name  |   |  | |  Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated.  |
-
 | triggered_by  |   |  | |  triggeredBy describes which triggers started the most recent update to the build configuration and contains information about those triggers.  |
-
 | _from_api_version  |   |  | |  API version of the referent.  |
-
 | kubeconfig  |   |  | |  Path to an existing Kubernetes config file. If not provided, and no other connection options are provided, the openshift client will attempt to load the default configuration file from I(~/.kube/config.json).  |
-
 | docker_strategy_options_build_args  |   |  | |  Args contains any build arguments that are to be passed to Docker. See  |
-
 | revision_git_committer_email  |   |  | |  email of the source control user  |
-
 | binary_as_file  |   |  | |  asFile indicates that the provided binary input should be considered a single file within the build input. For example, specifying "webapp.war" would place the provided binary as `/webapp.war` for the builder. If left empty, the Docker and Source build strategies assume this file is a zip, tar, or tar.gz file and extract it as the source. The custom strategy receives this binary as standard input. This filename may not contain slashes or be '..' or '.'.  |
-
 | context  |   |  | |  The name of a context found in the Kubernetes config file.  |
-
 | debug  |   |  False  | |  Enable debug output from the OpenShift helper. Logging info is written to KubeObjHelper.log  |
-
 | key_file  |   |  | |  Path to a key file used to authenticate with the API.  |
-
 | namespace  |   |  | |  Namespace defines the space within each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty. Must be a DNS_LABEL. Cannot be updated.  |
-
 | _from_uid  |   |  | |  UID of the referent.  |
 
 

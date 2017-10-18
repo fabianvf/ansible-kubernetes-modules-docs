@@ -33,55 +33,30 @@ Manage the lifecycle of a self_subject_access_review object. Supports check mode
 
 | Parameter     | required    | default  | choices    | comments |
 | ------------- |-------------| ---------|----------- |--------- |
-
 | username  |   |  | |  Provide a username for connecting to the API.  |
-
 | ssl_ca_cert  |   |  | |  Path to a CA certificate used to authenticate with the API.  |
-
 | spec_resource_attributes_resource  |   |  | |  Resource is one of the existing resource types. "*" means all.  |
-
 | force  |   |  False  | |  If set to C(True), and I(state) is C(present), an existing object will updated, and lists will be replaced, rather than merged.  |
-
 | cert_file  |   |  | |  Path to a certificate used to authenticate with the API.  |
-
 | labels  |   |  | |  Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services.  |
-
 | spec_resource_attributes_version  |   |  | |  Version is the API Version of the Resource. "*" means all.  |
-
 | verify_ssl  |   |  | |  Whether or not to verify the API server's SSL certificates.  |
-
 | spec_resource_attributes_namespace  |   |  | |  Namespace is the namespace of the action being requested. Currently, there is no distinction between no namespace and all namespaces "" (empty) is defaulted for LocalSubjectAccessReviews "" (empty) is empty for cluster-scoped resources "" (empty) means "all" for namespace scoped resources from a SubjectAccessReview or SelfSubjectAccessReview  |
-
 | password  |   |  | |  Provide a password for connecting to the API. Use in conjunction with I(username).  |
-
 | spec_non_resource_attributes_path  |   |  | |  Path is the URL path of the request  |
-
 | name  |   |  | |  Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated.  |
-
 | spec_non_resource_attributes_verb  |   |  | |  Verb is the standard HTTP verb  |
-
 | spec_resource_attributes_name  |   |  | |  Name is the name of the resource being requested for a "get" or deleted for a "delete". "" (empty) means all.  |
-
 | namespace  |   |  | |  Namespace defines the space within each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty. Must be a DNS_LABEL. Cannot be updated.  |
-
 | host  |   |  | |  Provide a URL for acessing the Kubernetes API.  |
-
 | spec_resource_attributes_group  |   |  | |  Group is the API Group of the Resource. "*" means all.  |
-
 | kubeconfig  |   |  | |  Path to an existing Kubernetes config file. If not provided, and no other connection options are provided, the openshift client will attempt to load the default configuration file from I(~/.kube/config.json).  |
-
 | spec_resource_attributes_verb  |   |  | |  Verb is a kubernetes resource API verb, like: get, list, watch, create, update, delete, proxy. "*" means all.  |
-
 | context  |   |  | |  The name of a context found in the Kubernetes config file.  |
-
 | spec_resource_attributes_subresource  |   |  | |  Subresource is one of the existing resource types. "" means none.  |
-
 | debug  |   |  False  | |  Enable debug output from the OpenShift helper. Logging info is written to KubeObjHelper.log  |
-
 | key_file  |   |  | |  Path to a key file used to authenticate with the API.  |
-
 | api_key  |   |  | |  Token used to connect to the API.  |
-
 | annotations  |   |  | |  Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects.  |
 
 
