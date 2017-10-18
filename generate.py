@@ -52,13 +52,13 @@ def generate_index(modules, dests):
             requirements=REQUIREMENTS,
             installation=INSTALLATION,
             usage=USAGE,
-            modules=map(
+            modules=sorted(filter(lambda x: x['name'], map(
                 lambda x: {
-                    'name': x[0]['module'] if x[0] else 'BROKEN',
+                    'name': x[0]['module'] if x[0] else None,
                     'path': x[1].split(os.path.sep)[-1]
                 }, 
                 zip(modules, dests)
-            )
+            )), key=lambda x: x['name'])
         ))
         print("Generated index at {}".format(index_path))
 
