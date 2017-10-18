@@ -22,8 +22,13 @@ Version added: 2.3.0
 ---
 
   * Synopsis
-  * Options
-  * Examples
+* Options
+
+* Examples
+
+* Return
+
+
 
 #### Synopsis
 Manage the lifecycle of a stateful_set object. Supports check mode, and attempts to to be idempotent.

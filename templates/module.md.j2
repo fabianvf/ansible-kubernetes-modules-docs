@@ -26,8 +26,18 @@ Version added: {{ version_added }}
 ---
 
   * Synopsis
+{% if options is defined -%}
   * Options
+{% endif %}
+{% if examples is defined -%}
   * Examples
+{% endif %}
+{% if returndocs is defined -%}
+  * Return
+{% endif %}
+{% if notes is defined -%}
+  * Notes
+{% endif %}
 
 #### Synopsis
 {{ description[0] |string }}
@@ -37,7 +47,7 @@ Version added: {{ version_added }}
 
 | Parameter     | required    | default  | choices    | comments |
 | ------------- |-------------| ---------|----------- |--------- |
-{% for option,values in options.iteritems() -%}
+{% for option,values in options -%}
 | {{ option }}  |  {% if values.required is defined %} {{ values.required | replace("True", "yes") | replace("False", "no") }} {% endif %} | {% if values.default is defined %} {{ values.default | replace("None","")}} {% endif %} |{% if values.choices is defined %} <ul>{% for each in values.choices %} <li>{{ each }}</li> {% endfor %}</ul>{% endif %} | {% if values.description is defined %}{% for each in values.description %} {{ each }} {% endfor %}{% endif %} |
 {% endfor %}
 

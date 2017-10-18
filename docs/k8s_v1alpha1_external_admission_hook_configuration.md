@@ -22,8 +22,13 @@ Version added: 2.3.0
 ---
 
   * Synopsis
-  * Options
-  * Examples
+* Options
+
+* Examples
+
+* Return
+
+
 
 #### Synopsis
 Manage the lifecycle of a external_admission_hook_configuration object. Supports check mode, and attempts to to be idempotent.

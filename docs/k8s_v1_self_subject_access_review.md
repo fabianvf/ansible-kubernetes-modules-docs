@@ -22,8 +22,13 @@ Version added: 2.3.0
 ---
 
   * Synopsis
-  * Options
-  * Examples
+* Options
+
+* Examples
+
+* Return
+
+
 
 #### Synopsis
 Manage the lifecycle of a self_subject_access_review object. Supports check mode, and attempts to to be idempotent.

@@ -67,6 +67,7 @@ def process_doc(module):
     if not doc:
         print("No docstring retrieved for {}".format(module), file=sys.stderr)
         return
+    doc['options'] = doc['options'].items()
     if examples and filter(lambda x: x, examples):
         examples = filter(lambda x: x, examples)
         examples_list = examples.split('\n')
@@ -79,8 +80,8 @@ def process_doc(module):
 
 def template_module(module, dest):
     if module is None:
-        print("No docstring retrieved for {}".format(module), file=sys.stderr)
-        print("Docs for {} could not be generated".format(module), file=sys.stderr)
+        print("No docstring retrieved for {}".format(dest), file=sys.stderr)
+        print("Docs for {} could not be generated".format(dest), file=sys.stderr)
         return
     template = jinja_env().get_template('module.md.j2')
     with open(dest, 'w') as f:

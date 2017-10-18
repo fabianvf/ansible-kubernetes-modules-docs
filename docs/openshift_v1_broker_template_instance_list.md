@@ -22,8 +22,13 @@ Version added: 2.3.0
 ---
 
   * Synopsis
-  * Options
-  * Examples
+* Options
+
+* Examples
+
+* Return
+
+
 
 #### Synopsis
 Retrieve a list of broker_template_instances. List operations provide a snapshot read of the underlying objects, returning a resource_version representing a consistent version of the listed objects.

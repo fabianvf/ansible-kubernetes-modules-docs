@@ -22,8 +22,13 @@ Version added: 2.3.0
 ---
 
   * Synopsis
-  * Options
-  * Examples
+* Options
+
+* Examples
+
+* Return
+
+
 
 #### Synopsis
 Manage the lifecycle of a pod_security_policy_self_subject_review object. Supports check mode, and attempts to to be idempotent.
